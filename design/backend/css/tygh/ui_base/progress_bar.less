@@ -1,0 +1,49 @@
+// Bootstrap styles
+
+
+// Bar of progress
+.progress .bar {
+    #gradient > .vertical(@btnPrimaryBackground, @btnPrimaryBackground);
+}
+
+// Striped bars
+.progress-striped .bar {
+    #gradient > .striped(@btnPrimaryBackground);
+}
+
+// COLORS
+// ------
+
+// Danger (red)
+.progress-danger .bar, .progress .bar-danger {
+    #gradient > .vertical(@btnDangerBackground, @btnDangerBackground);
+}
+.progress-danger.progress-striped .bar, .progress-striped .bar-danger {
+    #gradient > .striped(@btnDangerBackground);
+}
+
+// Success (green)
+.progress-success .bar, .progress .bar-success {
+    #gradient > .vertical(@btnSuccessBackground, @btnSuccessBackground);
+}
+.progress-success.progress-striped .bar, .progress-striped .bar-success {
+    #gradient > .striped(@btnSuccessBackground);
+}
+
+// Info (teal)
+.progress-info .bar, .progress .bar-info {
+    #gradient > .vertical(@btnInfoBackground, @btnInfoBackground);
+}
+.progress-info.progress-striped .bar, .progress-striped .bar-info {
+    #gradient > .striped(@btnInfoBackground);
+}
+
+// Warning (orange)
+.progress-warning .bar, .progress .bar-warning {
+    #gradient > .vertical(@btnWarningBackground, @btnWarningBackground);
+}
+.progress-warning.progress-striped .bar, .progress-striped .bar-warning {
+    #gradient > .striped(@btnWarningBackground);
+}
+
+// Custom styles

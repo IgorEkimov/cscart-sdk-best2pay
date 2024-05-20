@@ -1,0 +1,113 @@
+.cs-icon {
+    display: block;
+    margin: auto;
+    max-height: 100%;
+    max-width: 100%;
+    height: @iconSize;
+    width: @iconSize;
+}
+
+// Icon tones
+.cs-icon--apply-color {
+    color: @white;
+}
+
+.cs-icon--tone-base svg {
+    fill: lighten(@textColor, 10%);
+}
+
+.cs-icon--tone-muted svg {
+    fill: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
+}
+
+.cs-icon--tone-warning svg {
+    fill: @btnWarningBackground;
+}
+
+.cs-icon--tone-error svg {
+    fill: @btnDangerBackground;
+}
+
+.cs-icon--tone-interactive svg {
+    fill: @btnPrimaryBackground;
+}
+
+.cs-icon--tone-info svg {
+    fill: @btnInfoBackground;
+}
+
+.cs-icon--tone-success svg {
+    fill: @btnSuccessBackground;
+}
+
+.cs-icon--tone-primary svg {
+    fill: @btnPrimaryBackground;
+}
+
+.cs-icon--tone-text-warning svg {
+    fill: @warningText;
+}
+
+.cs-icon--tone-text-error svg {
+    fill: @errorText;
+}
+
+.cs-icon--tone-text-info svg {
+    fill: @infoText;
+}
+
+.cs-icon--tone-text-success svg {
+    fill: @successText;
+}
+
+// Custom
+.cs-icon--small {
+    transform: scale(0.8);
+}
+
+th .cs-icon--type-asc,
+th .cs-icon--type-desc,
+th .cs-icon--type-caret-up,
+th .cs-icon--type-caret-down,
+th .cs-icon--type-caret-left,
+th .cs-icon--type-caret-right {
+    display: inline-flex;
+    vertical-align: top;
+    transform: scale(0.8);
+}
+
+// Fallback to collapsed block
+.icon-caret-down:after {
+    content: url('../templates/icons/caret_down.svg');
+}
+
+.icon-caret-right:after {
+    content: url('../templates/icons/caret_right.svg');
+}
+
+// Fix icon size
+.cs-icon--type-user {
+    transform: scale(0.9);
+}
+
+.cs-icon--type-cog,
+.cs-icon--type-gear,
+.cs-icon--type-off,
+.cs-icon--type-trash,
+.cs-icon--type-align-justify {
+    transform: scale(0.85);
+}
+
+.cs-icon__hidden-accessible {
+    position: absolute !important;
+    top: 0;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important
+}

@@ -1,0 +1,23 @@
+{
+    "default_style": "Modern",
+    "default": {
+        "Modern": true,
+        "Greeny": true,
+        "Facebook": true,
+        "Woody": true,
+        "Black": true,
+        "Posh": true,
+        "MTronX": true,
+        "Brightness": true
+    },
+    "colors": {
+        "Modern": "#1ABC9C",
+        "Greeny": "#01A25C",
+        "Facebook": "#3C599F",
+        "Woody": "#FDE3CD",
+        "Black": "#18191A",
+        "Posh": "#FF3357",
+        "MTronX": "#3674BF",
+        "Brightness": "#EFEFEF"
+    }
+}

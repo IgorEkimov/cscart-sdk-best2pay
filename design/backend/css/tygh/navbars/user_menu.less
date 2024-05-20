@@ -1,0 +1,47 @@
+@media (min-width: @TabletBreakpoint + 1) {
+    .nav__user-menu-dropdown,
+    .languages-select-list,
+    .currencies-select-list {
+        width: 300px;    
+    }
+}
+
+.nav__user-menu-link.nav__user-menu-link.nav__user-menu-link.nav__user-menu-link {
+    box-shadow: none;
+}
+
+.nav__user-menu.open .nav__user-menu-inner {
+    background: @btnBackgroundHighlight;
+}
+
+.nav__profile-icon {
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+.languages-select-list-button,
+.curriencies-button {
+    overflow: hidden;
+}
+
+.languages-select-list.languages-select-list.languages-select-list,
+.currencies-select-list.currencies-select-list.currencies-select-list {
+    margin-left: 0;
+    border-radius: @baseBorderRadius;
+}
+
+.languages-select-list-item-link,
+.curriencies-item-link {
+    overflow: hidden;
+}
+
+.nav__user-menu-inner {
+    background: #f1f5fa; // background-global
+}
+
+// Select companies dropdown in profile menu
+.nav__user-menu-dropdown .object-picker__companies-name-content span {
+    display: none;
+}

@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Hebrew\n"
+"Language: he_IL\n"
+"Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3;\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: he\n"
+"X-Crowdin-File: /release-4.18.1/addons/onboarding_guide.po\n"
+"X-Crowdin-File-ID: 8264\n"
+"PO-Revision-Date: 2024-04-12 06:05\n"
+
+msgctxt "Addons::name::onboarding_guide"
+msgid "Onboarding guide"
+msgstr "מדריך עלייה למטוס"
+
+msgctxt "Addons::description::onboarding_guide"
+msgid "Introduces the marketplace to administrators and allows quickly set up basic functionality."
+msgstr "מציג את השוק למנהלי מערכת ומאפשר הגדרה מהירה של פונקציונליות בסיסית."
+
+msgctxt "Languages::onboarding_guide.guide_title"
+msgid "Welcome to your marketplace!<br>Get ready to receive your first order"
+msgstr "ברוך הבא לשוק שלך!<br>התכונן לקבל את ההזמנה הראשונה שלך"
+
+msgctxt "Languages::onboarding_guide.sb_guide_title"
+msgid "Welcome to your online store!<br>Get ready to receive your first order"
+msgstr "ברוכים הבאים לחנות המקוונת שלך!<br>התכונן לקבל את ההזמנה הראשונה שלך"
+
+msgctxt "Languages::onboarding_guide.completed_steps_progress"
+msgid "[completed] out of [total] complete"
+msgstr "[completed] מתוך [total] הושלם"
+
+msgctxt "Languages::onboarding_guide.dismiss"
+msgid "Dismiss"
+msgstr "לשחרר"
+
+msgctxt "Languages::onboarding_guide.step_close"
+msgid "Close"
+msgstr "סגור"
+
+msgctxt "Languages::onboarding_guide.step_complete"
+msgid "Complete"
+msgstr "לְהַשְׁלִים"
+
+msgctxt "Languages::onboarding_guide.explore_interface_title"
+msgid "Explore the Multi-Vendor No-Code interface"
+msgstr "חקור את הממשק ללא קוד מרובה ספקים"
+
+msgctxt "Languages::onboarding_guide.explore_interface_description"
+msgid "Discover how to effortlessly launch your marketplace in just 5 minutes. Learn the ins and outs of the intuitive interface and get ready to dive into the world of hassle-free marketplace creation."
+msgstr "גלה כיצד להשיק ללא מאמץ את השוק שלך תוך 5 דקות בלבד. למד את הפרטים הקטנים של הממשק האינטואיטיבי והתכונן לצלול לעולם של יצירת שוק ללא טרחה."
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_title"
+msgid "Personalize your marketplace"
+msgstr "התאם אישית את השוק שלך"
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_title"
+msgid "Personalize your online store"
+msgstr "התאם אישית את החנות המקוונת שלך"
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_description"
+msgid "Choose the style of your marketplace. Provide your contact information for customers and sellers."
+msgstr "בחר את הסגנון של השוק שלך. ספק את פרטי הקשר שלך ללקוחות ולמוכרים."
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_description"
+msgid "Choose the style of your online store. Provide your contact information for customers."
+msgstr "בחר את הסגנון של החנות המקוונת שלך. ספק את פרטי הקשר שלך ללקוחות."
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_title"
+msgid "Make changes on the fly"
+msgstr "בצע שינויים תוך כדי תנועה"
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the marketplace to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "השתמש בכלים ללא קוד כדי להתאים את השוק לצרכים שלך. ערוך כל טקסט; לסדר מחדש את הבלוקים; לשנות את הצבעים, הגופנים והסגנון. כאשר אתה רואה את חזית החנות כמנהל מערכת, אתה יכול להשתמש בכלים האלה בכל עת."
+
+msgctxt "Languages::onboarding_guide.sb_make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the online store to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "השתמש בכלים ללא קוד כדי להתאים את החנות המקוונת לצרכים שלך. ערוך כל טקסט; לסדר מחדש את הבלוקים; לשנות את הצבעים, הגופנים והסגנון. כאשר אתה רואה את חזית החנות כמנהל מערכת, אתה יכול להשתמש בכלים האלה בכל עת."
+
+msgctxt "Languages::onboarding_guide.theme_and_logo"
+msgid "Theme & logo"
+msgstr "נושא ולוגו"
+
+msgctxt "Languages::onboarding_guide.business_details"
+msgid "Business details"
+msgstr "פרטי העסק"
+
+msgctxt "Languages::onboarding_guide.languages_and_currency"
+msgid "Languages & Currency"
+msgstr "שפות ומטבעות"
+
+msgctxt "Languages::onboarding_guide.select_theme"
+msgid "Select theme"
+msgstr "בחר ערכת נושא"
+
+msgctxt "Languages::onboarding_guide.current_theme"
+msgid "Current theme"
+msgstr "נושא נוכחי"
+
+msgctxt "Languages::onboarding_guide.custom_theme"
+msgid "Custom theme"
+msgstr "נושא מותאם אישית"
+
+msgctxt "Languages::onboarding_guide.upload_logo"
+msgid "Upload logo"
+msgstr "העלה לוגו"
+
+msgctxt "Languages::onboarding_guide.activate"
+msgid "Activate"
+msgstr "לְהַפְעִיל"
+
+msgctxt "Languages::onboarding_guide.next"
+msgid "Next"
+msgstr "הַבָּא"
+
+msgctxt "Languages::onboarding_guide.back"
+msgid "Back"
+msgstr "חזור"
+
+msgctxt "Languages::onboarding_guide.save"
+msgid "Save"
+msgstr "להציל"
+
+msgctxt "Languages::onboarding_guide.edit_colors"
+msgid "Edit colors"
+msgstr "ערוך צבעים"
+
+msgctxt "Languages::onboarding_guide.modify_colors_fonts_backgrounds"
+msgid "Modify colors, fonts, and backgrounds"
+msgstr "שנה צבעים, גופנים ורקעים"
+
+msgctxt "Languages::onboarding_guide.edit_texts"
+msgid "Edit or translate any texts"
+msgstr "ערוך או תרגם כל טקסט"
+
+msgctxt "Languages::onboarding_guide.edit_blocks"
+msgid "Fine-tune page layouts"
+msgstr "כוונן פריסות דפים"
+
+msgctxt "Languages::onboarding_guide.configure_payment_options"
+msgid "Set up payments"
+msgstr "הגדר תשלומים"
+
+msgctxt "Languages::onboarding_guide.select_payment_options"
+msgid "Choose how you plan to accept payments. Select one of the following scenarios:"
+msgstr "בחר כיצד אתה מתכנן לקבל תשלומים. בחר אחד מהתרחישים הבאים:"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split"
+msgid "Multi-party payment (automatic disbursements)"
+msgstr "תשלום מרובה צדדים (תשלומים אוטומטיים)"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: PayPal Commerce Platform and Stripe Connect. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with PayPal or Stripe as well."
+msgstr "ישנן שיטות תשלום מיוחדות לשוק: PayPal Commerce Platform ו-Stripe Connect. לקוח עדיין משלם תשלום אחד עבור כל המוצרים; שיטת התשלום מפצלת את הכסף בינך לבין המוכרים באופן אוטומטי. שימו לב שמוכרים יצטרכו גם חשבונות עם PayPal או Stripe."
+
+msgctxt "Languages::onboarding_guide.single_rus_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: YooKassa For Marketplaces and Tinkoff Multiparty. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with YooKassa or Tinkoff as well."
+msgstr "ישנן שיטות תשלום מיוחדות ל-marketplaces: YooKassa For Marketplaces ו-Tinkoff Multiparty. לקוח עדיין משלם תשלום אחד עבור כל המוצרים; שיטת התשלום מפצלת את הכסף בינך לבין המוכרים באופן אוטומטי. שימו לב שמוכרים יצטרכו חשבונות עם YooKassa או Tinkoff גם כן."
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you"
+msgid "Single payment to the marketplace"
+msgstr "תשלום בודד לשוק"
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you_description"
+msgid "A customer makes one payment for all the products in the cart. The money ends up on your account, with the record of what you own to each seller. You periodically distribute the money between sellers."
+msgstr "לקוח משלם תשלום אחד עבור כל המוצרים בעגלה. הכסף מגיע לחשבון שלך, עם רישום של מה שבבעלותך לכל מוכר. אתה מחלק את הכסף מעת לעת בין המוכרים."
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers"
+msgid "Separate payments to sellers"
+msgstr "תשלומים נפרדים למוכרים"
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers_description"
+msgid "A customer pays to each seller separately. It becomes the seller’s responsibility to pay the commission to you (we have ways for that). Sellers will be able to set up their own shipping methods and promotions."
+msgstr "לקוח משלם לכל מוכר בנפרד. זוהי אחריותו של המוכר לשלם לך את העמלה (יש לנו דרכים לכך). המוכרים יוכלו להגדיר שיטות משלוח ומבצעים משלהם."
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods"
+msgid "Configure payment methods"
+msgstr "הגדר אמצעי תשלום"
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods_description"
+msgid "CS-Cart allows you to set up various payment methods; most of them automatically process the full up-front payment. But for now, let’s set up \"Cash on Delivery\" just to see how it works."
+msgstr "CS-Cart מאפשר לך להגדיר אמצעי תשלום שונים; רובם מעבדים אוטומטית את מלוא התשלום מראש. אבל לעת עתה, בואו נגדיר את \"מזומן במשלוח\" רק כדי לראות איך זה עובד."
+
+msgctxt "Languages::onboarding_guide.view_checkout_page"
+msgid "View checkout page"
+msgstr "צפה בדף התשלום"
+
+msgctxt "Languages::onboarding_guide.view_checkout_page_description"
+msgid "Once configured, your payment method will appear at the checkout page:"
+msgstr "לאחר ההגדרה, אמצעי התשלום שלך יופיע בדף התשלום:"
+
+msgctxt "Languages::onboarding_guide.missing_products"
+msgid "Missing products"
+msgstr "חסרים מוצרים"
+
+msgctxt "Languages::onboarding_guide.create_at_least_one_product_to_proceed_to_checkout"
+msgid "Create at least one product to proceed to checkout"
+msgstr "צור מוצר אחד לפחות כדי להמשיך לקופה"
+
+msgctxt "Languages::onboarding_guide.manage_sellers"
+msgid "Manage sellers"
+msgstr "ניהול מוכרים"
+
+msgctxt "Languages::onboarding_guide.create_one_vendor"
+msgid "Add a seller"
+msgstr "הוסף מוכר"
+
+msgctxt "Languages::onboarding_guide.create_vendor_description"
+msgid "Sellers—referred to as \"vendors\" in the admin panel—are essential for a marketplace. They provide products and services to customers. A seller can create an account themselves, or you can do it for them in the admin panel. Let’s add one seller via the admin panel."
+msgstr "מוכרים - המכונים \"ספקים\" בפאנל הניהול - חיוניים לשוק. הם מספקים מוצרים ושירותים ללקוחות. מוכר יכול ליצור חשבון בעצמו, או שאתה יכול לעשות זאת עבורו בפאנל הניהול. בואו נוסיף מוכר אחד דרך פאנל הניהול."
+
+msgctxt "Languages::onboarding_guide.view_storefront"
+msgid "See sellers on the storefront"
+msgstr "ראה את המוכרים בחזית החנות"
+
+msgctxt "Languages::onboarding_guide.view_invoice"
+msgid "View invoice"
+msgstr "צפה בחשבונית"
+
+msgctxt "Languages::onboarding_guide.logos_updated"
+msgid "Theme and email logos updated"
+msgstr "עיצוב לוגו ודוא\"ל עודכנו"
+
+msgctxt "Languages::onboarding_guide.set_default_currency"
+msgid "Set default currency"
+msgstr "הגדר מטבע ברירת מחדל"
+
+msgctxt "Languages::onboarding_guide.manage_currencies"
+msgid "Manage currencies"
+msgstr "נהל מטבעות"
+
+msgctxt "Languages::onboarding_guide.set_default_languages"
+msgid "Set default languages"
+msgstr "הגדר שפות ברירת מחדל"
+
+msgctxt "Languages::onboarding_guide.manage_languages"
+msgid "Manage languages"
+msgstr "נהל שפות"
+
+msgctxt "Languages::onboarding_guide.preview_an_email"
+msgid "Preview an email"
+msgstr "תצוגה מקדימה של אימייל"
+
+msgctxt "Languages::onboarding_guide.preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the new sellers who register at your marketplace."
+msgstr "לאחר שתסיים, ראה כיצד הנתונים שלך מופיעים בדוא\"ל למוכרים החדשים שנרשמים בשוק שלך."
+
+msgctxt "Languages::onboarding_guide.sb_preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the newly-registered customers."
+msgstr "לאחר שתסיים, ראה כיצד הנתונים שלך מופיעים בדוא\"ל ללקוחות הרשומים החדשים."
+
+msgctxt "Languages::onboarding_guide.customize_vendor_panel_design"
+msgid "Customize seller panel"
+msgstr "התאמה אישית של פאנל מוכרים"
+
+msgctxt "Languages::onboarding_guide.edit_vendor_panel_style"
+msgid "Sellers work with their own dedicated control panel. You can make it look the way you need. Set its colors, edit the menu, add blocks with info to the seller's dashboard."
+msgstr "המוכרים עובדים עם לוח בקרה ייעודי משלהם. אתה יכול לגרום לזה להיראות כמו שאתה צריך. הגדר את הצבעים שלו, ערוך את התפריט, הוסף בלוקים עם מידע ללוח המחוונים של המוכר."
+
+msgctxt "Languages::onboarding_guide.edit_structure"
+msgid "Edit menus and onboarding"
+msgstr "עריכת תפריטים והצטרפות"
+
+msgctxt "Languages::onboarding_guide.manage_products"
+msgid "Manage products"
+msgstr "ניהול מוצרים"
+
+msgctxt "Languages::onboarding_guide.manage_products_description"
+msgid "You as the marketplace owner can control all products sold on your platform. But sellers manage products through their own dashboard. See how they can add products one by one or in bulk."
+msgstr "אתה כבעל השוק יכול לשלוט בכל המוצרים הנמכרים בפלטפורמה שלך. אבל מוכרים מנהלים מוצרים דרך לוח המחוונים שלהם. ראה כיצד הם יכולים להוסיף מוצרים אחד אחד או בכמויות גדולות."
+
+msgctxt "Languages::onboarding_guide.sb_manage_products_description"
+msgid "Products are how your online store makes money; they include commodities, services, or anything else offered for a price. You can add products one by one or in bulk."
+msgstr "מוצרים הם הדרך שבה החנות המקוונת שלך מרוויחה כסף; הם כוללים סחורות, שירותים או כל דבר אחר המוצע תמורת מחיר. ניתן להוסיף מוצרים אחד אחד או בכמויות גדולות."
+
+msgctxt "Languages::onboarding_guide.add_one_product"
+msgid "Add one product"
+msgstr "הוסף מוצר אחד"
+
+msgctxt "Languages::onboarding_guide.import_csv_or_xml"
+msgid "Import CSV or XML"
+msgstr "ייבוא CSV או XML"
+
+msgctxt "Languages::onboarding_guide.view_product_page"
+msgid "View the latest added product"
+msgstr "הצג את המוצר האחרון שהתווסף"
+
+msgctxt "Languages::onboarding_guide.premoderation"
+msgid "If you do not see the created product on the storefront, you may have the <b>Vendor data premoderation</b> module enabled"
+msgstr "אם אינך רואה את המוצר שנוצר בחזית החנות, ייתכן שהמודול <b>נתוני ספק</b> מופעל"
+
+msgctxt "Languages::onboarding_guide.view_product_page_description"
+msgid "See your new products on the storefront."
+msgstr "ראה את המוצרים החדשים שלך בחזית החנות."
+
+msgctxt "Languages::onboarding_guide.preview_seller_onboarding"
+msgid "Preview seller onboarding"
+msgstr "תצוגה מקדימה של הצטרפות המוכר"
+
+msgctxt "Languages::onboarding_guide.walk_the_seller_path"
+msgid "Walk the seller path"
+msgstr "ללכת בשביל המוכר"
+
+msgctxt "Languages::onboarding_guide.customize_onboarding_process"
+msgid "Prospective sellers can request to join your marketplace on their own. See for yourself how that process works: the information they provide, the emails they receive, etc. You can adjust all of it, or even make your marketplace invite-only."
+msgstr "מוכרים פוטנציאליים יכולים לבקש להצטרף לשוק שלך בעצמם. ראה בעצמך איך התהליך הזה עובד: המידע שהם מספקים, האימיילים שהם מקבלים וכו'. אתה יכול להתאים את הכל, או אפילו להפוך את השוק שלך להזמנה בלבד."
+
+msgctxt "Languages::onboarding_guide.set_up_commissions_and_fees"
+msgid "Configure commissions and fees"
+msgstr "הגדר עמלות ועמלות"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans"
+msgid "Set up seller plans"
+msgstr "הגדר תוכניות מוכרים"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans_description"
+msgid "A marketplace usually earns you money from monthly fees and/or commissions from sales. Seller plans let you set the size and frequency of those payments."
+msgstr "שוק בדרך כלל מרוויח לך כסף מעמלות חודשיות ו/או עמלות ממכירות. תוכניות מפיץ מאפשרות לך להגדיר את הגודל והתדירות של תשלומים אלה."
+
+msgctxt "Languages::onboarding_guide.view_seller_plans"
+msgid "Preview seller plans"
+msgstr "תצוגה מקדימה של תוכניות המוכר"
+
+msgctxt "Languages::onboarding_guide.view_seller_plans_description"
+msgid "See how your configured seller plans appear to your prospective sellers on the storefront."
+msgstr "ראה כיצד תוכניות המוכר המוגדרות שלך מופיעות בפני המוכרים הפוטנציאליים שלך בחזית החנות."
+
+msgctxt "Languages::onboarding_guide.reset_onboarding"
+msgid "Reset onboarding"
+msgstr "אפס את ההטמעה"
+
+msgctxt "Languages::onboarding_guide.reset"
+msgid "Reset"
+msgstr "אִתחוּל"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_title"
+msgid "Set up shipping"
+msgstr "הגדר משלוח"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_description"
+msgid "CS-Cart provides your customers with shipping rates depending on the customer's address and order. You can set the rules for these rates yourself, or receive rates in real time from shipping companies like UPS or DHL. You can also make shipping methods available in some locations and unavailable in others."
+msgstr "CS-Cart מספקת ללקוחות שלך תעריפי משלוח בהתאם לכתובת הלקוח ולהזמנה. אתה יכול להגדיר את הכללים לתעריפים אלה בעצמך, או לקבל תעריפים בזמן אמת מחברות שילוח כמו UPS או DHL. אתה יכול גם להפוך את שיטות המשלוח לזמינות במקומות מסוימים ולא זמינות באחרים."
+
+msgctxt "Languages::onboarding_guide.configure_shippings_label"
+msgid "Let's set up a shipping method called \"Pickup from store\" to see how it works."
+msgstr "בואו נגדיר שיטת משלוח שנקראת \"איסוף מהחנות\" כדי לראות איך זה עובד."
+
+msgctxt "Languages::onboarding_guide.configure_shippings"
+msgid "Configure shipping methods"
+msgstr "הגדר שיטות משלוח"
+

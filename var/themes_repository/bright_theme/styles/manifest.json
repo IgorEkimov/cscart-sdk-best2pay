@@ -1,0 +1,9 @@
+{
+	"default_style":"Bright_theme",
+	"default":{
+		"Bright_theme":true
+	},
+	"colors": {
+		"Bright_theme": "#EFEFEF"
+	}
+}

@@ -1,0 +1,69 @@
+// Help center popup
+[aria-describedby="content_help_center_popup"][aria-describedby="content_help_center_popup"] {
+    border-radius: var(--help-center-border-radius-large);
+}
+
+// Hide popup title
+[aria-describedby="content_help_center_popup"] .ui-dialog-titlebar {
+    border: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+[aria-describedby="content_help_center_popup"] .ui-dialog-title {
+    margin: 0;
+    padding: 0;
+    display: none;
+}
+
+// Add padding for close button in header popup
+[aria-describedby="content_help_center_popup"] .help-center-section__header {
+    padding-right: ~"calc(1.5 * var(--help-center-responsive-padding) + 24px)";
+}
+
+// Close popup button
+[aria-describedby="content_help_center_popup"] .ui-dialog-titlebar-close {
+    top: 16px + 5px; // top: 21px;
+    margin-top: 0;
+    right: 16px;
+}
+
+@media (max-width: @TabletBreakpoint) {
+    [aria-describedby="content_help_center_popup"] .ui-dialog-titlebar-close {
+        top: 10px;
+    }
+}
+
+// Help center popup container
+.help-center-popup .object-container {
+    padding: 0;
+}
+
+// Open popup icon
+@media (max-width: 950px) {
+    .help-center-popup__icon.help-center-popup__icon.help-center-popup__icon,
+    .main-menu-1__icon.main-menu-1__icon.icon-question-sign {
+        display: inline-block !important;
+        visibility: visible !important;
+    }
+}
+
+.help-center-popup__icon:after {
+    content: attr(data-ca-help-center-counter);
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    min-width: 1.36em;
+    max-width: 100%;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 999px;
+    font-size: 11px;
+    line-height: 1.36;
+    font-family: @sansFontFamily;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    background-color: @errorText;
+}

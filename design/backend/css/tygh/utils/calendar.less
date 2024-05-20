@@ -1,0 +1,39 @@
+// Calendar
+.calendar {
+    position: relative;
+    display: inline-block;
+
+    .calendar__date,
+    .calendar__input {
+        padding-left: 24px;
+    }
+
+    .shift-input:not(.review-date) {
+        display: block;
+        padding: 5px 0px 0px 18px;
+    }
+
+    .icon-calendar {
+        position: absolute;
+        top: 9px;
+        left: 6px;
+    }
+}
+
+.calendar--block {
+    display: block;
+}
+
+.calendar__date,
+.calendar__input {
+    width: auto;
+}
+
+.cm-hide-inputs .calendar .icon-calendar {
+    display: none;
+}
+
+.ui-datepicker {
+    width: auto;
+    z-index: 1102;
+}

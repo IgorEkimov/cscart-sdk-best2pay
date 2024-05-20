@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: nl\n"
+"X-Crowdin-File: /release-4.18.1/addons/onboarding_guide.po\n"
+"X-Crowdin-File-ID: 8264\n"
+"PO-Revision-Date: 2024-04-12 06:05\n"
+
+msgctxt "Addons::name::onboarding_guide"
+msgid "Onboarding guide"
+msgstr "Onboarding-gids"
+
+msgctxt "Addons::description::onboarding_guide"
+msgid "Introduces the marketplace to administrators and allows quickly set up basic functionality."
+msgstr "Introduceert de marktplaats voor beheerders en maakt het mogelijk om snel basisfunctionaliteit in te stellen."
+
+msgctxt "Languages::onboarding_guide.guide_title"
+msgid "Welcome to your marketplace!<br>Get ready to receive your first order"
+msgstr "Welkom op uw marktplaats!<br>Maak je klaar om je eerste bestelling te ontvangen"
+
+msgctxt "Languages::onboarding_guide.sb_guide_title"
+msgid "Welcome to your online store!<br>Get ready to receive your first order"
+msgstr "Welkom in uw online winkel!<br>Maak je klaar om je eerste bestelling te ontvangen"
+
+msgctxt "Languages::onboarding_guide.completed_steps_progress"
+msgid "[completed] out of [total] complete"
+msgstr "[completed] van [total] compleet"
+
+msgctxt "Languages::onboarding_guide.dismiss"
+msgid "Dismiss"
+msgstr "Afwijzen"
+
+msgctxt "Languages::onboarding_guide.step_close"
+msgid "Close"
+msgstr "Dichtbij"
+
+msgctxt "Languages::onboarding_guide.step_complete"
+msgid "Complete"
+msgstr "Compleet"
+
+msgctxt "Languages::onboarding_guide.explore_interface_title"
+msgid "Explore the Multi-Vendor No-Code interface"
+msgstr "Verken de Multi-Vendor No-Code-interface"
+
+msgctxt "Languages::onboarding_guide.explore_interface_description"
+msgid "Discover how to effortlessly launch your marketplace in just 5 minutes. Learn the ins and outs of the intuitive interface and get ready to dive into the world of hassle-free marketplace creation."
+msgstr "Ontdek hoe u uw marktplaats moeiteloos in slechts 5 minuten kunt lanceren. Leer de ins en outs van de intuïtieve interface en bereid je voor om in de wereld van probleemloze marktplaatscreatie te duiken."
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_title"
+msgid "Personalize your marketplace"
+msgstr "Personaliseer uw marktplaats"
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_title"
+msgid "Personalize your online store"
+msgstr "Personaliseer uw online winkel"
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_description"
+msgid "Choose the style of your marketplace. Provide your contact information for customers and sellers."
+msgstr "Kies de stijl van uw marktplaats. Geef uw contactgegevens op voor klanten en verkopers."
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_description"
+msgid "Choose the style of your online store. Provide your contact information for customers."
+msgstr "Kies de stijl van uw online winkel. Geef uw contactgegevens op voor klanten."
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_title"
+msgid "Make changes on the fly"
+msgstr "Breng wijzigingen direct aan"
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the marketplace to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "Gebruik de tools zonder code om de marktplaats aan uw behoeften aan te passen. Bewerk eventuele teksten; herschik de blokken; verander de kleuren, lettertypen en stijl. Als u als beheerder de winkel ziet, kunt u deze tools op elk gewenst moment gebruiken."
+
+msgctxt "Languages::onboarding_guide.sb_make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the online store to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "Gebruik de no-code-tools om de online winkel aan uw behoeften aan te passen. Bewerk eventuele teksten; herschik de blokken; verander de kleuren, lettertypen en stijl. Als u als beheerder de winkel ziet, kunt u deze tools op elk gewenst moment gebruiken."
+
+msgctxt "Languages::onboarding_guide.theme_and_logo"
+msgid "Theme & logo"
+msgstr "Thema & logo"
+
+msgctxt "Languages::onboarding_guide.business_details"
+msgid "Business details"
+msgstr "Bedrijfsgegevens"
+
+msgctxt "Languages::onboarding_guide.languages_and_currency"
+msgid "Languages & Currency"
+msgstr "Talen en valuta"
+
+msgctxt "Languages::onboarding_guide.select_theme"
+msgid "Select theme"
+msgstr "Selecteer thema"
+
+msgctxt "Languages::onboarding_guide.current_theme"
+msgid "Current theme"
+msgstr "Huidig thema"
+
+msgctxt "Languages::onboarding_guide.custom_theme"
+msgid "Custom theme"
+msgstr "Aangepast thema"
+
+msgctxt "Languages::onboarding_guide.upload_logo"
+msgid "Upload logo"
+msgstr "Logo uploaden"
+
+msgctxt "Languages::onboarding_guide.activate"
+msgid "Activate"
+msgstr "Activeren"
+
+msgctxt "Languages::onboarding_guide.next"
+msgid "Next"
+msgstr "Volgende"
+
+msgctxt "Languages::onboarding_guide.back"
+msgid "Back"
+msgstr "Rug"
+
+msgctxt "Languages::onboarding_guide.save"
+msgid "Save"
+msgstr "Redden"
+
+msgctxt "Languages::onboarding_guide.edit_colors"
+msgid "Edit colors"
+msgstr "Kleuren bewerken"
+
+msgctxt "Languages::onboarding_guide.modify_colors_fonts_backgrounds"
+msgid "Modify colors, fonts, and backgrounds"
+msgstr "Wijzig kleuren, lettertypen en achtergronden"
+
+msgctxt "Languages::onboarding_guide.edit_texts"
+msgid "Edit or translate any texts"
+msgstr "Bewerk of vertaal teksten"
+
+msgctxt "Languages::onboarding_guide.edit_blocks"
+msgid "Fine-tune page layouts"
+msgstr "Pagina-indelingen verfijnen"
+
+msgctxt "Languages::onboarding_guide.configure_payment_options"
+msgid "Set up payments"
+msgstr "Betalingen instellen"
+
+msgctxt "Languages::onboarding_guide.select_payment_options"
+msgid "Choose how you plan to accept payments. Select one of the following scenarios:"
+msgstr "Kies hoe u betalingen wilt accepteren. Selecteer een van de volgende scenario's:"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split"
+msgid "Multi-party payment (automatic disbursements)"
+msgstr "Meerpartijenbetaling (automatische uitbetalingen)"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: PayPal Commerce Platform and Stripe Connect. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with PayPal or Stripe as well."
+msgstr "Er zijn speciale betaalmethoden voor marktplaatsen: PayPal Commerce Platform en Stripe Connect. Een klant doet nog steeds één betaling voor alle producten; de betaalmethode verdeelt het geld automatisch tussen u en de verkopers. Houd er rekening mee dat verkopers ook accounts bij PayPal of Stripe nodig hebben."
+
+msgctxt "Languages::onboarding_guide.single_rus_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: YooKassa For Marketplaces and Tinkoff Multiparty. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with YooKassa or Tinkoff as well."
+msgstr "Voor marktplaatsen zijn er speciale betaalmethoden: YooKassa For Marketplaces en Tinkoff Multiparty. Een klant doet nog steeds één betaling voor alle producten; de betaalmethode verdeelt het geld automatisch tussen u en de verkopers. Houd er rekening mee dat verkopers ook accounts bij YooKassa of Tinkoff nodig hebben."
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you"
+msgid "Single payment to the marketplace"
+msgstr "Eenmalige betaling aan de marktplaats"
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you_description"
+msgid "A customer makes one payment for all the products in the cart. The money ends up on your account, with the record of what you own to each seller. You periodically distribute the money between sellers."
+msgstr "Een klant betaalt één keer voor alle producten in de winkelwagen. Het geld komt op uw rekening terecht, waarbij voor elke verkoper wordt vermeld wat u bezit. Je verdeelt het geld periodiek onder verkopers."
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers"
+msgid "Separate payments to sellers"
+msgstr "Afzonderlijke betalingen aan verkopers"
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers_description"
+msgid "A customer pays to each seller separately. It becomes the seller’s responsibility to pay the commission to you (we have ways for that). Sellers will be able to set up their own shipping methods and promotions."
+msgstr "Een klant betaalt afzonderlijk aan elke verkoper. Het wordt de verantwoordelijkheid van de verkoper om de commissie aan u te betalen (daar hebben wij manieren voor). Verkopers kunnen hun eigen verzendmethoden en promoties instellen."
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods"
+msgid "Configure payment methods"
+msgstr "Configureer betaalmethoden"
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods_description"
+msgid "CS-Cart allows you to set up various payment methods; most of them automatically process the full up-front payment. But for now, let’s set up \"Cash on Delivery\" just to see how it works."
+msgstr "Met CS-Cart kunt u verschillende betaalmethoden instellen; de meeste verwerken automatisch de volledige vooruitbetaling. Maar laten we voorlopig \"Onder rembours\" instellen om te zien hoe het werkt."
+
+msgctxt "Languages::onboarding_guide.view_checkout_page"
+msgid "View checkout page"
+msgstr "Bekijk de afrekenpagina"
+
+msgctxt "Languages::onboarding_guide.view_checkout_page_description"
+msgid "Once configured, your payment method will appear at the checkout page:"
+msgstr "Eenmaal geconfigureerd, verschijnt uw betaalmethode op de afrekenpagina:"
+
+msgctxt "Languages::onboarding_guide.missing_products"
+msgid "Missing products"
+msgstr "Ontbrekende producten"
+
+msgctxt "Languages::onboarding_guide.create_at_least_one_product_to_proceed_to_checkout"
+msgid "Create at least one product to proceed to checkout"
+msgstr "Maak minimaal één product aan om door te gaan naar de kassa"
+
+msgctxt "Languages::onboarding_guide.manage_sellers"
+msgid "Manage sellers"
+msgstr "Beheer verkopers"
+
+msgctxt "Languages::onboarding_guide.create_one_vendor"
+msgid "Add a seller"
+msgstr "Voeg een verkoper toe"
+
+msgctxt "Languages::onboarding_guide.create_vendor_description"
+msgid "Sellers—referred to as \"vendors\" in the admin panel—are essential for a marketplace. They provide products and services to customers. A seller can create an account themselves, or you can do it for them in the admin panel. Let’s add one seller via the admin panel."
+msgstr "Verkopers, in het beheerdersdashboard 'leveranciers' genoemd, zijn essentieel voor een marktplaats. Zij leveren producten en diensten aan klanten. Een verkoper kan zelf een account aanmaken, of u kunt dit voor hem doen in het beheerdersdashboard. Laten we één verkoper toevoegen via het beheerdersdashboard."
+
+msgctxt "Languages::onboarding_guide.view_storefront"
+msgid "See sellers on the storefront"
+msgstr "Zie verkopers in de winkel"
+
+msgctxt "Languages::onboarding_guide.view_invoice"
+msgid "View invoice"
+msgstr "Bekijk factuur"
+
+msgctxt "Languages::onboarding_guide.logos_updated"
+msgid "Theme and email logos updated"
+msgstr "Thema- en e-maillogo's bijgewerkt"
+
+msgctxt "Languages::onboarding_guide.set_default_currency"
+msgid "Set default currency"
+msgstr "Stel de standaardvaluta in"
+
+msgctxt "Languages::onboarding_guide.manage_currencies"
+msgid "Manage currencies"
+msgstr "Beheer valuta's"
+
+msgctxt "Languages::onboarding_guide.set_default_languages"
+msgid "Set default languages"
+msgstr "Stel standaardtalen in"
+
+msgctxt "Languages::onboarding_guide.manage_languages"
+msgid "Manage languages"
+msgstr "Beheer talen"
+
+msgctxt "Languages::onboarding_guide.preview_an_email"
+msgid "Preview an email"
+msgstr "Bekijk een voorbeeld van een e-mail"
+
+msgctxt "Languages::onboarding_guide.preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the new sellers who register at your marketplace."
+msgstr "Als u klaar bent, ziet u hoe uw gegevens worden weergegeven in een e-mail aan de nieuwe verkopers die zich op uw marktplaats registreren."
+
+msgctxt "Languages::onboarding_guide.sb_preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the newly-registered customers."
+msgstr "Als u klaar bent, ziet u hoe uw gegevens worden weergegeven in een e-mail aan de nieuw geregistreerde klanten."
+
+msgctxt "Languages::onboarding_guide.customize_vendor_panel_design"
+msgid "Customize seller panel"
+msgstr "Pas het verkoperspaneel aan"
+
+msgctxt "Languages::onboarding_guide.edit_vendor_panel_style"
+msgid "Sellers work with their own dedicated control panel. You can make it look the way you need. Set its colors, edit the menu, add blocks with info to the seller's dashboard."
+msgstr "Verkopers werken met hun eigen speciale controlepaneel. Je kunt het er zo uit laten zien als jij wilt. Stel de kleuren in, bewerk het menu, voeg blokken met informatie toe aan het dashboard van de verkoper."
+
+msgctxt "Languages::onboarding_guide.edit_structure"
+msgid "Edit menus and onboarding"
+msgstr "Bewerk menu's en onboarding"
+
+msgctxt "Languages::onboarding_guide.manage_products"
+msgid "Manage products"
+msgstr "Beheer producten"
+
+msgctxt "Languages::onboarding_guide.manage_products_description"
+msgid "You as the marketplace owner can control all products sold on your platform. But sellers manage products through their own dashboard. See how they can add products one by one or in bulk."
+msgstr "Jij als marktplaatseigenaar hebt controle over alle producten die op jouw platform worden verkocht. Maar verkopers beheren producten via hun eigen dashboard. Bekijk hoe ze producten één voor één of in bulk kunnen toevoegen."
+
+msgctxt "Languages::onboarding_guide.sb_manage_products_description"
+msgid "Products are how your online store makes money; they include commodities, services, or anything else offered for a price. You can add products one by one or in bulk."
+msgstr "Producten zijn hoe uw online winkel geld verdient; ze omvatten grondstoffen, diensten of iets anders dat tegen een prijs wordt aangeboden. U kunt producten één voor één of in bulk toevoegen."
+
+msgctxt "Languages::onboarding_guide.add_one_product"
+msgid "Add one product"
+msgstr "Voeg één product toe"
+
+msgctxt "Languages::onboarding_guide.import_csv_or_xml"
+msgid "Import CSV or XML"
+msgstr "Importeer CSV of XML"
+
+msgctxt "Languages::onboarding_guide.view_product_page"
+msgid "View the latest added product"
+msgstr "Bekijk het laatst toegevoegde product"
+
+msgctxt "Languages::onboarding_guide.premoderation"
+msgid "If you do not see the created product on the storefront, you may have the <b>Vendor data premoderation</b> module enabled"
+msgstr "Als u het gemaakte product niet in de winkel ziet, is mogelijk de module <b>Premoderatie van leveranciersgegevens</b> ingeschakeld"
+
+msgctxt "Languages::onboarding_guide.view_product_page_description"
+msgid "See your new products on the storefront."
+msgstr "Bekijk uw nieuwe producten in de winkel."
+
+msgctxt "Languages::onboarding_guide.preview_seller_onboarding"
+msgid "Preview seller onboarding"
+msgstr "Bekijk een voorbeeld van de onboarding van verkopers"
+
+msgctxt "Languages::onboarding_guide.walk_the_seller_path"
+msgid "Walk the seller path"
+msgstr "Bewandel het verkoperspad"
+
+msgctxt "Languages::onboarding_guide.customize_onboarding_process"
+msgid "Prospective sellers can request to join your marketplace on their own. See for yourself how that process works: the information they provide, the emails they receive, etc. You can adjust all of it, or even make your marketplace invite-only."
+msgstr "Potentiële verkopers kunnen zelf een verzoek indienen om lid te worden van uw marktplaats. Ontdek zelf hoe dat proces werkt: de informatie die ze verstrekken, de e-mails die ze ontvangen, enz. Je kunt het allemaal aanpassen, of je marktplaats zelfs alleen op uitnodiging maken."
+
+msgctxt "Languages::onboarding_guide.set_up_commissions_and_fees"
+msgid "Configure commissions and fees"
+msgstr "Configureer commissies en kosten"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans"
+msgid "Set up seller plans"
+msgstr "Verkopersplannen instellen"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans_description"
+msgid "A marketplace usually earns you money from monthly fees and/or commissions from sales. Seller plans let you set the size and frequency of those payments."
+msgstr "Een marktplaats verdient u doorgaans geld uit maandelijkse kosten en/of commissies uit verkopen. Met verkopersplannen kunt u de omvang en frequentie van die betalingen instellen."
+
+msgctxt "Languages::onboarding_guide.view_seller_plans"
+msgid "Preview seller plans"
+msgstr "Bekijk een voorbeeld van de plannen van de verkoper"
+
+msgctxt "Languages::onboarding_guide.view_seller_plans_description"
+msgid "See how your configured seller plans appear to your prospective sellers on the storefront."
+msgstr "Bekijk hoe uw geconfigureerde verkopersplannen in de winkel verschijnen voor uw potentiële verkopers."
+
+msgctxt "Languages::onboarding_guide.reset_onboarding"
+msgid "Reset onboarding"
+msgstr "Onboarding opnieuw instellen"
+
+msgctxt "Languages::onboarding_guide.reset"
+msgid "Reset"
+msgstr "Opnieuw instellen"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_title"
+msgid "Set up shipping"
+msgstr "Verzending instellen"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_description"
+msgid "CS-Cart provides your customers with shipping rates depending on the customer's address and order. You can set the rules for these rates yourself, or receive rates in real time from shipping companies like UPS or DHL. You can also make shipping methods available in some locations and unavailable in others."
+msgstr "CS-Cart biedt uw klanten verzendkosten, afhankelijk van het adres en de bestelling van de klant. U kunt zelf de regels voor deze tarieven instellen of realtime tarieven ontvangen van transportbedrijven als UPS of DHL. U kunt verzendmethoden ook op sommige locaties beschikbaar maken en op andere niet."
+
+msgctxt "Languages::onboarding_guide.configure_shippings_label"
+msgid "Let's set up a shipping method called \"Pickup from store\" to see how it works."
+msgstr "Laten we een verzendmethode instellen met de naam 'Ophalen in de winkel' om te zien hoe dit werkt."
+
+msgctxt "Languages::onboarding_guide.configure_shippings"
+msgid "Configure shipping methods"
+msgstr "Verzendmethoden configureren"
+

@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>rus_taxes</id>
+    <version>1.0.0</version>
+    <priority>1000</priority>
+    <status>active</status>
+    <auto_install>ULTIMATE,MULTIVENDOR</auto_install>
+
+    <queries>
+        <item for="install">ALTER TABLE ?:taxes ADD COLUMN tax_type VARCHAR(6) NOT NULL DEFAULT ''</item>
+        <item for="install" editions="MULTIVENDOR">
+            ALTER TABLE ?:companies ADD agent_type VARCHAR(40) NOT NULL DEFAULT 'payment_agent'
+        </item>
+        <item for="install">
+            ALTER TABLE ?:products
+            ADD fiscal_data_1212 smallint(5) unsigned NOT NULL DEFAULT '1',
+            ADD mark_code_type varchar(40) NOT NULL DEFAULT '';
+        </item>
+        <item for="install">ALTER TABLE ?:payments ADD send_receipt varchar(255) NOT NULL DEFAULT 'dont_send'</item>
+        <item for="install">DROP TABLE IF EXISTS ?:order_digital_marking_codes;</item>
+        <item for="install">
+            CREATE TABLE `?:order_digital_marking_codes` (
+            `code_id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `order_id` mediumint(8) unsigned NOT NULL,
+            `order_item_id` int(11) unsigned NOT NULL,
+            `marking_code_format` varchar(8) NOT NULL default '',
+            `marking_code` varchar(255) NOT NULL default '',
+            PRIMARY KEY  (`code_id`)
+            ) Engine=MyISAM DEFAULT CHARSET UTF8;
+        </item>
+        <item for="install">INSERT INTO ?:exim_layouts (name, cols, pattern_id, active) VALUES('general', 'Code ID,Order ID,Order item ID,Marking code format,Marking code', 'order_digital_marking_codes', 'Y')</item>
+
+        <item for="uninstall">ALTER TABLE ?:taxes DROP COLUMN tax_type</item>
+        <item for="uninstall" editions="MULTIVENDOR">
+            ALTER TABLE ?:companies DROP COLUMN agent_type
+        </item>
+        <item for="uninstall">DROP TABLE IF EXISTS ?:order_digital_marking_codes;</item>
+        <item for="uninstall">ALTER TABLE ?:products DROP fiscal_data_1212, DROP mark_code_type;</item>
+        <item for="uninstall">ALTER TABLE ?:payments DROP send_receipt</item>
+        <item for="uninstall">DELETE FROM ?:exim_layouts WHERE pattern_id = 'order_digital_marking_codes'</item>
+
+        <item for="demo">UPDATE ?:products SET tax_ids = (SELECT tax_id FROM ?:taxes WHERE status = 'A' LIMIT 1)</item>
+    </queries>
+
+    <functions>
+        <item for="install">fn_rus_taxes_install</item>
+    </functions>
+</addon>

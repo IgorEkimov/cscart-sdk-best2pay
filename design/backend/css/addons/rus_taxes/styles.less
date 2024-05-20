@@ -1,0 +1,40 @@
+#content_marking_codes .object-container {
+    padding-top: 0;
+}
+
+.digital-marking-marking-codes {
+    margin-top: 13px; // revert .object-container padding
+}
+
+.digital-marking-marking-codes__form .digital-marking-marking-codes__control-group {
+    margin: 0;
+    padding: 0;
+}
+
+// Sticky scroll
+@media (min-width: @TabletBreakpoint + 2) {
+    .digital-marking-marking-codes__product {
+        position: sticky;
+        top: -1px; // table cell border top
+        background: #fff;
+        z-index: 1;
+    }
+}
+
+.digital-marking-marking-codes__row-description.digital-marking-marking-codes__row-description {
+    border-top: 0;
+}
+
+.digital-marking-marking-codes__cell-description ul {
+    margin-bottom: 0;
+}
+
+.digital-marking-marking-codes__cell-description.digital-marking-marking-codes__cell-description {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 0;
+}
+
+.digital-marking-marking-codes__cell-code.digital-marking-marking-codes__cell-code:before {
+    display: none;
+}

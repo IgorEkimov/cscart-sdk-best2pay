@@ -1,0 +1,308 @@
+@import "../../config.less";
+
+// width: 48px;
+@uiDialogTitlebarCloseWidth: @iconSize + 2 * (4px + 1px + 5px + 4px);
+@uiDialogTitlebarCloseHeight: @iconSize + 2 * (4px + 1px + 1px);
+
+html.dialog-is-open {
+    body {
+        @media (max-width: @TabletBreakpoint) {
+            overflow: hidden;
+        }
+    }
+}
+
+// Popup dialog styles
+.object-container {
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 13px 13px 40px;
+    .controls .shift-input {
+        display: block;
+    }
+    .notification-content {
+        top: 11px;
+        right: 15px;
+        left: 15px;
+        min-width: 420px;
+        position: absolute;
+        z-index: 1510;
+    }
+    .buttons-container-picker {
+        .border-radius(0);
+        .box-shadow(none);
+        .modal-footer();
+        background-color: transparent;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin-bottom: 0;
+        padding: 20px 14px;
+        text-align: right; // right align buttons
+        border-top: 1px solid #eee; // Properly space out buttons
+        .btn+.btn {
+            margin-bottom: 0;
+            margin-left: 5px; // account for input[type="submit"] which gets the bottom margin like all other inputs
+        } // but override that for button groups
+        .btn-group .btn+.btn {
+            margin-left: -1px;
+        }
+        .form-edit .input-large {
+            width: 50px !important;
+        }
+        .input-append,
+        .input-prepend {
+            margin-bottom: 0;
+        }
+    }
+    .form-edit .input-large {
+        width: 684px !important;
+    }
+    .dropdown-toggle {
+        margin-top: 0px;
+    }
+}
+
+.ui-dialog {
+    padding: 0;
+    max-width: 90%;
+    position: fixed !important;
+    .ui-dialog-content {
+        overflow: hidden;
+        padding: 0;
+        .control-group:hover {
+            background: transparent;
+        }
+    }
+    .ui-dialog-title {
+        padding-right: @uiDialogTitlebarCloseWidth + 9px - 15px; // padding-right: 42px;
+        width: 100%;
+        white-space: nowrap;
+    }
+    .btn-link {
+        padding-top: 5px;
+    }
+    .upload-file-local input[type="file"] {
+        z-index: 2000;
+    }
+    .setting-wide .input-large {
+        width: 520px !important;
+    }
+
+    // Elfinder popup fix
+    &.ui-front {
+        z-index: 1050;
+    }
+}
+
+.ui-widget {
+    input.btn {
+        font-family: @sansFontFamily;
+    }
+}
+
+.ui-widget {
+    font-size: @baseFontSize;
+}
+
+.ui-widget-content a {
+    color: @linkColor;
+}
+
+.ui-widget-content a.btn {
+    color: @textColor;
+}
+
+.ui-widget-content a.btn-primary {
+    color: #fff;
+}
+
+.ui-widget-content a.link--monochrome,
+.ui-widget-content a.link--monochrome:hover,
+.ui-widget-content a.link--monochrome:focus,
+.ui-widget-content a.link--monochrome:active,
+.ui-widget-content a.link--monochrome.active {
+    color: @textColor;
+}
+
+// Revert default buttons in popup
+// Set the backgrounds
+// -------------------------
+.ui-widget-content .btn-primary {
+    .buttonBackground(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight);
+    border-color: @btnPrimaryBackgroundHighlight @btnPrimaryBackgroundHighlight darken(@btnPrimaryBackgroundHighlight, 2%) @btnPrimaryBackgroundHighlight;
+}
+// Warning appears are orange
+.ui-widget-content .btn-warning {
+    .buttonBackground(@btnWarningBackground, @btnWarningBackgroundHighlight);
+    border-color: lighten(@btnWarningBackgroundHighlight, 2%) @btnWarningBackgroundHighlight darken(@btnWarningBackgroundHighlight, 2%) @btnWarningBackgroundHighlight;
+}
+// Danger and error appear as red
+.ui-widget-content .btn-danger {
+    .buttonBackground(@btnDangerBackground, @btnDangerBackgroundHighlight);
+    border-color: lighten(@btnDangerBackgroundHighlight, 2%) @btnDangerBackgroundHighlight darken(@btnDangerBackgroundHighlight, 2%) @btnDangerBackgroundHighlight;
+}
+// Success appears as green
+.ui-widget-content .btn-success {
+    .buttonBackground(@btnSuccessBackground, @btnSuccessBackgroundHighlight);
+    border-color: lighten(@btnSuccessBackgroundHighlight, 2%) @btnSuccessBackgroundHighlight darken(@btnSuccessBackgroundHighlight, 2%) @btnSuccessBackgroundHighlight;
+}
+// Info appears as a neutral blue
+.ui-widget-content .btn-info {
+    .buttonBackground(@btnInfoBackground, @btnInfoBackgroundHighlight);
+    border-color: lighten(@btnInfoBackgroundHighlight, 2%) @btnInfoBackgroundHighlight darken(@btnInfoBackgroundHighlight, 2%) @btnInfoBackgroundHighlight;
+}
+// Inverse appears as dark gray
+.ui-widget-content .btn-inverse {
+    .buttonBackground(@btnInverseBackground, @btnInverseBackgroundHighlight);
+    border-color: lighten(@btnInverseBackgroundHighlight, 2%) @btnInverseBackgroundHighlight darken(@btnInverseBackgroundHighlight, 2%) @btnInverseBackgroundHighlight;
+}
+
+.ui-widget .btn-small {
+    font-size: @fontSizeSmall;
+}
+
+.ui-widget-overlay {
+    position: fixed;
+    z-index: 1001;
+    opacity: 0.6;
+    filter: Alpha(Opacity=60);
+}
+
+.dialog-auto-sized {
+    .object-container {
+        padding-bottom: 60px;
+    }
+}
+
+// Popup close button
+.ui-dialog .ui-dialog-titlebar-close {
+    right: 9px;
+    width: @uiDialogTitlebarCloseWidth; // width: 48px;
+    margin-top: -16px;
+    padding: 4px;
+    height: @uiDialogTitlebarCloseHeight; // height: 32px;
+    line-height: @iconSize;
+    opacity: 0.5;
+    border: 1px solid transparent;
+}
+
+.ui-dialog .ui-dialog-titlebar-close:hover,
+.ui-dialog .ui-dialog-titlebar-close:focus,
+.ui-dialog .ui-dialog-titlebar-close:active {
+    padding: 4px;
+    background: @btnBackgroundHighlight;
+    border-color: darken(@btnBackgroundHighlight, 1%);
+}
+
+.ui-dialog .ui-dialog-titlebar-close:active {
+    border-color: darken(@btnBackgroundHighlight, 5%);
+    box-shadow: inset 0 1px 4px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
+}
+
+.ui-dialog .ui-dialog-titlebar-close .ui-icon-closethick {
+    width: @iconSize;
+    height: @iconSize;
+    margin-top: @iconSize / -2; // margin-top: -10px;
+    margin-left: @iconSize / -2; // margin-left: -10px;
+    background-image: url("data:image/svg+xml,<svg viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'><path d='m4.46967 4.46967c.29289-.29289.76777-.29289 1.06066 0l4.46967 4.46967 4.4697-4.46967c.2929-.29289.7677-.29289 1.0606 0s.2929.76777 0 1.06066l-4.4696 4.46967 4.4696 4.4697c.2929.2929.2929.7677 0 1.0606s-.7677.2929-1.0606 0l-4.4697-4.4696-4.46967 4.4696c-.29289.2929-.76777.2929-1.06066 0s-.29289-.7677 0-1.0606l4.46967-4.4697-4.46967-4.46967c-.29289-.29289-.29289-.76777 0-1.06066z'/></svg>"); // remove.svg
+    background-position: left top;
+    transform: scale(1.25);
+}
+
+@media (max-width: @TabletBreakpoint) {
+    // Strictly set popup width on mobiles
+    .ui-dialog {
+        width: 100vw !important;
+        
+    }
+
+    [role="dialog"].ui-dialog.ui-widget {
+        height: 100% !important;
+    }
+
+    .hidden.ui-dialog-content.ui-widget-content {
+        min-height: unset !important;
+        max-height: unset !important;
+
+        position: absolute;
+        bottom: 0;
+        top: 51px;
+        left: 0;
+        right: 0;
+    }
+
+    .ui-dialog-content.ui-widget-content {
+        @media (max-width: @TabletBreakpoint) {
+            height: auto !important;
+        }
+    }
+
+    [aria-describedby="content_select_fields_to_edit"].ui-dialog {
+        width: 100vw !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 100vh !important;
+    }
+
+    // Popup bottom block with buttons
+    .object-container {
+        .buttons-container-picker,
+        .buttons-container-picker.modal-footer {
+            padding: 5px;
+
+            // Toggle 'save/close' buttons centered on mobiles
+            text-align: center;
+
+            .pull-left,
+            .pull-right {
+                display: block;
+                width: 100%;
+
+                float: auto;
+                float: unset;
+
+                text-align: center;
+
+                margin: 0;
+            }
+        }
+    }
+
+    // Reset padding in advanced product search
+    .adv-search .modal-footer {
+        span {
+            padding: 0px;
+        }
+
+        > .pull-left {
+            padding-bottom: 10px;
+        }
+    }
+}
+
+@media (max-width: @DesktopBreakpoint) {
+    .buttons-container.buttons-container-picker {
+        background-color: #fff;
+        z-index: 1000;
+    }
+
+    .object-container {
+        padding-bottom: 0px;
+
+        &:after {
+            content: "";
+            display: block;
+            padding-bottom: 130px;
+        }
+    }
+
+    // do not show tooltips while popup is open
+    .dialog-is-open .tooltip {
+        display: none !important;
+        visibility: none !important;
+        top: -9999px !important;
+        left: -9999px !important;
+    }
+}

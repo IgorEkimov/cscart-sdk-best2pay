@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /release-4.18.1/upgrade.po\n"
+"X-Crowdin-File-ID: 8376\n"
+"PO-Revision-Date: 2024-04-22 06:02\n"
+
+msgctxt "Languages::upgrade_notification.warehouses.recalculate_master_products_stocks.title"
+msgid "Common Products now have correct quantities with Warehouses"
+msgstr "Количества общих товаров на складах теперь верны"
+
+msgctxt "Languages::upgrade_notification.warehouses.recalculate_master_products_stocks.message"
+msgid "We have fixed the issues that caused Common Products to have wrong quantities on the storefront when Warehouses were involved. The problem will go away over time, as product quantities change and the correct data is saved.</br>To fix the issue right now, you can force the recalculation of quantity for all common products using the button below.</br></br><a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Recalculate quantities</a>"
+msgstr "Мы исправили проблему, из-за которой у \"Общих товаров\" неправильно считалось количество на витрине при использовании \"Складов\". Проблема постепенно пропадёт в вашем магазине сама, по мере того как количество товаров меняется и сохраняются нужные данные.</br>Но если вы хотите исправить проблему сейчас, то можете запустить перерасчёт количества общих товаров по кнопке ниже.</br></br><a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Пересчитать количество</a>"
+
+msgctxt "Languages::upgrade_notification.rus_kupivkredit.title"
+msgid "KupiVKredit integration is no longer supported"
+msgstr "Интеграция с KupiVKredit больше не поддерживается"
+
+msgctxt "Languages::upgrade_notification.rus_kupivkredit.message"
+msgid "Your store currently uses an old KupiVKredit integration. According to our information, it is no longer supported and might not work. We no longer support it as well, but it remains available in case it works for you. We may add a new Tinkoff integration for credits and installments in one of the future versions."
+msgstr "В вашем магазине используется старая интеграция КупиВКредит. По нашей информации, Тинькофф больше её не поддерживает, и интеграция может не работать. Мы тоже не поддерживаем интеграцию, но оставили её в вашей установке CS-Cart на случай, если у вас она всё ещё работает. Не исключаем, что в будущем можем добавить поддержку рассрочки или кредитования для актуальной интеграции с Тинькофф."
+
+msgctxt "Languages::upgrade_notification.yandex_maps.yandex_extra_api_key_required.title"
+msgid "Extra API Key Required for Yandex Maps"
+msgstr "Требуется дополнительный ключ API для Яндекс Карт"
+
+msgctxt "Languages::upgrade_notification.yandex_maps.yandex_extra_api_key_required"
+msgid "Due to the changes on the Yandex side, our integration of Yandex Maps now requires an extra API key to work properly. Please get the Geosuggest API key <a href=\"https://developer.tech.yandex.ru/\" target=\"_blank\">in your Yandex Developer account</a> and put it in the settings listed below.</br></br>"
+msgstr "Из-за изменений на стороне Яндекса для правильной работы нашей интеграции Яндекс.Карт теперь нужен дополнительный API-ключ. Получите ключ API Геосаджеста <a href=\"https://developer.tech.yandex.ru/\" target=\"_blank\">в вашем Яндекс.Кабинете разработчика</a> и добавьте его в настройки ниже.</br></br>"
+
+msgctxt "Languages::upgrade_notification.yandex_maps.geo_maps.addon_setting_button"
+msgid "<a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Maps and geolocation</a>"
+msgstr "<a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Карты и геолокация</a>"
+
+msgctxt "Languages::upgrade_notification.yandex_maps.vendor_locations.addon_setting_button"
+msgid "<a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Vendor locations</a>"
+msgstr "<a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Местоположение продавцов</a>"
+

@@ -1,0 +1,3 @@
+.tilda-pages-container *:not(.cm-block-loader *) {
+    all:revert;
+}

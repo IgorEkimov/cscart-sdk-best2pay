@@ -1,0 +1,146 @@
+@import "../../config.less";
+
+// Menu sidebar variables
+@menuSidebarBg: none;
+@menuSidebarColor: #fff;
+
+// Menu sidebar styles
+.cs-main-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: var(--bp-bottom-panel-height);
+    padding-top: var(--top-bar-height);
+    width: var(--main-menu-width);
+    z-index: @zindexFixedNavbar;
+    background-color: @menuSidebarColor;
+    background-image: @menuSidebarBg;
+}
+
+.cs-main-menu__outer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 20px;
+    overflow-y: auto;
+}
+
+.cs-main-menu__primary--block-manager {
+    padding-top: 32px;
+}
+
+.cs-main-menu__inner {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-top: 8px;
+}
+
+@media (min-width: @TabletBreakpoint + 1) {
+    html:not(.bp-panel-active) .cs-main-menu__outer {
+        margin-bottom: 5px + 40px + (@baseLineHeight + 2 * 3px) * 0.5; // padding-bottom: 58px;
+    }
+}
+
+@media (min-width: 1340px) {
+    html:not(.bp-panel-active) .cs-main-menu__outer {
+        margin-bottom: 24px + 56px + (@baseLineHeight + 2 * 3px) * 0.5; // padding-bottom: 93px;
+    }
+}
+
+.cs-main-menu__primary {
+    flex-grow: 1;
+    padding-bottom: (@baseLineHeight + 2 * 3px) * 0.5; // padding-bottom: 13px;
+}
+
+.cs-main-menu__secondary {
+    bottom: 0;
+    position: sticky;
+    padding-top: (@baseLineHeight + 2 * 3px) * 0.5; // padding-bottom: 13px;
+    padding-bottom: (@baseLineHeight + 2 * 3px) * 0.5; // padding-bottom: 13px;
+    max-height: ~"calc(100vh / 2)";
+    overflow: auto;
+    z-index: 1;
+    background: #fff;
+}
+
+// Mobile main menu
+@media (max-width: @TabletBreakpoint) {
+    .noscrolling {
+        overflow-y: hidden;
+    }
+    .cs-main-menu {
+        left: -200%; // FIXME: remove this
+        margin: 0;
+        padding-top: 10px;
+        z-index: 100500;
+        transition: .3s left;
+        transition-timing-function: ease-in-out;
+        width: 80vw;
+        box-shadow: 2px 0px 11px 0px #00000075;
+    }
+    .cs-main-menu.open {
+        left: 0;
+    }
+    .cs-main-menu__secondary {
+        position: static;
+    }
+    .cs-main-menu + .cs-main-menu__backdrop {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: @zindexModalBackdrop;
+        transition: all 1s;
+    }
+    .cs-main-menu.open + .cs-main-menu__backdrop {
+        display: block;
+    }
+}
+
+.cs-main-menu__header-mobile {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+// Main menu scroll bar
+// Web standards scroll bar styles
+.cs-main-menu:not(:hover) {
+    scrollbar-width: none;
+}
+
+.cs-main-menu {
+    scrollbar-color: #dde4ef #fff; // background-border white
+    scrollbar-width: thin;
+}
+
+// WebKit and chromium-based browsers scroll bar styles
+.cs-main-menu:not(:hover)::-webkit-scrollbar {
+    width: 0;
+}
+
+.cs-main-menu::-webkit-scrollbar {
+    width: 16px;
+}
+
+.cs-main-menu::-webkit-scrollbar-track {
+    box-shadow: inset 0px 0 0px 3px #fff;
+    border: solid 3px #fff;
+    background-color: transparent;
+}
+
+.cs-main-menu:hover::-webkit-scrollbar-track {
+    background-color: #f1f5fa; // background-global
+}
+
+.cs-main-menu::-webkit-scrollbar-thumb {
+    border-radius: 99px;
+    box-shadow: inset 0px 0px 0px 5px #fff;
+    background-color: transparent;
+}
+
+.cs-main-menu:hover::-webkit-scrollbar-thumb {
+    background-color: #dde4ef; // background-border
+}

@@ -1,0 +1,102 @@
+// Content top structure
+// ---
+// content__top-navigation
+// ├── content__top-navigation-main
+// │   ├── content__top-navigation-primary
+// │   │   ├── content__saved-search
+// │   │   └── content__tabs-navigation
+// │   │
+// │   └── content__top-navigation-secondary
+// │       ├── content__context-search
+// │       └── content-variant-wrap (language)
+// │
+// └── content__search-filters
+
+// General top navigation 
+.content__top-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+// Main top navigation
+.content__top-navigation-main {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+@media (min-width: 1200px) {
+    .content__top-navigation-main {
+        flex-wrap: nowrap;
+    }
+}
+
+.content__top-navigation-main--wrap {
+    flex-wrap: wrap;
+}
+
+@media (min-width: 1200px) {
+    .content__top-navigation-main--wrap {
+        flex-wrap: wrap;
+    }
+}
+
+// Primary top navigation
+.content__top-navigation-primary {
+    max-width: 100%;
+    min-width: 0;
+    flex-grow: 1; // Fill all available space if no other elements are visible
+}
+
+// Secondary top navigation
+.content__top-navigation-secondary {
+    display: flex;
+    margin-left: auto;
+}
+
+.content__top-navigation-secondary--fill {
+    flex-grow: 9999; // Force fill all available space
+}
+
+// Context search
+.content__context-search {
+    width: 100%;
+}
+
+// Page tabs
+.content__tabs-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.content__tabs-navigation > .tabs > .nav {
+    margin: 0;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+
+.content__tabs-navigation > .tabs > .nav > li > a {
+    white-space: nowrap;
+}
+
+@media (min-width: @TabletBreakpoint + 1) {
+    .content__tabs-navigation > .tabs > .nav {
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+}
+
+// Language selector
+.content-language-btn-text {
+    display: none;
+}
+
+// Search filters
+.content__search-filters {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}

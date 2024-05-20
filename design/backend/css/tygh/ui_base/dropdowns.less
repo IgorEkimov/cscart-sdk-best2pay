@@ -1,0 +1,191 @@
+// Bootstrap styles
+
+// The dropdown menu (ul)
+// ----------------------
+.dropdown-menu {
+    padding: 12px 8px;
+
+    // Links within the dropdown menu
+    > li > a {
+        border-radius: @baseBorderRadius;
+    }
+}
+
+// Hover/Focus state
+// -----------
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  #gradient > .vertical(@dropdownLinkBackgroundHover, @dropdownLinkBackgroundHover);
+  box-shadow: inset 1px 0 0 darken(@dropdownLinkBackgroundActive, 2%), inset -1px 0 0 darken(@dropdownLinkBackgroundActive, 2%), inset 0 1px 0 darken(@dropdownLinkBackgroundActive, 2%), inset 0 -1px 0 darken(@dropdownLinkBackgroundActive, 2%);
+}
+
+// Active state
+// ------------
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  #gradient > .vertical(@dropdownLinkBackgroundActive, @dropdownLinkBackgroundActive);
+  box-shadow: inset 1px 0 0 darken(@dropdownLinkBackgroundActive, 2%), inset -1px 0 0 darken(@dropdownLinkBackgroundActive, 2%), inset 0 1px 0 darken(@dropdownLinkBackgroundActive, 2%), inset 0 -1px 0 darken(@dropdownLinkBackgroundActive, 2%);
+}
+
+// Caret to indicate there is a submenu
+.dropdown-submenu > a:after {
+    margin-top: 7px;
+}
+
+// Left aligned submenus
+.dropdown-submenu.pull-left {
+    // Positioning the submenu
+    > .dropdown-menu {
+      left: ~"calc(-100% - 20px + 2px)";
+    }
+}
+
+
+
+// Custom styles
+
+.dropdown-menu > li > a:not([href]):hover,
+.dropdown-menu > li > a:not([href]):focus,
+.dropdown-submenu:hover > a:not([href]),
+.dropdown-submenu:focus > a:not([href]),
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  box-shadow: none;
+}
+
+.dropdown-menu {
+    text-align: left !important;
+    .box-shadow(0px 8px 16px -8px rgba(47, 101, 181, 0.2));
+
+    input[type="checkbox"] {
+        margin-top: 0;
+        margin-right: 7px;
+    }
+}
+.dropleft {
+    .dropdown-menu {
+        right: 0px;
+        left: auto;
+    }
+}
+.dropdown--inline {
+    display: inline-block;
+}
+.droptop {
+    .dropdown-menu {
+        top: auto;
+        bottom: 100%;
+    }
+}
+.dropdown-opened {
+    display: block;
+}
+
+.dropdown-menu > li > a,
+.dropdown-menu > li > span {
+    padding-top: @dropdownItemPadding;
+    padding-bottom: @dropdownItemPadding;
+}
+
+// Links within the dropdown menu
+.dropdown-menu > li > span {
+    display: block;
+    padding: @dropdownItemPadding 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: @baseLineHeight;
+    color: @dropdownLinkColor;
+    white-space: nowrap;
+}
+
+.dropdown-menu > li > a.dropdown--text-wrap,
+.dropdown-menu > li > span.dropdown--text-wrap {
+    width: 100%;
+    min-width: 200px;
+    max-height: @baseLineHeight * 2 + (@dropdownItemPadding - 1px) * 2;
+}
+
+.dropdown-menu > li > a.dropdown--text-wrap.dropdown--text-wrap-long,
+.dropdown-menu > li > span.dropdown--text-wrap.dropdown--text-wrap-long {
+    -webkit-line-clamp: 5;
+    min-width: 320px;
+    max-height: @baseLineHeight * 5 + (@dropdownItemPadding - 1px) * 2;
+}
+
+.dropdown-menu > li > span:not([class*="--text-wrap"]) {
+    display: block;
+    white-space: nowrap;
+}
+
+.dropdown-menu > .disabled > span {
+  color: @grayLight;
+}
+
+.dropdown-toggle--text-wrap {
+    position: relative;
+    padding-right: 23px;
+    text-align: left;
+    margin-left: 0px;
+
+    .caret {
+        position: absolute;
+        right: 6px;
+        margin-right: 5px;
+        top: 5px;
+    }
+}
+
+.dropdown-toggle--text-wrap.btn-link {
+    white-space: normal;
+}
+
+.dropdown > .btn-link {
+    white-space: nowrap;
+}
+
+.dropdown-menu > li > a.text-success,
+.dropdown-menu > li > span.text-success {
+    color: @successText;
+}
+
+.dropdown-menu > li > a.text-success:hover {
+    background: @successBackground;
+}
+
+.dropdown-menu > li > a.text-warning,
+.dropdown-menu > li > span.text-warning {
+    color: @warningText;
+}
+
+.dropdown-menu > li > a.text-warning:hover {
+    background: @warningBackground;
+}
+
+.dropdown-menu > li > a.text-error,
+.dropdown-menu > li > span.text-error {
+    color: @errorText;
+}
+
+.dropdown-menu > li > a.text-error:hover {
+    background: @errorBackground;
+}
+
+.dropup,
+.navbar-fixed-bottom .dropdown {
+  // Reverse the caret
+  .caret {
+    border-top: 0;
+    border-bottom: 4px solid @btnPrimaryBackground;
+  }
+}
+
+.dropdown__item {
+    padding: @dropdownItemPadding 20px;
+}
+
+.dropdown-menu > li > a.hidden {
+    display: none;
+}

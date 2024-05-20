@@ -1,0 +1,1 @@
+{fn_best2pay_prepare_order_info($order_info)}

@@ -1,0 +1,169 @@
+/*
+    views/addons/components/rating/stars.tpl
+*/
+
+.cs-addons-rating-stars {
+    display: flex;
+    color: var(--cs-product-reviews-accent-color);
+    white-space: nowrap;
+    filter: ~"contrast(0) sepia(100%) brightness(1.2) saturate(4)";
+}
+
+.cs-addons-rating-stars--secondary {
+    color: @grayLight;
+}
+
+.cs-addons-rating-stars--flip {
+    transform: scaleX(-1);
+}
+
+.cs-addons-rating-stars__link {
+    display: inline-flex;
+    align-items: center;
+}
+
+.cs-addons-rating-stars__link:hover,
+.cs-addons-rating-stars__link:focus {
+    text-decoration: none;
+}
+
+.cs-addons-rating-stars:before {
+    width: @iconSize;
+    height: @iconSize;
+    margin-right: @iconSize * (5 - 1);
+}
+
+.cs-addons-rating-stars--small:before {
+    width: @iconSize * 0.7;
+    height: @iconSize * 0.7;
+    margin-right: (@iconSize * 0.7) * (5 - 1);
+}
+
+.cs-addons-rating-stars--large:before {
+    width: @iconSize * 1.25;
+    height: @iconSize * 1.25;
+    margin-right: (@iconSize * 1.25) * (5 - 1);
+}
+
+.cs-addons-rating-stars--xlarge:before {
+    width: @iconSize * 1.5;
+    height: @iconSize * 1.5;
+    margin-right: (@iconSize * 1.5) * (5 - 1);
+}
+
+// Full stars
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="5"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full);
+}
+
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="4"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-empty);
+}
+
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="3"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty);
+}
+
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="2"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty);
+}
+
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="1"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty);
+}
+
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="0"]:before {
+    content: var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty);
+}
+// /Full stars
+
+// Half stars
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="4"][data-ca-addons-addons-stars-is-half="1"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-half);
+}
+
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="3"][data-ca-addons-addons-stars-is-half="1"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-half)
+        var(--cs-addons-stars-empty);
+}
+
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="2"][data-ca-addons-addons-stars-is-half="1"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-half)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty);
+}
+
+.cs-addons-rating-stars[data-ca-addons-addons-stars-full="1"][data-ca-addons-addons-stars-is-half="1"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-half)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty)
+        var(--cs-addons-stars-empty);
+}
+// /Half stars
+
+// Without empty stars
+.cs-addons-rating-stars.cs-addons-rating-stars--without-empty-stars[data-ca-addons-addons-stars-full="5"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full);
+}
+
+.cs-addons-rating-stars.cs-addons-rating-stars--without-empty-stars[data-ca-addons-addons-stars-full="4"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full);
+}
+
+.cs-addons-rating-stars.cs-addons-rating-stars--without-empty-stars[data-ca-addons-addons-stars-full="3"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full);
+}
+
+.cs-addons-rating-stars.cs-addons-rating-stars--without-empty-stars[data-ca-addons-addons-stars-full="2"]:before {
+    content: var(--cs-addons-stars-full)
+        var(--cs-addons-stars-full);
+}
+
+.cs-addons-rating-stars.cs-addons-rating-stars--without-empty-stars[data-ca-addons-addons-stars-full="1"]:before {
+    content: var(--cs-addons-stars-full);
+}
+// /Without empty stars
+

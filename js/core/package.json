@@ -1,0 +1,32 @@
+{
+  "name": "cs-cart-core-js-bundle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack build --mode development --progress",
+    "dev:watch": "webpack watch --mode development --progress",
+    "prod": "webpack"
+  },
+  "keywords": [],
+  "author": "cs-cart team",
+  "dependencies": {
+    "jquery": "3.5.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-redux": "6.0.1",
+    "redux": "4.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.23.9",
+    "@babel/core": "7.23.9",
+    "@babel/plugin-proposal-private-property-in-object": "7.21.11",
+    "@babel/preset-env": "7.23.9",
+    "babel-loader": "8.0.5",
+    "babel-plugin-remove-use-strict": "1.0.1",
+    "babel-preset-react-app": "10.0.1",
+    "webpack": "5.90.1",
+    "webpack-cli": "5.1.4"
+  },
+  "browserslist": "> 0.25%, not dead"
+}

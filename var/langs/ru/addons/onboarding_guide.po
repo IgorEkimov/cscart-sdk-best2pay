@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: ru\n"
+"X-Crowdin-File: /release-4.18.1/addons/onboarding_guide.po\n"
+"X-Crowdin-File-ID: 8264\n"
+"PO-Revision-Date: 2024-04-22 06:02\n"
+
+msgctxt "Addons::name::onboarding_guide"
+msgid "Onboarding guide"
+msgstr "Первые шаги"
+
+msgctxt "Addons::description::onboarding_guide"
+msgid "Introduces the marketplace to administrators and allows quickly set up basic functionality."
+msgstr "Знакомит администраторов с маркетплейсом и позволяет быстро настроить базовую функциональность."
+
+msgctxt "Languages::onboarding_guide.guide_title"
+msgid "Welcome to your marketplace!<br>Get ready to receive your first order"
+msgstr "Добро пожаловать на ваш маркетплейс!<br>Давайте подготовимся к приёму вашего первого заказа."
+
+msgctxt "Languages::onboarding_guide.sb_guide_title"
+msgid "Welcome to your online store!<br>Get ready to receive your first order"
+msgstr "Добро пожаловать в ваш интернет-магазин!<br>Давайте подготовимся к приёму вашего первого заказа."
+
+msgctxt "Languages::onboarding_guide.completed_steps_progress"
+msgid "[completed] out of [total] complete"
+msgstr "[completed] из [total] выполнено"
+
+msgctxt "Languages::onboarding_guide.dismiss"
+msgid "Dismiss"
+msgstr "Отклонить"
+
+msgctxt "Languages::onboarding_guide.step_close"
+msgid "Close"
+msgstr "Закрыть"
+
+msgctxt "Languages::onboarding_guide.step_complete"
+msgid "Complete"
+msgstr "Пометить как выполненное"
+
+msgctxt "Languages::onboarding_guide.explore_interface_title"
+msgid "Explore the Multi-Vendor No-Code interface"
+msgstr "Познакомьтесь с интерфейсом Multi-Vendor No-Code"
+
+msgctxt "Languages::onboarding_guide.explore_interface_description"
+msgid "Discover how to effortlessly launch your marketplace in just 5 minutes. Learn the ins and outs of the intuitive interface and get ready to dive into the world of hassle-free marketplace creation."
+msgstr "Узнайте, как без особых усилий запустить свой маркетплейс всего за 5 минут. Изучите все тонкости интерфейса и приготовьтесь погрузиться в мир интернет-торговли без лишних хлопот."
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_title"
+msgid "Personalize your marketplace"
+msgstr "Настройте маркетплейс под себя"
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_title"
+msgid "Personalize your online store"
+msgstr "Настройте свой интернет-магазин"
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_description"
+msgid "Choose the style of your marketplace. Provide your contact information for customers and sellers."
+msgstr "Выберите стиль вашего маркетплейса. Укажите контактную информацию для покупателей и продавцов."
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_description"
+msgid "Choose the style of your online store. Provide your contact information for customers."
+msgstr "Выберите стиль вашего интернет-магазина. Укажите контактную информацию для покупателей."
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_title"
+msgid "Make changes on the fly"
+msgstr "Вносите изменения на лету"
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the marketplace to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "Чтобы настроить маркетплейс под себя, не нужны знания кода. Редактируйте любые тексты; меняйте положение блоков, а также цвета, шрифты и стиль. Эти возможности доступны администратору на витрине в любой момент."
+
+msgctxt "Languages::onboarding_guide.sb_make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the online store to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "Чтобы настроить интернет-магазин под себя, не нужны знания кода. Редактируйте любые тексты; меняйте положение блоков, а также цвета, шрифты и стиль. Эти возможности доступны администратору на витрине в любой момент."
+
+msgctxt "Languages::onboarding_guide.theme_and_logo"
+msgid "Theme & logo"
+msgstr "Тема и логотип"
+
+msgctxt "Languages::onboarding_guide.business_details"
+msgid "Business details"
+msgstr "Информация о бизнесе"
+
+msgctxt "Languages::onboarding_guide.languages_and_currency"
+msgid "Languages & Currency"
+msgstr "Языки и валюты"
+
+msgctxt "Languages::onboarding_guide.select_theme"
+msgid "Select theme"
+msgstr "Выберите тему"
+
+msgctxt "Languages::onboarding_guide.current_theme"
+msgid "Current theme"
+msgstr "Текущая тема"
+
+msgctxt "Languages::onboarding_guide.custom_theme"
+msgid "Custom theme"
+msgstr "Своя тема"
+
+msgctxt "Languages::onboarding_guide.upload_logo"
+msgid "Upload logo"
+msgstr "Загрузите логотип"
+
+msgctxt "Languages::onboarding_guide.activate"
+msgid "Activate"
+msgstr "Активировать"
+
+msgctxt "Languages::onboarding_guide.next"
+msgid "Next"
+msgstr "Далее"
+
+msgctxt "Languages::onboarding_guide.back"
+msgid "Back"
+msgstr "Назад"
+
+msgctxt "Languages::onboarding_guide.save"
+msgid "Save"
+msgstr "Сохранить"
+
+msgctxt "Languages::onboarding_guide.edit_colors"
+msgid "Edit colors"
+msgstr "Изменить цвета"
+
+msgctxt "Languages::onboarding_guide.modify_colors_fonts_backgrounds"
+msgid "Modify colors, fonts, and backgrounds"
+msgstr "Изменение цветов, шрифтов и фона"
+
+msgctxt "Languages::onboarding_guide.edit_texts"
+msgid "Edit or translate any texts"
+msgstr "Правка или перевод любых текстов"
+
+msgctxt "Languages::onboarding_guide.edit_blocks"
+msgid "Fine-tune page layouts"
+msgstr "Настройка макетов страниц"
+
+msgctxt "Languages::onboarding_guide.configure_payment_options"
+msgid "Set up payments"
+msgstr "Настройте способы оплаты"
+
+msgctxt "Languages::onboarding_guide.select_payment_options"
+msgid "Choose how you plan to accept payments. Select one of the following scenarios:"
+msgstr "Выберите, как вы планируете принимать оплату. Вот возможные сценарии:"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split"
+msgid "Multi-party payment (automatic disbursements)"
+msgstr "Многосторонняя оплата (автоматические выплаты)"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: PayPal Commerce Platform and Stripe Connect. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with PayPal or Stripe as well."
+msgstr "Для маркетплейсов существуют специальные платёжные системы: PayPal Commerce Platform и Stripe Connect. Покупатель платит один раз за все товары; а платёжная система автоматически делит деньги между всеми продавцами. Обратите внимание, что продавцам понадобятся учётные записи PayPal или Stripe."
+
+msgctxt "Languages::onboarding_guide.single_rus_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: YooKassa For Marketplaces and Tinkoff Multiparty. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with YooKassa or Tinkoff as well."
+msgstr "Для маркетплейсов существуют специальные платёжные системы: \"Тинькофф Сплитование\" и \"ЮKassa для платформ\". Покупатель платит один раз за все товары; а платёжная система автоматически делит деньги между всеми продавцами. Обратите внимание, что продавцам понадобятся учётные записи Тинькофф или ЮKassa."
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you"
+msgid "Single payment to the marketplace"
+msgstr "Единая оплата маркетплейсу"
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you_description"
+msgid "A customer makes one payment for all the products in the cart. The money ends up on your account, with the record of what you own to each seller. You periodically distribute the money between sellers."
+msgstr "Покупатель платит один раз за все товары в корзине. Деньги попадают на ваш счёт, а CS-Cart хранит информацию о том, сколько вы должны каждому продавцу. Вы периодически осуществляете выплаты продавцам."
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers"
+msgid "Separate payments to sellers"
+msgstr "Раздельная оплата каждому продавцу"
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers_description"
+msgid "A customer pays to each seller separately. It becomes the seller’s responsibility to pay the commission to you (we have ways for that). Sellers will be able to set up their own shipping methods and promotions."
+msgstr "Покупатель платит отдельно каждому продавцу. В этом случае продавец должен выплатить комиссию вам (в CS-Cart есть механизмы для этого). Продавцы смогут создавать свои собственные способы оплаты и промо-акции."
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods"
+msgid "Configure payment methods"
+msgstr "Настройте способы оплаты"
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods_description"
+msgid "CS-Cart allows you to set up various payment methods; most of them automatically process the full up-front payment. But for now, let’s set up \"Cash on Delivery\" just to see how it works."
+msgstr "CS-Cart позволяет вам создавать различные способы оплаты. Большинство из них автоматически берут с покупателя 100% предоплату. Но пока что для пробы давайте настроим способ оплаты \"Наложенный платёж\"."
+
+msgctxt "Languages::onboarding_guide.view_checkout_page"
+msgid "View checkout page"
+msgstr "Просмотр страницы оформления заказа"
+
+msgctxt "Languages::onboarding_guide.view_checkout_page_description"
+msgid "Once configured, your payment method will appear at the checkout page:"
+msgstr "После настройки способ оплаты появится на странице оформления заказа:"
+
+msgctxt "Languages::onboarding_guide.missing_products"
+msgid "Missing products"
+msgstr "Отсутствующие товары"
+
+msgctxt "Languages::onboarding_guide.create_at_least_one_product_to_proceed_to_checkout"
+msgid "Create at least one product to proceed to checkout"
+msgstr "Создайте хотя бы один товар для перехода к оформлению заказа"
+
+msgctxt "Languages::onboarding_guide.manage_sellers"
+msgid "Manage sellers"
+msgstr "Управление продавцами"
+
+msgctxt "Languages::onboarding_guide.create_one_vendor"
+msgid "Add a seller"
+msgstr "Добавить продавца"
+
+msgctxt "Languages::onboarding_guide.create_vendor_description"
+msgid "Sellers—referred to as \"vendors\" in the admin panel—are essential for a marketplace. They provide products and services to customers. A seller can create an account themselves, or you can do it for them in the admin panel. Let’s add one seller via the admin panel."
+msgstr "Продавцы являются основой любого маркетплейса. Именно они продают товары и предоставляют услуги покупателям. Продавец может сам создать себе учётную запись, либо это можете сделать вы через панель администратора. Давайте создадим одного продавца."
+
+msgctxt "Languages::onboarding_guide.view_storefront"
+msgid "See sellers on the storefront"
+msgstr "Просмотр продавцов на витрине"
+
+msgctxt "Languages::onboarding_guide.view_invoice"
+msgid "View invoice"
+msgstr "Просмотр накладной"
+
+msgctxt "Languages::onboarding_guide.logos_updated"
+msgid "Theme and email logos updated"
+msgstr "Логотипы темы и электронных писем обновлены"
+
+msgctxt "Languages::onboarding_guide.set_default_currency"
+msgid "Set default currency"
+msgstr "Выбрать основную валюту"
+
+msgctxt "Languages::onboarding_guide.manage_currencies"
+msgid "Manage currencies"
+msgstr "Управление валютами"
+
+msgctxt "Languages::onboarding_guide.set_default_languages"
+msgid "Set default languages"
+msgstr "Задать язык по умолчанию"
+
+msgctxt "Languages::onboarding_guide.manage_languages"
+msgid "Manage languages"
+msgstr "Управление языками"
+
+msgctxt "Languages::onboarding_guide.preview_an_email"
+msgid "Preview an email"
+msgstr "Предпросмотр электронного письма"
+
+msgctxt "Languages::onboarding_guide.preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the new sellers who register at your marketplace."
+msgstr "Когда вы закончите с настройкой, посмотрите как ваши данные отобразятся в электронном письме, которое получают новые продавцы на вашем маркетплейсе."
+
+msgctxt "Languages::onboarding_guide.sb_preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the newly-registered customers."
+msgstr "Когда вы закончите с настройкой, посмотрите как ваши данные отобразятся в электронном письме, которое получают новые зарегистрировавшиеся покупатели."
+
+msgctxt "Languages::onboarding_guide.customize_vendor_panel_design"
+msgid "Customize seller panel"
+msgstr "Настройте панель продавца"
+
+msgctxt "Languages::onboarding_guide.edit_vendor_panel_style"
+msgid "Sellers work with their own dedicated control panel. You can make it look the way you need. Set its colors, edit the menu, add blocks with info to the seller's dashboard."
+msgstr "Продавцы работают в собственной панели администратора. Вы можете настроить её внешний вид: выбрать цвета, отредактировать меню и добавить информацию на главную страницу панели продавца."
+
+msgctxt "Languages::onboarding_guide.edit_structure"
+msgid "Edit menus and onboarding"
+msgstr "Изменить меню и \"Первые шаги\""
+
+msgctxt "Languages::onboarding_guide.manage_products"
+msgid "Manage products"
+msgstr "Управление товарами"
+
+msgctxt "Languages::onboarding_guide.manage_products_description"
+msgid "You as the marketplace owner can control all products sold on your platform. But sellers manage products through their own dashboard. See how they can add products one by one or in bulk."
+msgstr "Вы как владелец маркетплейса можете управлять всеми товарами, которые у вас продаются. Продавцы управляют своими товарами из своей панели администратора. Посмотрите, как они добавляют один или сразу несколько товаров."
+
+msgctxt "Languages::onboarding_guide.sb_manage_products_description"
+msgid "Products are how your online store makes money; they include commodities, services, or anything else offered for a price. You can add products one by one or in bulk."
+msgstr "Товары — это источник дохода вашего интернет-магазина. К \"товарам\" относится всё, что вы предлагаете за определённую стоимость: товары, услуги и т.п. Товары можно добавлять по очереди или массово."
+
+msgctxt "Languages::onboarding_guide.add_one_product"
+msgid "Add one product"
+msgstr "Добавить один товар"
+
+msgctxt "Languages::onboarding_guide.import_csv_or_xml"
+msgid "Import CSV or XML"
+msgstr "Импорт CSV или XML"
+
+msgctxt "Languages::onboarding_guide.view_product_page"
+msgid "View the latest added product"
+msgstr "Показать последний добавленный товар"
+
+msgctxt "Languages::onboarding_guide.premoderation"
+msgid "If you do not see the created product on the storefront, you may have the <b>Vendor data premoderation</b> module enabled"
+msgstr "Если вы не видите созданный товар на витрине, возможно у вас включен модуль <b>\"Премодерация данных продавцов\"</b>."
+
+msgctxt "Languages::onboarding_guide.view_product_page_description"
+msgid "See your new products on the storefront."
+msgstr "Просмотр ваших новых товаров на витрине."
+
+msgctxt "Languages::onboarding_guide.preview_seller_onboarding"
+msgid "Preview seller onboarding"
+msgstr "Пройдите онбординг продавцов"
+
+msgctxt "Languages::onboarding_guide.walk_the_seller_path"
+msgid "Walk the seller path"
+msgstr "Пройдите путём продавца"
+
+msgctxt "Languages::onboarding_guide.customize_onboarding_process"
+msgid "Prospective sellers can request to join your marketplace on their own. See for yourself how that process works: the information they provide, the emails they receive, etc. You can adjust all of it, or even make your marketplace invite-only."
+msgstr "Потенциальные продавцы могут сами запросить учётную запись на вашем маркетплейсе. Посмотрите, как устроен этот процесс: какую информацию предоставляют продавцы, какие электронные письма они получают, и т.д. Вы сможете всё это изменить, или сделать так, чтобы продавцы могли прийти на маркетплейс только по приглашениям."
+
+msgctxt "Languages::onboarding_guide.set_up_commissions_and_fees"
+msgid "Configure commissions and fees"
+msgstr "Настройте комиссии и сборы"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans"
+msgid "Set up seller plans"
+msgstr "Настройте тарифные планы продавцов"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans_description"
+msgid "A marketplace usually earns you money from monthly fees and/or commissions from sales. Seller plans let you set the size and frequency of those payments."
+msgstr "Обычно маркетплейс зарабатывает деньги за счёт ежемесячных платежей и/или комиссионных от продаж. Тарифные планя для продавцов позволяют устанавливать размер и частоту этих платежей."
+
+msgctxt "Languages::onboarding_guide.view_seller_plans"
+msgid "Preview seller plans"
+msgstr "Предпросмотр тарифных планов"
+
+msgctxt "Languages::onboarding_guide.view_seller_plans_description"
+msgid "See how your configured seller plans appear to your prospective sellers on the storefront."
+msgstr "Посмотрите, как настроенные тарифные планы отображаются на витрине для потенциальных продавцов."
+
+msgctxt "Languages::onboarding_guide.reset_onboarding"
+msgid "Reset onboarding"
+msgstr "Сбросить прогресс в \"Первых шагах\""
+
+msgctxt "Languages::onboarding_guide.reset"
+msgid "Reset"
+msgstr "Сбросить"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_title"
+msgid "Set up shipping"
+msgstr "Настройте доставку"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_description"
+msgid "CS-Cart provides your customers with shipping rates depending on the customer's address and order. You can set the rules for these rates yourself, or receive rates in real time from shipping companies like UPS or DHL. You can also make shipping methods available in some locations and unavailable in others."
+msgstr "CS-Cart показывает покупателям стоимость доставки в зависимости от их адреса и заказа. Вы можете задать правила расчёта стоимости вручную или же получать стоимость доставки в реальном времени от транспортных компаний (например СДЭК, Boxberry, и т.д.). Также вы можете настроить доступность или недоступность способа доставки в разных регионах."
+
+msgctxt "Languages::onboarding_guide.configure_shippings_label"
+msgid "Let's set up a shipping method called \"Pickup from store\" to see how it works."
+msgstr "Чтобы попробовать настройки доставки, давайте создадим способ доставки \"Самовывоз\"."
+
+msgctxt "Languages::onboarding_guide.configure_shippings"
+msgid "Configure shipping methods"
+msgstr "Настроить способы доставки"
+

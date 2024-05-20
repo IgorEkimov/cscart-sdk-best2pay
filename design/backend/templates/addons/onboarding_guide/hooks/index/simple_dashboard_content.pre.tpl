@@ -1,0 +1,1 @@
+{include file="addons/onboarding_guide/views/onboarding_guide/onboarding_guide.tpl"}

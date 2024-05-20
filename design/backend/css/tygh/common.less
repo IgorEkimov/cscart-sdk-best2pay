@@ -1,0 +1,142 @@
+html, body, #main_column {
+    min-height: 100%;
+    height: 100%;
+}
+
+html {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    min-width: 300px !important;
+    background: #f1f5fa; // background-global
+}
+
+:focus {
+    outline: none;
+}
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.preload * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+.main-wrap {
+    width: 100%;
+    max-width: 3000px;
+    min-width: 300px;
+    margin: 0 auto;
+    display: table;
+    table-layout: fixed;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    background-image: none;
+}
+
+a,
+a:hover {
+    cursor: pointer;
+}
+
+.a-pseudo,
+.a-pseudo:hover {
+    margin-right: 15px;
+    border-bottom: 1px dotted;
+    color: #999 !important;
+    text-decoration: none !important;
+}
+
+// Comet
+#comet_control {
+    width: 560px !important;
+}
+
+// Ajax loading
+.ajax-content-more {
+    text-align: center;
+}
+.ajax-content-more span {
+    padding-right: 20px;
+    background: no-repeat url('../media/images/ajax_loader_small.gif') center right;
+}
+
+// No items available
+.no-items {
+    background: #fcfcfc;
+    border-radius: @baseBorderRadius;
+    text-align: center;
+    padding: 40px 0;
+    border: 1px solid #f2f2f2;
+    .muted();
+}
+
+// Store selector
+.store-selector {
+    margin-top: 5px;
+
+    .btn-group {
+        vertical-align: baseline;
+    }
+}
+
+// Commercial
+.commercial-promotion-text {
+    margin-left: 5px;
+}
+
+// Languages
+.lang-name {
+    width: 300px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.well {
+    .box-shadow(none);
+}
+
+// Type
+.description {
+    word-break: break-all;
+    word-break: break-word;
+    margin-top: 5px;
+}
+
+.controls .description {
+    margin-top: 5px;
+}
+
+.bug-report {
+    background-color: rgba(0, 0, 0, 0.2);
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.2) !important;
+    }
+}
+
+a[class*="--text-wrap"], li > a[class*="--text-wrap"], span[class*="--text-wrap"] {
+    white-space: normal;
+    display: -webkit-inline-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding-bottom: 4px;
+}
+
+li > a[class*="--text-wrap"],
+li > span[class*="--text-wrap"] {
+    display: -webkit-box;
+}

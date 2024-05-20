@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>onboarding_guide</id>
+    <version>1.0</version>
+    <priority>100</priority>
+    <position>140</position>
+    <status>active</status>
+    <unmanaged>true</unmanaged>
+    <default_language>en</default_language>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+</addon>

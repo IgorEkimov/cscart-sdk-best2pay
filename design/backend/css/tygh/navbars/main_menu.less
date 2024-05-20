@@ -1,0 +1,274 @@
+// Menu sidebar variables
+@menuSidebarColorActive: @dropdownLinkBackgroundActive;
+
+
+// Menu sidebar styles
+.main-menu-1,
+.main-menu-2,
+.main-menu-3 {
+    list-style: none;
+    margin: 0;
+}
+
+.main-menu-1__accordion-body,
+.main-menu-2__accordion-body,
+.main-menu-3__accordion-body {
+    // Out - Cubic
+    transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+    transition-duration: 0.1s;
+}
+
+.main-menu-1__accordion-inner,
+.main-menu-2__accordion-inner,
+.main-menu-1__item,
+.main-menu-2__item,
+.main-menu-3__item {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.main-menu-1__item:last-child {
+    margin-bottom: 0;
+}
+
+.main-menu-1__accordion-heading,
+.main-menu-2__accordion-heading,
+.main-menu-1__link-wrapper,
+.main-menu-2__link-wrapper,
+.main-menu-3__link-wrapper {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.main-menu-1__link-content,
+.main-menu-2__link-content,
+.main-menu-3__link-content {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.main-menu-1__link-content--long,
+.main-menu-2__link-content--long,
+.main-menu-3__link-content--long {
+    letter-spacing: -0.5px;
+}
+
+.main-menu-1__link-content--active.main-menu-1__link-content--long,
+.main-menu-2__link-content--active.main-menu-2__link-content--long,
+.main-menu-3__link-content--active.main-menu-3__link-content--long {
+    letter-spacing: -0.85px;
+}
+
+.main-menu-1__link,
+.main-menu-2__link,
+.main-menu-3__link {
+    width: 100%;
+    border: 0;
+    border-radius: @baseBorderRadius;
+    background: transparent;
+}
+
+.main-menu-1__link.main-menu-1__link,
+.main-menu-2__link.main-menu-2__link,
+.main-menu-3__link.main-menu-3__link {
+    display: flex;
+    padding: 8px 15px;
+    min-width: 0;
+}
+
+@media (min-width: @TabletBreakpoint + 1) {
+    .main-menu-1__link.main-menu-1__link,
+    .main-menu-2__link.main-menu-2__link,
+    .main-menu-3__link.main-menu-3__link {
+        padding-top: 6px;
+        padding-bottom: 6px;
+    }
+}
+
+// Useful for open developer tools
+@media (min-width: @TabletBreakpoint + 1) and (max-height: 700px) {
+    .main-menu-1__link.main-menu-1__link,
+    .main-menu-2__link.main-menu-2__link,
+    .main-menu-3__link.main-menu-3__link {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+}
+
+.main-menu-1__link.main-menu-1__link.mobile-visible,
+.main-menu-2__link.main-menu-2__link.mobile-visible,
+.main-menu-3__link.main-menu-3__link.mobile-visible {
+    display: none;
+}
+
+@media (max-width: @TabletBreakpoint) {
+    .main-menu-1__link.main-menu-1__link.mobile-visible,
+    .main-menu-2__link.main-menu-2__link.mobile-visible,
+    .main-menu-3__link.main-menu-3__link.mobile-visible {
+        display: flex;
+    }
+}
+
+// Level 1 and level 2
+.main-menu-1__link,
+.main-menu-2__link,
+.main-menu-3__link {
+    align-items: center;
+    gap: 16px;
+    color: @textColor;
+    border-radius: @baseBorderRadius;
+}
+
+.main-menu-1__link:hover,
+.main-menu-1__link:focus,
+.main-menu-2__link:hover,
+.main-menu-2__link:focus,
+.main-menu-3__link:hover,
+.main-menu-3__link:focus {
+    color: @textColor;
+}
+
+.main-menu-1__link--regular,
+.main-menu-2__link--regular {
+    font-weight: 400;
+}
+
+.main-menu-1__icon:not(.main-menu-1__icon--active):not(:hover):not(:focus),
+.main-menu-2__icon:not(.main-menu-1__icon--active) {
+    color: lighten(@textColor, 22%); // textSecondaryColor
+}
+
+// Level 2 and level 3
+.main-menu-2__link:not(.main-menu-2__link--active):not(:hover),
+.main-menu-3__link:not(.main-menu-2__link--active):not(:hover) {
+    color: lighten(@textColor, 22%); // textSecondaryColor
+}
+
+// Block manager
+.main-menu-1__link:not(.main-menu-1__link--icon).main-menu-1__link--root-hidden:after,
+.main-menu-1__link:not(.main-menu-1__link--icon).main-menu-1__link--hidden-by-permissions:after,
+.main-menu-2__link:not(.main-menu-2__link--icon).main-menu-2__link--hidden-by-permissions:after {
+    content: url('../templates/icons/eye_close.svg');
+    flex-shrink: 0;
+    width: @baseFontSize;
+    height: @baseFontSize;
+    opacity: 0.5;
+}
+
+// Level 1
+.main-menu-1__accordion-heading {
+    display: flex;
+    border-radius: @baseBorderRadius;
+}
+
+.main-menu-1__link--icon {
+    width: auto;
+}
+
+.main-menu-1__link--icon.main-menu-1__link--icon {
+    padding-right: 8px;
+    min-width: auto;
+}
+
+.main-menu-1__link--with-icon.main-menu-1__link--with-icon {
+    padding-left: 8px;
+}
+
+.main-menu-1__link {
+    font-weight: 600;
+}
+
+// Level 2
+.main-menu-2__link.main-menu-2__link {
+    padding-left: 15px + @iconSize + 16px;
+}
+
+// Level 3
+.main-menu-3__link.main-menu-3__link {
+    padding-left: 65px;
+}
+
+// Active
+.main-menu-1__link:hover,
+.main-menu-1__link:focus,
+.main-menu-1__link--active,
+.main-menu-2__link:hover,
+.main-menu-2__link:focus,
+.main-menu-2__link--active,
+.main-menu-3__link:hover,
+.main-menu-3__link:focus,
+.main-menu-3__link--active {
+    text-decoration: none;
+}
+
+.main-menu-2__link:hover,
+.main-menu-2__link:focus,
+.main-menu-3__link:hover,
+.main-menu-3__link:focus {
+    background: fadeout(@menuSidebarColorActive, 50%);
+}
+
+.main-menu-1__accordion-heading:hover {
+    background: fadeout(@menuSidebarColorActive, 50%);
+}
+
+.main-menu-1__link--active,
+.main-menu-1__toggle--active,
+.main-menu-2__link--active,
+.main-menu-2__toggle--active,
+.main-menu-3__link--active,
+.main-menu-3__toggle--active {
+    font-weight: 600;
+}
+
+.main-menu-1__link--active,
+.main-menu-2__link--active,
+.main-menu-3__link--active {
+    background: @menuSidebarColorActive;
+}
+
+.main-menu-1__link--active:not(:hover),
+.main-menu-2__link--active:not(:hover),
+.main-menu-3__link--active:not(:hover) {
+    box-shadow: inset 1px 0 0 darken(@menuSidebarColorActive, 1%), inset -1px 0 0 darken(@menuSidebarColorActive, 1%), inset 0 1px 0 darken(@menuSidebarColorActive, 1%), inset 0 -1px 0 darken(@menuSidebarColorActive, 1%);
+}
+
+// Divider
+.main-menu-1__divider,
+.main-menu-2__divider,
+.main-menu-3__divider {
+    height: 1px;
+    margin: 5px 1px;
+    margin-left: 45px;
+    margin-right: 30px;
+    background-color: @dropdownDividerTop;
+}
+
+.main-menu-1__divider {
+    margin-top: (@baseLineHeight + 2 * 3px) * 0.5;
+    margin-bottom: (@baseLineHeight + 2 * 3px) * 0.5;
+    background-color: transparent;
+}
+
+.main-menu-1__link--title-divider,
+.main-menu-2__link--title-divider,
+.main-menu-3__link--title-divider {
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
+    font-size: @fontSizeSmall;
+    font-weight: 600;
+}
+
+.main-menu-1__link--title-divider:hover,
+.main-menu-2__link--title-divider:hover,
+.main-menu-3__link--title-divider:hover {
+    background: transparent;
+    cursor: default;
+}
+
+// Quick link
+.main-menu-1__link--quick-link {
+    color: spin(desaturate(lighten(@textColor, 30%), 25%), -15%); // textMutedColor
+    font-weight: 400;
+}

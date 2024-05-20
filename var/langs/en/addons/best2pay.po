@@ -1,0 +1,176 @@
+msgid ""
+msgstr "Project-Id-Version: tygh\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: English\n"
+"Language: en_US"
+
+msgctxt "Addons::name::best2pay"
+msgid "Best2Pay"
+msgstr "Best2Pay"
+
+msgctxt "Addons::description::best2pay"
+msgid "Accept payments for your products via credit and debit cards."
+msgstr "Accept payments for your products via credit and debit cards."
+
+msgctxt "Languages::best2pay.sector_description"
+msgid "Your individual customer number"
+msgstr "Your individual customer number"
+
+msgctxt "Languages::best2pay.password_description"
+msgid "Password used to generate a digital signature"
+msgstr "Password used to generate a digital signature"
+
+msgctxt "Languages::best2pay.payment_method"
+msgid "Payment method"
+msgstr "Payment method"
+
+# Settings
+msgctxt "Languages::best2pay.one_stage"
+msgid "Standard acquiring (one-stage payment)"
+msgstr "Standard acquiring (one-stage payment)"
+
+msgctxt "Languages::best2pay.two_steps"
+msgid "Standard acquiring (two-stage payment)"
+msgstr "Standard acquiring (two-stage payment)"
+
+msgctxt "Languages::best2pay.halva"
+msgid "Halva Chastyami (one-stage payment)"
+msgstr "Halva Chastyami (one-stage payment)"
+
+msgctxt "Languages::best2pay.halva_two_steps"
+msgid "Halva Chastyami (two-stage payment)"
+msgstr "Halva Chastyami (two-stage payment)"
+
+msgctxt "Languages::best2pay.sbp"
+msgid "Fast Payment System"
+msgstr "Fast Payment System"
+
+msgctxt "Languages::best2pay.two_steps_description"
+msgid "Payment occurs after confirmation by the manager in the personal account"
+msgstr "Payment occurs after confirmation by the manager in the personal account"
+
+msgctxt "Languages::best2pay.modal_payform"
+msgid "Open the payment form in modal window"
+msgstr "Open the payment form in modal window"
+
+msgctxt "Languages::best2pay.modal_payform_description"
+msgid "When this option is enabled, the payment form opens in a modal window"
+msgstr "When this option is enabled, the payment form opens in a modal window"
+
+msgctxt "Languages::best2pay.test_mode"
+msgid "Test Mode"
+msgstr "Test Mode"
+
+msgctxt "Languages::best2pay.test_mode_description"
+msgid "Use emulation of real work. Buyer will not be charged"
+msgstr "Use emulation of real work. Buyer will not be charged"
+
+msgctxt "Languages::best2pay.tax"
+msgid "Tax"
+msgstr "Tax"
+
+msgctxt "Languages::best2pay.vat1"
+msgid "VAT rate 20%"
+msgstr "VAT rate 20%"
+
+msgctxt "Languages::best2pay.vat2"
+msgid "VAT rate 10%"
+msgstr "VAT rate 10%"
+
+msgctxt "Languages::best2pay.vat3"
+msgid "VAT rate calc. 20/120"
+msgstr "VAT rate calc. 20/120"
+
+msgctxt "Languages::best2pay.vat4"
+msgid "VAT rate calc. 10/110"
+msgstr "VAT rate calc. 10/110"
+
+msgctxt "Languages::best2pay.vat5"
+msgid "VAT rate 0%"
+msgstr "VAT rate 0%"
+
+msgctxt "Languages::best2pay.vat6"
+msgid "Not subject to VAT"
+msgstr "Not subject to VAT"
+
+msgctxt "Languages::best2pay.custom_orders_statuses_title"
+msgid "Custom statuses for orders"
+msgstr "Custom statuses for orders"
+
+msgctxt "Languages::best2pay.order_completed"
+msgid "Order successfully paid"
+msgstr "Order successfully paid"
+
+msgctxt "Languages::best2pay.order_authorized"
+msgid "Order authorized"
+msgstr "Order authorized"
+
+msgctxt "Languages::best2pay.order_canceled"
+msgid "Order cancelled"
+msgstr "Order cancelled"
+
+msgctxt "Languages::best2pay.notify_url"
+msgid "Notify URL"
+msgstr "Notify URL"
+
+msgctxt "Languages::best2pay.notify_url_description"
+msgid "Report this URL to Best2Pay technical support to receive payment notifications"
+msgstr "Report this URL to Best2Pay technical support to receive payment notifications"
+
+# Errors and notifications
+msgctxt "Languages::best2pay.access_denied"
+msgid "Access denied"
+msgstr "Access denied"
+
+msgctxt "Languages::best2pay.payment_process_error"
+msgid "An error occurred in the payment system during the payment process. Please try again or choose a different payment method."
+msgstr "An error occurred in the payment system during the payment process. Please try again or choose a different payment method."
+
+msgctxt "Languages::best2pay.empty_response"
+msgid "Empty response"
+msgstr "Empty response"
+
+msgctxt "Languages::best2pay.invalid_xml"
+msgid "Non valid XML was received"
+msgstr "Non valid XML was received"
+
+msgctxt "Languages::best2pay.empty_signature"
+msgid "Signature is empty"
+msgstr "Signature is empty"
+
+msgctxt "Languages::best2pay.invalid_signature"
+msgid "Signature is not valid"
+msgstr "Signature is not valid"
+
+msgctxt "Languages::best2pay.unknown_operation"
+msgid "Unknown operation type"
+msgstr "Unknown operation type"
+
+msgctxt "Languages::best2pay.operation_not_approved"
+msgid "Operation not approved"
+msgstr "Operation not approved"
+
+msgctxt "Languages::best2pay.operation_not_valid"
+msgid "Operation not valid"
+msgstr "Operation not valid"
+
+msgctxt "Languages::best2pay.no_order_id"
+msgid "Order ID does not exist"
+msgstr "Order ID does not exist"
+
+msgctxt "Languages::best2pay.refund_completed"
+msgid "Refund completed successfully"
+msgstr "Refund completed successfully"
+
+msgctxt "Languages::best2pay.payment_successful"
+msgid "Payment successful"
+msgstr "Payment successful"
+
+# Order
+msgctxt "Languages::best2pay.complete"
+msgid "Complete"
+msgstr "Complete"
+
+msgctxt "Languages::best2pay.refund"
+msgid "Refund"
+msgstr "Refund"

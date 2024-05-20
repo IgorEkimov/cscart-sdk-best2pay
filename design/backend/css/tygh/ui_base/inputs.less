@@ -1,0 +1,863 @@
+// Bootstrap styles
+
+// Position radios and checkboxes better
+input[type="radio"] {
+    margin: 4px 1px 1px 1px;
+    .transition(~"border linear .2s, box-shadow linear .2s, background linear .2s");
+}
+
+input[type="checkbox"] {
+    margin: 2px 1px 1px 1px;
+    .transition(~"border linear .2s, box-shadow linear .2s, background linear .2s");
+}
+
+// CHECKBOXES & RADIOS
+// -------------------
+
+// Indent the labels to position radios/checkboxes as hanging
+.radio,
+.checkbox {
+    padding: 5px 0 5px 24px;
+}
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  margin-left: -24px;
+}
+
+// Radios and checkboxes on same line
+// TODO v3: Convert .inline to .control-inline
+.radio.inline + .radio.inline,
+.checkbox.inline + .checkbox.inline {
+  margin-left: 16px; // space out consecutive inline controls
+}
+
+// Custom styles
+
+// Input
+input,
+textarea,
+.uneditable-input,
+.object-selector {
+    width: 220px;
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    height: @inputHeight;
+    padding: 5px 6px;
+    .box-shadow(none);
+
+    &[hidden] {
+        display: none;
+    }
+}
+
+@media (max-width: @DesktopBreakpoint) {
+    textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+        font-size: 16px;
+    }
+}
+textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="color"]:focus, .uneditable-input:focus {
+    border-color: @mainColor;
+    .box-shadow(none);
+}
+textarea:disabled, input[type="text"]:disabled, input[type="password"]:disabled, input[type="datetime"]:disabled, input[type="datetime-local"]:disabled, input[type="date"]:disabled, input[type="month"]:disabled, input[type="time"]:disabled, input[type="week"]:disabled, input[type="number"]:disabled, input[type="email"]:disabled, input[type="url"]:disabled, input[type="search"]:disabled, input[type="tel"]:disabled, input[type="color"]:disabled, .uneditable-input:disabled {
+    color: @gray;
+    background-color: @inputDisabledBackground;
+}
+
+input[type="search"] { // Appearance in Safari/Chrome
+    .box-sizing(border-box);
+  }
+
+textarea {
+    height: auto;
+}
+
+// Webkit-style focus
+// ------------------
+input[type="checkbox"]:focus {
+    outline-offset: 4px;
+}
+
+input[type="radio"]:focus {
+    outline-offset: 2px;
+}
+
+select:focus {
+    outline-offset: 0;
+}
+
+.input-append,
+.input-prepend {
+    .add-on {
+        color: @gray;
+        background-color: @inputDisabledBackground;
+        border: 1px solid @inputBorder;
+        height: @inputHeight;
+    }
+}
+
+// Input group
+.input-group {
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+
+.form-horizontal .input-group {
+    display: flex;
+}
+
+.input-group > .input-large,
+.input-group > .input-long,
+.input-group > .redactor-box,
+.input-group > .mce-tinymce {
+    flex: 1 1 auto;
+    width: 1%;
+    min-width: 0;   // https://stackoverflow.com/questions/36247140/why-dont-flex-items-shrink-past-content-size
+}
+
+.input-group > .mce-tinymce {
+    width: 1% !important;
+}
+
+.form-edit .input-group > .input-large,
+.no-sidebar .form-edit .input-group > .input-large {
+    width: 1%;
+}
+
+.input-group > .input-long,
+.ufa .input-group > .input-long {
+    max-width: 220px;
+}
+
+// Input append
+.input-group.input-append.input-append--wysiwyg {
+    white-space: normal;
+}
+
+.input-group.input-append .add-on,
+.input-group.input-append .btn {
+    display: flex;
+    align-items: center;
+    height: auto;
+}
+
+.input-group.input-append input:first-child:last-child,
+.input-group.input-append select:first-child:last-child {
+    border-radius: @baseBorderRadius;
+}
+
+.table-middle tr td .input-group.input-append .btn,
+.table-middle tr th .input-group.input-append .btn {
+    margin-top: -1px;
+}
+
+.no-sidebar .form-edit .input-group {
+    width: 99.5%;
+}
+
+@media (max-width: @TabletBreakpoint) {
+    .input-prepend.input-prepend--mobile-fullwidth {
+        display: flex;
+        width: 100%;
+
+        .add-on {
+            display: inline-flex;
+            flex-shrink: 0;
+
+            max-width: 70%;
+            overflow-x: auto;
+        }
+    }
+}
+
+select.input-micro,
+textarea.input-micro,
+input[type="text"].input-micro,
+input[type="password"].input-micro,
+input[type="datetime"].input-micro,
+input[type="datetime-local"].input-micro,
+input[type="date"].input-micro,
+input[type="month"].input-micro,
+input[type="time"].input-micro,
+input[type="week"].input-micro,
+input[type="number"].input-micro,
+input[type="email"].input-micro,
+input[type="url"].input-micro,
+input[type="search"].input-micro,
+input[type="tel"].input-micro,
+input[type="color"].input-micro,
+.uneditable-input.input-micro {
+    margin-bottom: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+
+    // Size factor * Base line height + Padding + Border.
+    // Results: width: 38px;
+    width: round(1.1 * @baseLineHeight + 5px * 2 + 1px * 2);
+}
+
+// Deprecated
+.input-xsmall {
+    width: 50px;
+}
+// /Deprecated
+
+.input-mini {
+    // Size factor * Base line height + Padding + Border.
+    // Results: width: 74px;
+    width: round(3 * @baseLineHeight + 6px * 2 + 1px * 2);
+}
+.input-small {
+    // Size factor * Base line height + Padding + Border.
+    // Results: width: 104px;
+    width: round(4.5 * @baseLineHeight + 6px * 2 + 1px * 2);
+}
+.input-full {
+    width: 100% !important;
+}
+.input-fill {
+    width: 100%;
+}
+.input-slarge {
+    width: 310px;
+}
+.input-phone-container--default {
+    max-width: 220px;
+}
+.input-prepend--full,
+.form-horizontal .input-prepend--full {
+    display: flex;
+}
+.cm-hide-inputs {
+    .input-prepend {
+        font-size: @baseFontSize;
+    }
+}
+select.input--no-margin,
+textarea.input--no-margin,
+input[type="text"].input--no-margin,
+input[type="password"].input--no-margin,
+input[type="datetime"].input--no-margin,
+input[type="datetime-local"].input--no-margin,
+input[type="date"].input--no-margin,
+input[type="month"].input--no-margin,
+input[type="time"].input--no-margin,
+input[type="week"].input--no-margin,
+input[type="number"].input--no-margin,
+input[type="email"].input--no-margin,
+input[type="url"].input--no-margin,
+input[type="search"].input--no-margin,
+input[type="tel"].input--no-margin,
+input[type="color"].input--no-margin,
+.uneditable-input.input--no-margin {
+    margin: 0;
+}
+// Switch
+div.has-switch {
+    span {
+        background-image: none !important;
+
+        &.switch-primary,
+        &.switch-left {
+            background: @btnSuccessBackground;
+            font-weight: bold;
+        }
+        &.switch-primary:hover,
+        &.switch-left:hover,
+        &.switch-primary:focus,
+        &.switch-left:focus,
+        &.switch-primary:active,
+        &.switch-left:active,
+        &.switch-primary.active,
+        &.switch-left.active,
+        &.switch-primary.disabled,
+        &.switch-left.disabled,
+        &.switch-primary[disabled],
+        &.switch-left[disabled] {
+            background-color: darken(@btnSuccessBackground, 5%);
+        }
+        &.switch-primary:active,
+        &.switch-left:active,
+        &.switch-primary.active,
+        &.switch-left.active {
+            background-color: @btnSuccessBackgroundHighlight;
+        }
+    }
+}
+.controls .switch {
+    margin-top: 7px;
+}
+// Dialog
+.ui-dialog {
+    border: none;
+    .input-append input,
+    .input-prepend input {
+        position: static;
+        &:focus {
+            z-index: inherit;
+        }
+    }
+    .dropdown-menu {
+        z-index: 1500; // zIndexPopup
+    }
+    .ui-corner-all, &.ui-corner-all {
+        .border-radius(@baseBorderRadius);
+    }
+    .ui-dialog-title {
+        font-size: 20px;
+    }
+
+}
+label.cm-required {
+    padding-right: 7px;
+    background: url('../media/images/required_mark.png') no-repeat;
+    background-position: right 10px;
+}
+.hand {
+    cursor: pointer;
+}
+.inline-label {
+    display: inline;
+    margin: 0;
+}
+
+// Forms
+
+// Multiple selects
+.selectbox-highlighted {
+    background: #519DF5;
+    color: #fff;
+    font-weight: bold;
+}
+.multiply-select-header {
+    display: inline;
+    &.cm-required {
+        background: none !important;
+        padding-right: 0px;
+    }
+}
+.toll-select {
+    height: 200px !important;
+}
+
+// Firefox bug with padding
+.input-append input[type="submit"].btn {
+    height: @inputHeight !important;
+}
+.ufa {
+    input[type="text"], input[type="password"], textarea {
+        max-width: 728px;
+    }
+    .fileuploader .well {
+        max-width: 500px;
+    }
+    .setting-wide .input-large {
+        max-width: 522px;
+    }
+    .object-container {
+        .redactor-box {
+            width: 660px;
+        }
+    }
+}
+
+// Redactor min. height in html mode.
+.redactor-box {
+    textarea {
+        .border-radius(0);
+        max-width: 740px;
+        min-height: 320px;
+    }
+    .redactor-toolbar,
+    .redactor-dropdown {
+        z-index: 1 !important;
+    }
+}
+.redactor2-box {
+    .redactor-air li a, .redactor-toolbar li a {
+        height: 34px;
+    }
+    .redactor-air li a.re-button-icon, .redactor-toolbar li a.re-button-icon {
+        padding: 10px;
+        font-size: 14px;
+    }
+    textarea.open {
+        max-width: 100%;
+    }
+}
+.redactor-dropdown a {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body.body-redactor-hidden {
+    overflow: visible;
+}
+
+textarea[class*="span"] {
+    height: auto;
+}
+
+// Adaptive textarea
+// Add this inline style to template:
+// <textarea style="--text-length: {$message|count_characters:true};">{$message}</textarea>
+.cs-textarea-adaptive {
+    --characters-per-line: 35;
+    --text-length: 500;
+    min-height: 72px;
+    height: ~"calc( (var(--text-length) / var(--characters-per-line)) * 20px + 12px)"; // Rows * Line-height + Padding + Border
+    max-height: ~"calc(100vh - 200px)";
+
+    @media (min-width: @TabletBreakpoint + 1px) {
+        --characters-per-line: 140;
+    }
+}
+.cs-textarea-adaptive--with-sidebar {
+    @media (min-width: @TabletBreakpoint + 1px) {
+        --characters-per-line: 100;
+    }
+}
+// /Adaptive textarea
+
+.controls {
+    position: relative;
+    .shift-input {
+        padding-left: 0px !important;
+        padding-top: 5px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .clearfix h5:first-child {
+        margin-top: 5px;
+    }
+    .clearfix:first-child {
+        margin-top: 0;
+    }
+    .block {
+        clear: both;
+    }
+    .hidden {
+        display: none;
+    };
+    .help-block {
+        margin-top: @baseLineHeight / 2;
+    }
+    .choose-category {
+        margin-top: 0;
+    }
+
+    > input {
+        vertical-align: top;
+    }
+}
+
+.controls > input[type="radio"],
+.controls > input[type="checkbox"],
+.controls > span > input[type="radio"],
+.controls > span > input[type="checkbox"] {
+    margin-top: 9px;
+}
+
+.controls > input[type="radio"] {
+    margin-top: 11px;
+}
+
+input[type="checkbox"]:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 34px;
+    height: 34px;
+    transform: translate(-11px, -11px);
+}
+
+.controls .select-field > .radio:first-child {
+    padding-top: 5px;
+}
+.help-inline-wrap p {
+    padding-top: 5px;
+}
+.form--no-margin {
+    margin: 0;
+}
+.form-edit {
+    .control-group {
+        margin-bottom: 15px;
+        padding: 5px 0px;
+        &:hover {
+            background-color: @tableBackgroundHover;
+        }
+        .shift-top {
+            padding-top: 5px;
+        }
+
+        &--hidden-input:not(:hover) {
+
+            input[type="text"]:not(:focus),
+            select:not(:focus) {
+                @media (min-width: 1280px) {
+                    .ifControlGroupHiddenInput(@isControlGroupHidden);
+                }
+            }
+        }
+    }
+    .controls {
+        .redactor-box {
+            max-width: 770px;
+            textarea,
+            textarea:focus {
+                z-index: 1;
+            }
+            iframe[src*="youtube.com"] {
+                max-width: 100%;
+            }
+        }
+        .btn-group {
+            margin-top: 7px;
+        }
+        p {
+            margin-top: 5px;
+        }
+        .hidden-input {
+            display: none;
+        }
+    }
+    .input-phone-container--large {
+        max-width: 760px;
+    }
+    .input-large {
+        width: 100%;
+        max-width: 760px;
+        height: auto;
+    }
+    .shift-input:not(.hidden) {
+        display: inline-block;
+    }
+}
+.form-setting {
+    .control-label {
+        padding-right: 10px;
+        padding-left: 10px;
+        width: 486px;
+        text-align: left;
+    }
+    .controls {
+        margin-left: 506px;
+    }
+}
+.form-horizontal .control-label {
+    word-break: break-all;
+    word-break: break-word;
+}
+label.text-value {
+    padding-left: 0 !important;
+}
+.text-type-value {
+    display: inline-block;
+    margin-top: 5px;
+}
+.buttons-container {
+    margin-bottom: 10px;
+
+    &--hidden-cancel {
+        & .cm-cancel {
+            display: none;
+        }
+    }
+}
+.ajax-select-wrap {
+    margin-top: 0;
+    padding-top: 0;
+    .btn-link {
+        margin-top: 0;
+    }
+    .btn-group {
+        white-space: normal;
+    }
+}
+.ajax-overlay {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    width: 100%;
+    z-index: 10000;
+    display: none;
+}
+.ajax-popup-tools {
+    --cs-load-ajax-content-item-height: 20px + @dropdownItemPadding * 2;
+    --cs-load-ajax-content-limit: 6;
+
+    overflow-x: auto;
+    max-height: ~"calc(var(--cs-load-ajax-content-item-height) * var(--cs-load-ajax-content-limit) - 1px)";
+    ul {
+        margin-left: 0px;
+        li {
+            list-style-type: none;
+            a {
+                display: block;
+                padding: @dropdownItemPadding 20px;
+                clear: both;
+                font-weight: normal;
+                line-height: 20px;
+                color: #333;
+                white-space: nowrap;
+                overflow-x: hidden;
+                text-overflow: ellipsis;
+                &:hover {
+                    text-decoration: none;
+                    #gradient > .vertical(@dropdownLinkBackgroundHover, @dropdownLinkBackgroundHover);
+                }
+            }
+        }
+    }
+}
+.mixed-controls {
+    .form-inline {
+        margin-bottom: 5px;
+        width: 100%;
+
+        label {
+            margin-right: 10px;
+            padding-top: 5px;
+            min-width: 80px;
+        }
+        .btn {
+            .border-radius(0 4px 4px 0);
+        }
+        .add-on {
+            padding-right: 12px;
+            padding-left: 12px;
+            line-height: 1.5 !important;
+        }
+    }
+    .choose-category {
+        margin-top: 0;
+    }
+}
+.form-toolbar {
+    font-size: @baseFontSize;
+}
+.setting-wide{
+    .control-label {
+        width: 290px;
+    }
+    @media(max-width: 900px) {
+        .cm-required {
+            width: auto;
+        }
+    }
+    .controls {
+        margin-left: 310px;
+    }
+    .input-large {
+        max-width: 630px;
+    }
+}
+.no-sidebar .form-edit .setting-wide .input-large,
+.form-edit .setting-wide .input-large {
+    max-width: 630px;
+}
+.setting-select-values {
+    margin: 20px 0 0 -180px;
+}
+.select-value-wrap {
+    position: relative;
+    top: -2px;
+}
+.select-value {
+    .border-radius(@baseBorderRadius);
+    display: inline-block;
+    padding: 2px 10px;
+    background: #ebebeb;
+}
+label.checkbox {
+    line-height: @baseLineHeight;
+
+    &.checkbox--multiline {
+        line-height: 20px;
+    }
+}
+.form-horizontal .ty-switch-checkbox {
+    top: 5px;
+}
+
+.privileges-custom-access {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    background-color: #f3fbfe;
+    border: 1px solid #d4ebfa;
+    border-radius: 4px;
+}
+
+.privileges-custom-access-disabled {
+    color: grey;
+
+    input {
+        opacity: 0.5;
+    }
+}
+
+.privilege-access-level-control-disabled {
+    color: grey;
+}
+
+.privileges-access-level-controls-inline {
+    display: flex;
+
+    .inline {
+        flex: 1;
+    }
+}
+
+.usergroup-privileges-list .control-group {
+    margin-bottom: 0px;
+}
+
+input[type="checkbox"] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid @inputBorder;
+    border-radius: @borderRadiusSmall;
+    background: @inputBackground;
+    box-shadow: none; // Override jQuery UI Bootstrap
+    font-size: @fontSizeMini;
+
+    &:checked,
+    &:indeterminate {
+        background: @mainColor;
+        border-color: @mainColor;
+        position: relative;
+
+        &:after {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            color: white;
+        }
+    }
+
+    &:checked:after {
+        transform: translate(-0.5px, 1px);
+        content: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' width='20' height='20' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m15.9754 5.89958c.3661.36611.3661.9597 0 1.32582l-6.83034 6.8305c-.17581.1759-.41427.2746-.66292.2746-.24864 0-.4871-.0987-.66292-.2746l-3.79464-3.7947c-.36611-.36609-.36611-.95968.00001-1.32579.36612-.36612.95972-.36611 1.32583.00001l3.13172 3.13178 6.16746-6.1676c.3661-.36613.9597-.36613 1.3258-.00002z'/%3E%3C/svg%3E");
+    }
+    &:indeterminate:after {
+        transform: translate(-0.5px, 1px);
+        content: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' width='20' height='20' fill='%23fff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m4.0625 10c0-.51777.41973-.9375.9375-.9375h10.625c.5178 0 .9375.41973.9375.9375 0 .5178-.4197.9375-.9375.9375h-10.625c-.51777 0-.9375-.4197-.9375-.9375z'/%3E%3C/svg%3E");
+    }
+
+    &:disabled {
+        border-color: darken(@inputDisabledBackground, 40%);
+        background: darken(@inputDisabledBackground, 40%);
+        outline-color: darken(@inputDisabledBackground, 40%);
+    }
+
+    &.checkbox {
+        min-height: auto;
+        padding-left: initial;
+    }
+    &.checkbox--nomargin {
+        margin: 0;
+    }
+}
+
+input[type="checkbox"]:checked:hover {
+    background: darken(@mainColor, 8%);
+    border-color: darken(@mainColor, 8%);
+}
+
+input[type="checkbox"]:not(:checked):hover {
+    border-color: @textColor;
+}
+
+.table-wrapper {
+    .control-label {
+        padding-top: 13px;
+    }
+}
+
+.cm-vertical-sub {
+    vertical-align: sub;
+}
+
+textarea.input-textarea-long {
+    width: 100%;
+}
+
+.ufa input[type="text"].input-large,
+.ufa input[type="password"].input-large,
+.ufa textarea.input-textarea-long {
+    max-width: none;
+}
+
+.redactor-styles ol ol ul li {
+    list-style-type: square;
+}
+
+.admin-content-external-form {
+    width: 100%;
+}
+
+// WISYWIG
+.disable-overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0.5;
+    z-index: 8;
+    background: #fff;
+    cursor: not-allowed;
+}
+
+.disable-overlay-wrap,
+.disable-overlay-wrap.collapse {
+    position: relative !important;
+}
+
+.multiple-select__picker-container {
+    .select2-search__field {
+        width: 100% !important;
+    }
+}
+
+.select2-selection__choice {
+    font-size: 11px;
+}
+
+// Select companies dropdown
+.search-shop {
+    padding: 10px 10px 0px 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.vendor-submenu {
+    ul {
+        margin-top: 0;
+        z-index: 1040;
+    }
+    .cm-select-list {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: @PhoneBreakpoint) {
+    .vendor-submenu {
+        .dropdown-toggle>span {
+            display: inline-block;
+            max-width: 75px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+}

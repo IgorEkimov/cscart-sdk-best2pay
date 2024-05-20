@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Chinese Simplified\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File: /release-4.18.1/addons/onboarding_guide.po\n"
+"X-Crowdin-File-ID: 8264\n"
+"PO-Revision-Date: 2024-04-12 06:05\n"
+
+msgctxt "Addons::name::onboarding_guide"
+msgid "Onboarding guide"
+msgstr "入职指南"
+
+msgctxt "Addons::description::onboarding_guide"
+msgid "Introduces the marketplace to administrators and allows quickly set up basic functionality."
+msgstr "向管理员介绍市场并允许快速设置基本功能。"
+
+msgctxt "Languages::onboarding_guide.guide_title"
+msgid "Welcome to your marketplace!<br>Get ready to receive your first order"
+msgstr "欢迎来到您的市场！<br>准备好接收您的第一份订单"
+
+msgctxt "Languages::onboarding_guide.sb_guide_title"
+msgid "Welcome to your online store!<br>Get ready to receive your first order"
+msgstr "欢迎来到您的网上商店！<br>准备好接收您的第一份订单"
+
+msgctxt "Languages::onboarding_guide.completed_steps_progress"
+msgid "[completed] out of [total] complete"
+msgstr "[completed] 满 [total] 完成"
+
+msgctxt "Languages::onboarding_guide.dismiss"
+msgid "Dismiss"
+msgstr "解雇"
+
+msgctxt "Languages::onboarding_guide.step_close"
+msgid "Close"
+msgstr "关闭"
+
+msgctxt "Languages::onboarding_guide.step_complete"
+msgid "Complete"
+msgstr "完全的"
+
+msgctxt "Languages::onboarding_guide.explore_interface_title"
+msgid "Explore the Multi-Vendor No-Code interface"
+msgstr "探索多供应商无代码界面"
+
+msgctxt "Languages::onboarding_guide.explore_interface_description"
+msgid "Discover how to effortlessly launch your marketplace in just 5 minutes. Learn the ins and outs of the intuitive interface and get ready to dive into the world of hassle-free marketplace creation."
+msgstr "了解如何在短短 5 分钟内轻松启动您的市场。了解直观界面的详细信息，并准备好进入无忧市场创建的世界。"
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_title"
+msgid "Personalize your marketplace"
+msgstr "个性化您的市场"
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_title"
+msgid "Personalize your online store"
+msgstr "个性化您的在线商店"
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_description"
+msgid "Choose the style of your marketplace. Provide your contact information for customers and sellers."
+msgstr "选择您的市场的风格。提供您的客户和卖家的联系信息。"
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_description"
+msgid "Choose the style of your online store. Provide your contact information for customers."
+msgstr "选择您的在线商店的风格。为客户提供您的联系信息。"
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_title"
+msgid "Make changes on the fly"
+msgstr "即时进行更改"
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the marketplace to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "使用无代码工具根据您的需求定制市场。编辑任何文本；重新排列块；更改颜色、字体和样式。当您以管理员身份查看店面时，您可以随时使用这些工具。"
+
+msgctxt "Languages::onboarding_guide.sb_make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the online store to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "使用无代码工具根据您的需求定制在线商店。编辑任何文本；重新排列块；更改颜色、字体和样式。当您以管理员身份查看店面时，您可以随时使用这些工具。"
+
+msgctxt "Languages::onboarding_guide.theme_and_logo"
+msgid "Theme & logo"
+msgstr "主题和标志"
+
+msgctxt "Languages::onboarding_guide.business_details"
+msgid "Business details"
+msgstr "业务详情"
+
+msgctxt "Languages::onboarding_guide.languages_and_currency"
+msgid "Languages & Currency"
+msgstr "语言和货币"
+
+msgctxt "Languages::onboarding_guide.select_theme"
+msgid "Select theme"
+msgstr "选择主题"
+
+msgctxt "Languages::onboarding_guide.current_theme"
+msgid "Current theme"
+msgstr "当前主题"
+
+msgctxt "Languages::onboarding_guide.custom_theme"
+msgid "Custom theme"
+msgstr "自定义主题"
+
+msgctxt "Languages::onboarding_guide.upload_logo"
+msgid "Upload logo"
+msgstr "上传徽标"
+
+msgctxt "Languages::onboarding_guide.activate"
+msgid "Activate"
+msgstr "启用"
+
+msgctxt "Languages::onboarding_guide.next"
+msgid "Next"
+msgstr "下一个"
+
+msgctxt "Languages::onboarding_guide.back"
+msgid "Back"
+msgstr "后退"
+
+msgctxt "Languages::onboarding_guide.save"
+msgid "Save"
+msgstr "节省"
+
+msgctxt "Languages::onboarding_guide.edit_colors"
+msgid "Edit colors"
+msgstr "编辑颜色"
+
+msgctxt "Languages::onboarding_guide.modify_colors_fonts_backgrounds"
+msgid "Modify colors, fonts, and backgrounds"
+msgstr "修改颜色、字体和背景"
+
+msgctxt "Languages::onboarding_guide.edit_texts"
+msgid "Edit or translate any texts"
+msgstr "编辑或翻译任何文本"
+
+msgctxt "Languages::onboarding_guide.edit_blocks"
+msgid "Fine-tune page layouts"
+msgstr "微调页面布局"
+
+msgctxt "Languages::onboarding_guide.configure_payment_options"
+msgid "Set up payments"
+msgstr "设置付款"
+
+msgctxt "Languages::onboarding_guide.select_payment_options"
+msgid "Choose how you plan to accept payments. Select one of the following scenarios:"
+msgstr "选择您计划如何接受付款。选择以下场景之一："
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split"
+msgid "Multi-party payment (automatic disbursements)"
+msgstr "多方支付（自动付款）"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: PayPal Commerce Platform and Stripe Connect. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with PayPal or Stripe as well."
+msgstr "市场有特殊的支付方式：PayPal Commerce Platform 和 Stripe Connect。客户仍然对所有产品一次性付款；付款方式会自动在您和卖家之间分配资金。请注意，卖家还需要 PayPal 或 Stripe 帐户。"
+
+msgctxt "Languages::onboarding_guide.single_rus_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: YooKassa For Marketplaces and Tinkoff Multiparty. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with YooKassa or Tinkoff as well."
+msgstr "市场有特殊的付款方式：YooKassa For Marketplaces 和 Tinkoff Multiparty。客户仍然对所有产品一次性付款；付款方式会自动在您和卖家之间分配资金。请注意，卖家还需要 YooKassa 或 Tinkoff 帐户。"
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you"
+msgid "Single payment to the marketplace"
+msgstr "向市场一次性付款"
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you_description"
+msgid "A customer makes one payment for all the products in the cart. The money ends up on your account, with the record of what you own to each seller. You periodically distribute the money between sellers."
+msgstr "客户一次性支付购物车中的所有产品。这笔钱最终会存入您的帐户，并记录您对每个卖家的所有权。您定期在卖家之间分配资金。"
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers"
+msgid "Separate payments to sellers"
+msgstr "向卖家单独付款"
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers_description"
+msgid "A customer pays to each seller separately. It becomes the seller’s responsibility to pay the commission to you (we have ways for that). Sellers will be able to set up their own shipping methods and promotions."
+msgstr "客户分别向每个卖家付款。卖家有责任向您支付佣金（我们有办法做到这一点）。卖家将能够设置自己的运输方式和促销活动。"
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods"
+msgid "Configure payment methods"
+msgstr "配置付款方式"
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods_description"
+msgid "CS-Cart allows you to set up various payment methods; most of them automatically process the full up-front payment. But for now, let’s set up \"Cash on Delivery\" just to see how it works."
+msgstr "CS-Cart允许您设置多种支付方式；他们中的大多数会自动处理全额预付款。但现在，让我们设置“货到付款”，看看它是如何工作的。"
+
+msgctxt "Languages::onboarding_guide.view_checkout_page"
+msgid "View checkout page"
+msgstr "查看结账页面"
+
+msgctxt "Languages::onboarding_guide.view_checkout_page_description"
+msgid "Once configured, your payment method will appear at the checkout page:"
+msgstr "配置完成后，您的付款方式将显示在结账页面："
+
+msgctxt "Languages::onboarding_guide.missing_products"
+msgid "Missing products"
+msgstr "缺少产品"
+
+msgctxt "Languages::onboarding_guide.create_at_least_one_product_to_proceed_to_checkout"
+msgid "Create at least one product to proceed to checkout"
+msgstr "创建至少一种产品才能继续结账"
+
+msgctxt "Languages::onboarding_guide.manage_sellers"
+msgid "Manage sellers"
+msgstr "管理卖家"
+
+msgctxt "Languages::onboarding_guide.create_one_vendor"
+msgid "Add a seller"
+msgstr "添加卖家"
+
+msgctxt "Languages::onboarding_guide.create_vendor_description"
+msgid "Sellers—referred to as \"vendors\" in the admin panel—are essential for a marketplace. They provide products and services to customers. A seller can create an account themselves, or you can do it for them in the admin panel. Let’s add one seller via the admin panel."
+msgstr "卖家（在管理面板中称为“供应商”）对于市场至关重要。他们为客户提供产品和服务。卖家可以自己创建帐户，您也可以在管理面板中为他们创建帐户。让我们通过管理面板添加一位卖家。"
+
+msgctxt "Languages::onboarding_guide.view_storefront"
+msgid "See sellers on the storefront"
+msgstr "查看店面的卖家"
+
+msgctxt "Languages::onboarding_guide.view_invoice"
+msgid "View invoice"
+msgstr "查看发票"
+
+msgctxt "Languages::onboarding_guide.logos_updated"
+msgid "Theme and email logos updated"
+msgstr "主题和电子邮件徽标已更新"
+
+msgctxt "Languages::onboarding_guide.set_default_currency"
+msgid "Set default currency"
+msgstr "设置默认货币"
+
+msgctxt "Languages::onboarding_guide.manage_currencies"
+msgid "Manage currencies"
+msgstr "管理货币"
+
+msgctxt "Languages::onboarding_guide.set_default_languages"
+msgid "Set default languages"
+msgstr "设置默认语言"
+
+msgctxt "Languages::onboarding_guide.manage_languages"
+msgid "Manage languages"
+msgstr "管理语言"
+
+msgctxt "Languages::onboarding_guide.preview_an_email"
+msgid "Preview an email"
+msgstr "预览电子邮件"
+
+msgctxt "Languages::onboarding_guide.preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the new sellers who register at your marketplace."
+msgstr "完成后，查看您的数据如何显示在发送给在您的市场注册的新卖家的电子邮件中。"
+
+msgctxt "Languages::onboarding_guide.sb_preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the newly-registered customers."
+msgstr "完成后，查看您的数据如何显示在发送给新注册客户的电子邮件中。"
+
+msgctxt "Languages::onboarding_guide.customize_vendor_panel_design"
+msgid "Customize seller panel"
+msgstr "自定义卖家面板"
+
+msgctxt "Languages::onboarding_guide.edit_vendor_panel_style"
+msgid "Sellers work with their own dedicated control panel. You can make it look the way you need. Set its colors, edit the menu, add blocks with info to the seller's dashboard."
+msgstr "卖家使用自己的专用控制面板。您可以让它看起来像您需要的那样。设置其颜色，编辑菜单，将包含信息的块添加到卖家的仪表板。"
+
+msgctxt "Languages::onboarding_guide.edit_structure"
+msgid "Edit menus and onboarding"
+msgstr "编辑菜单和入门"
+
+msgctxt "Languages::onboarding_guide.manage_products"
+msgid "Manage products"
+msgstr "管理产品"
+
+msgctxt "Languages::onboarding_guide.manage_products_description"
+msgid "You as the marketplace owner can control all products sold on your platform. But sellers manage products through their own dashboard. See how they can add products one by one or in bulk."
+msgstr "作为市场所有者，您可以控制在您的平台上销售的所有产品。但卖家通过自己的仪表板管理产品。了解他们如何一件一件或批量添加产品。"
+
+msgctxt "Languages::onboarding_guide.sb_manage_products_description"
+msgid "Products are how your online store makes money; they include commodities, services, or anything else offered for a price. You can add products one by one or in bulk."
+msgstr "产品是您的在线商店赚钱的方式；它们包括商品、服务或有价提供的任何其他东西。您可以一件一件或批量添加产品。"
+
+msgctxt "Languages::onboarding_guide.add_one_product"
+msgid "Add one product"
+msgstr "添加一种产品"
+
+msgctxt "Languages::onboarding_guide.import_csv_or_xml"
+msgid "Import CSV or XML"
+msgstr "导入 CSV 或 XML"
+
+msgctxt "Languages::onboarding_guide.view_product_page"
+msgid "View the latest added product"
+msgstr "查看最新添加的产品"
+
+msgctxt "Languages::onboarding_guide.premoderation"
+msgid "If you do not see the created product on the storefront, you may have the <b>Vendor data premoderation</b> module enabled"
+msgstr "如果您在店面没有看到创建的产品，您可能启用了 <b>Vendor data premoderation</b> 模块"
+
+msgctxt "Languages::onboarding_guide.view_product_page_description"
+msgid "See your new products on the storefront."
+msgstr "在店面查看您的新产品。"
+
+msgctxt "Languages::onboarding_guide.preview_seller_onboarding"
+msgid "Preview seller onboarding"
+msgstr "预览卖家入职"
+
+msgctxt "Languages::onboarding_guide.walk_the_seller_path"
+msgid "Walk the seller path"
+msgstr "走卖家之路"
+
+msgctxt "Languages::onboarding_guide.customize_onboarding_process"
+msgid "Prospective sellers can request to join your marketplace on their own. See for yourself how that process works: the information they provide, the emails they receive, etc. You can adjust all of it, or even make your marketplace invite-only."
+msgstr "潜在卖家可以请求自行加入您的市场。亲眼看看这个流程是如何运作的：他们提供的信息、他们收到的电子邮件等。您可以调整所有这些，甚至让您的市场仅受邀请。"
+
+msgctxt "Languages::onboarding_guide.set_up_commissions_and_fees"
+msgid "Configure commissions and fees"
+msgstr "配置佣金和费用"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans"
+msgid "Set up seller plans"
+msgstr "设置卖家计划"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans_description"
+msgid "A marketplace usually earns you money from monthly fees and/or commissions from sales. Seller plans let you set the size and frequency of those payments."
+msgstr "市场通常通过月费和/或销售佣金为您赚钱。卖家计划可让您设置这些付款的金额和频率。"
+
+msgctxt "Languages::onboarding_guide.view_seller_plans"
+msgid "Preview seller plans"
+msgstr "预览卖家计划"
+
+msgctxt "Languages::onboarding_guide.view_seller_plans_description"
+msgid "See how your configured seller plans appear to your prospective sellers on the storefront."
+msgstr "查看您配置的卖家计划如何在店面中向潜在卖家显示。"
+
+msgctxt "Languages::onboarding_guide.reset_onboarding"
+msgid "Reset onboarding"
+msgstr "重置入职"
+
+msgctxt "Languages::onboarding_guide.reset"
+msgid "Reset"
+msgstr "重置"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_title"
+msgid "Set up shipping"
+msgstr "设置运输"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_description"
+msgid "CS-Cart provides your customers with shipping rates depending on the customer's address and order. You can set the rules for these rates yourself, or receive rates in real time from shipping companies like UPS or DHL. You can also make shipping methods available in some locations and unavailable in others."
+msgstr "CS-Cart 根据客户的地址和订单为您的客户提供运费。您可以自行设置这些费率的规则，也可以从 UPS 或 DHL 等运输公司实时接收费率。您还可以使运送方式在某些位置可用而在其他位置不可用。"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_label"
+msgid "Let's set up a shipping method called \"Pickup from store\" to see how it works."
+msgstr "让我们设置一种名为“从商店取货”的运输方式，看看它是如何工作的。"
+
+msgctxt "Languages::onboarding_guide.configure_shippings"
+msgid "Configure shipping methods"
+msgstr "配置运输方式"
+

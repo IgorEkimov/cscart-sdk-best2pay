@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Persian\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: fa\n"
+"X-Crowdin-File: /release-4.18.1/addons/onboarding_guide.po\n"
+"X-Crowdin-File-ID: 8264\n"
+"PO-Revision-Date: 2024-04-12 06:05\n"
+
+msgctxt "Addons::name::onboarding_guide"
+msgid "Onboarding guide"
+msgstr "راهنمای ورود"
+
+msgctxt "Addons::description::onboarding_guide"
+msgid "Introduces the marketplace to administrators and allows quickly set up basic functionality."
+msgstr "بازار را به مدیران معرفی می کند و امکان تنظیم سریع عملکردهای اساسی را فراهم می کند."
+
+msgctxt "Languages::onboarding_guide.guide_title"
+msgid "Welcome to your marketplace!<br>Get ready to receive your first order"
+msgstr "به بازار خود خوش آمدید!<br>برای دریافت اولین سفارش خود آماده شوید"
+
+msgctxt "Languages::onboarding_guide.sb_guide_title"
+msgid "Welcome to your online store!<br>Get ready to receive your first order"
+msgstr "به فروشگاه آنلاین خود خوش آمدید!<br>برای دریافت اولین سفارش خود آماده شوید"
+
+msgctxt "Languages::onboarding_guide.completed_steps_progress"
+msgid "[completed] out of [total] complete"
+msgstr "[completed] از [total] کامل شد"
+
+msgctxt "Languages::onboarding_guide.dismiss"
+msgid "Dismiss"
+msgstr "رد"
+
+msgctxt "Languages::onboarding_guide.step_close"
+msgid "Close"
+msgstr "بستن"
+
+msgctxt "Languages::onboarding_guide.step_complete"
+msgid "Complete"
+msgstr "کامل"
+
+msgctxt "Languages::onboarding_guide.explore_interface_title"
+msgid "Explore the Multi-Vendor No-Code interface"
+msgstr "رابط Multi-Vendor No-Code را کاوش کنید"
+
+msgctxt "Languages::onboarding_guide.explore_interface_description"
+msgid "Discover how to effortlessly launch your marketplace in just 5 minutes. Learn the ins and outs of the intuitive interface and get ready to dive into the world of hassle-free marketplace creation."
+msgstr "کشف کنید که چگونه می توانید بدون زحمت بازار خود را تنها در 5 دقیقه راه اندازی کنید. نکات و نکات رابط بصری را بیاموزید و برای شیرجه رفتن به دنیای ایجاد بازار بی دردسر آماده شوید."
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_title"
+msgid "Personalize your marketplace"
+msgstr "بازار خود را شخصی سازی کنید"
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_title"
+msgid "Personalize your online store"
+msgstr "فروشگاه آنلاین خود را شخصی سازی کنید"
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_description"
+msgid "Choose the style of your marketplace. Provide your contact information for customers and sellers."
+msgstr "سبک بازار خود را انتخاب کنید. اطلاعات تماس خود را برای مشتریان و فروشندگان ارائه دهید."
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_description"
+msgid "Choose the style of your online store. Provide your contact information for customers."
+msgstr "سبک فروشگاه اینترنتی خود را انتخاب کنید. اطلاعات تماس خود را برای مشتریان ارائه دهید."
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_title"
+msgid "Make changes on the fly"
+msgstr "تغییرات را در لحظه ایجاد کنید"
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the marketplace to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "از ابزارهای بدون کد برای تطبیق بازار با نیازهای خود استفاده کنید. ویرایش هر متن؛ تنظیم مجدد بلوک ها؛ رنگ، فونت و سبک را تغییر دهید. هنگامی که ویترین فروشگاه را به عنوان مدیر می بینید، می توانید هر زمان که بخواهید از این ابزارها استفاده کنید."
+
+msgctxt "Languages::onboarding_guide.sb_make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the online store to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "از ابزارهای بدون کد استفاده کنید تا فروشگاه آنلاین را مطابق با نیازهای خود تنظیم کنید. ویرایش هر متن؛ تنظیم مجدد بلوک ها؛ رنگ، فونت و سبک را تغییر دهید. هنگامی که ویترین فروشگاه را به عنوان مدیر می بینید، می توانید هر زمان که بخواهید از این ابزارها استفاده کنید."
+
+msgctxt "Languages::onboarding_guide.theme_and_logo"
+msgid "Theme & logo"
+msgstr "تم و لوگو"
+
+msgctxt "Languages::onboarding_guide.business_details"
+msgid "Business details"
+msgstr "جزئیات کسب و کار"
+
+msgctxt "Languages::onboarding_guide.languages_and_currency"
+msgid "Languages & Currency"
+msgstr "زبان ها و ارز"
+
+msgctxt "Languages::onboarding_guide.select_theme"
+msgid "Select theme"
+msgstr "انتخاب قالب"
+
+msgctxt "Languages::onboarding_guide.current_theme"
+msgid "Current theme"
+msgstr "موضوع فعلی"
+
+msgctxt "Languages::onboarding_guide.custom_theme"
+msgid "Custom theme"
+msgstr "تم سفارشی"
+
+msgctxt "Languages::onboarding_guide.upload_logo"
+msgid "Upload logo"
+msgstr "لوگو بارگذاری کنید"
+
+msgctxt "Languages::onboarding_guide.activate"
+msgid "Activate"
+msgstr "فعال کنید"
+
+msgctxt "Languages::onboarding_guide.next"
+msgid "Next"
+msgstr "بعد"
+
+msgctxt "Languages::onboarding_guide.back"
+msgid "Back"
+msgstr "بازگشت"
+
+msgctxt "Languages::onboarding_guide.save"
+msgid "Save"
+msgstr "صرفه جویی"
+
+msgctxt "Languages::onboarding_guide.edit_colors"
+msgid "Edit colors"
+msgstr "رنگ ها را ویرایش کنید"
+
+msgctxt "Languages::onboarding_guide.modify_colors_fonts_backgrounds"
+msgid "Modify colors, fonts, and backgrounds"
+msgstr "رنگ ها، فونت ها و پس زمینه ها را تغییر دهید"
+
+msgctxt "Languages::onboarding_guide.edit_texts"
+msgid "Edit or translate any texts"
+msgstr "هر متنی را ویرایش یا ترجمه کنید"
+
+msgctxt "Languages::onboarding_guide.edit_blocks"
+msgid "Fine-tune page layouts"
+msgstr "تنظیم دقیق طرح‌بندی صفحه"
+
+msgctxt "Languages::onboarding_guide.configure_payment_options"
+msgid "Set up payments"
+msgstr "پرداخت ها را تنظیم کنید"
+
+msgctxt "Languages::onboarding_guide.select_payment_options"
+msgid "Choose how you plan to accept payments. Select one of the following scenarios:"
+msgstr "نحوه پذیرش پرداخت را انتخاب کنید. یکی از سناریوهای زیر را انتخاب کنید:"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split"
+msgid "Multi-party payment (automatic disbursements)"
+msgstr "پرداخت چند طرفه (پرداخت خودکار)"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: PayPal Commerce Platform and Stripe Connect. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with PayPal or Stripe as well."
+msgstr "روش‌های پرداخت ویژه‌ای برای بازارها وجود دارد: پلتفرم تجاری PayPal و Stripe Connect. یک مشتری هنوز یک پرداخت برای همه محصولات انجام می دهد. روش پرداخت پول را بین شما و فروشندگان به صورت خودکار تقسیم می کند. توجه داشته باشید که فروشندگان به حساب هایی با PayPal یا Stripe نیز نیاز دارند."
+
+msgctxt "Languages::onboarding_guide.single_rus_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: YooKassa For Marketplaces and Tinkoff Multiparty. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with YooKassa or Tinkoff as well."
+msgstr "روش های پرداخت ویژه ای برای بازارها وجود دارد: YooKassa For Marketplaces و Tinkoff Multiparty. یک مشتری هنوز یک پرداخت برای همه محصولات انجام می دهد. روش پرداخت پول را بین شما و فروشندگان به صورت خودکار تقسیم می کند. توجه داشته باشید که فروشندگان به حساب های YooKassa یا Tinkoff نیز نیاز دارند."
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you"
+msgid "Single payment to the marketplace"
+msgstr "پرداخت تک به بازار"
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you_description"
+msgid "A customer makes one payment for all the products in the cart. The money ends up on your account, with the record of what you own to each seller. You periodically distribute the money between sellers."
+msgstr "یک مشتری برای تمام محصولات موجود در سبد خرید یک بار پرداخت می کند. پول به حساب شما ختم می شود، با ثبت آنچه که دارید برای هر فروشنده. شما به صورت دوره ای پول را بین فروشندگان تقسیم می کنید."
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers"
+msgid "Separate payments to sellers"
+msgstr "پرداخت جداگانه به فروشندگان"
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers_description"
+msgid "A customer pays to each seller separately. It becomes the seller’s responsibility to pay the commission to you (we have ways for that). Sellers will be able to set up their own shipping methods and promotions."
+msgstr "یک مشتری به هر فروشنده جداگانه پرداخت می کند. پرداخت کمیسیون به شما به عهده فروشنده است (ما راه هایی برای آن داریم). فروشندگان می توانند روش های حمل و نقل و تبلیغات خود را تنظیم کنند."
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods"
+msgid "Configure payment methods"
+msgstr "روش های پرداخت را پیکربندی کنید"
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods_description"
+msgid "CS-Cart allows you to set up various payment methods; most of them automatically process the full up-front payment. But for now, let’s set up \"Cash on Delivery\" just to see how it works."
+msgstr "CS-Cart به شما امکان می دهد روش های پرداخت مختلفی را تنظیم کنید. بسیاری از آنها به طور خودکار پرداخت اولیه کامل را پردازش می کنند. اما در حال حاضر، بیایید «نقد در تحویل» را راه‌اندازی کنیم تا ببینیم چگونه کار می‌کند."
+
+msgctxt "Languages::onboarding_guide.view_checkout_page"
+msgid "View checkout page"
+msgstr "مشاهده صفحه پرداخت"
+
+msgctxt "Languages::onboarding_guide.view_checkout_page_description"
+msgid "Once configured, your payment method will appear at the checkout page:"
+msgstr "پس از پیکربندی، روش پرداخت شما در صفحه پرداخت ظاهر می شود:"
+
+msgctxt "Languages::onboarding_guide.missing_products"
+msgid "Missing products"
+msgstr "محصولات گم شده"
+
+msgctxt "Languages::onboarding_guide.create_at_least_one_product_to_proceed_to_checkout"
+msgid "Create at least one product to proceed to checkout"
+msgstr "حداقل یک محصول ایجاد کنید تا به تسویه حساب ادامه دهید"
+
+msgctxt "Languages::onboarding_guide.manage_sellers"
+msgid "Manage sellers"
+msgstr "فروشندگان را مدیریت کنید"
+
+msgctxt "Languages::onboarding_guide.create_one_vendor"
+msgid "Add a seller"
+msgstr "یک فروشنده اضافه کنید"
+
+msgctxt "Languages::onboarding_guide.create_vendor_description"
+msgid "Sellers—referred to as \"vendors\" in the admin panel—are essential for a marketplace. They provide products and services to customers. A seller can create an account themselves, or you can do it for them in the admin panel. Let’s add one seller via the admin panel."
+msgstr "فروشندگان - که در پنل مدیریت به آنها \"فروشندگان\" گفته می شود - برای یک بازار ضروری هستند. آنها محصولات و خدمات را به مشتریان ارائه می دهند. یک فروشنده می تواند خودش یک حساب کاربری ایجاد کند یا می توانید این کار را در پنل مدیریت برای او انجام دهید. بیایید یک فروشنده از طریق پنل مدیریت اضافه کنیم."
+
+msgctxt "Languages::onboarding_guide.view_storefront"
+msgid "See sellers on the storefront"
+msgstr "فروشندگان را در ویترین فروشگاه ببینید"
+
+msgctxt "Languages::onboarding_guide.view_invoice"
+msgid "View invoice"
+msgstr "مشاهده فاکتور"
+
+msgctxt "Languages::onboarding_guide.logos_updated"
+msgid "Theme and email logos updated"
+msgstr "تم و آرم ایمیل به روز شد"
+
+msgctxt "Languages::onboarding_guide.set_default_currency"
+msgid "Set default currency"
+msgstr "ارز پیش فرض را تنظیم کنید"
+
+msgctxt "Languages::onboarding_guide.manage_currencies"
+msgid "Manage currencies"
+msgstr "ارزها را مدیریت کنید"
+
+msgctxt "Languages::onboarding_guide.set_default_languages"
+msgid "Set default languages"
+msgstr "تنظیم زبان های پیش فرض"
+
+msgctxt "Languages::onboarding_guide.manage_languages"
+msgid "Manage languages"
+msgstr "مدیریت زبان ها"
+
+msgctxt "Languages::onboarding_guide.preview_an_email"
+msgid "Preview an email"
+msgstr "پیش نمایش یک ایمیل"
+
+msgctxt "Languages::onboarding_guide.preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the new sellers who register at your marketplace."
+msgstr "پس از پایان کار، ببینید چگونه داده های شما در ایمیلی برای فروشندگان جدیدی که در بازار شما ثبت نام کرده اند نشان داده می شود."
+
+msgctxt "Languages::onboarding_guide.sb_preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the newly-registered customers."
+msgstr "پس از پایان کار، ببینید چگونه داده های شما در ایمیلی برای مشتریان تازه ثبت نام شده نشان داده می شود."
+
+msgctxt "Languages::onboarding_guide.customize_vendor_panel_design"
+msgid "Customize seller panel"
+msgstr "سفارشی کردن پنل فروشنده"
+
+msgctxt "Languages::onboarding_guide.edit_vendor_panel_style"
+msgid "Sellers work with their own dedicated control panel. You can make it look the way you need. Set its colors, edit the menu, add blocks with info to the seller's dashboard."
+msgstr "فروشندگان با کنترل پنل اختصاصی خود کار می کنند. می توانید آن را به شکلی که نیاز دارید جلوه دهید. رنگ های آن را تنظیم کنید، منو را ویرایش کنید، بلوک های حاوی اطلاعات را به داشبورد فروشنده اضافه کنید."
+
+msgctxt "Languages::onboarding_guide.edit_structure"
+msgid "Edit menus and onboarding"
+msgstr "ویرایش منوها و ورود"
+
+msgctxt "Languages::onboarding_guide.manage_products"
+msgid "Manage products"
+msgstr "محصولات را مدیریت کنید"
+
+msgctxt "Languages::onboarding_guide.manage_products_description"
+msgid "You as the marketplace owner can control all products sold on your platform. But sellers manage products through their own dashboard. See how they can add products one by one or in bulk."
+msgstr "شما به عنوان مالک بازار می توانید تمام محصولات فروخته شده در پلتفرم خود را کنترل کنید. اما فروشندگان محصولات را از طریق داشبورد خود مدیریت می کنند. ببینید چگونه آنها می توانند محصولات را یک به یک یا به صورت عمده اضافه کنند."
+
+msgctxt "Languages::onboarding_guide.sb_manage_products_description"
+msgid "Products are how your online store makes money; they include commodities, services, or anything else offered for a price. You can add products one by one or in bulk."
+msgstr "محصولات نحوه کسب درآمد از فروشگاه آنلاین شما هستند. آنها شامل کالاها، خدمات یا هر چیز دیگری هستند که برای قیمت ارائه می شوند. می توانید محصولات را تک تک یا به صورت عمده اضافه کنید."
+
+msgctxt "Languages::onboarding_guide.add_one_product"
+msgid "Add one product"
+msgstr "یک محصول اضافه کنید"
+
+msgctxt "Languages::onboarding_guide.import_csv_or_xml"
+msgid "Import CSV or XML"
+msgstr "CSV یا XML را وارد کنید"
+
+msgctxt "Languages::onboarding_guide.view_product_page"
+msgid "View the latest added product"
+msgstr "مشاهده آخرین محصول اضافه شده"
+
+msgctxt "Languages::onboarding_guide.premoderation"
+msgid "If you do not see the created product on the storefront, you may have the <b>Vendor data premoderation</b> module enabled"
+msgstr "اگر محصول ایجاد شده را در ویترین فروشگاه نمی بینید، ممکن است ماژول <b>Vendor data premoderation</b> را فعال کرده باشید."
+
+msgctxt "Languages::onboarding_guide.view_product_page_description"
+msgid "See your new products on the storefront."
+msgstr "محصولات جدید خود را در ویترین فروشگاه ببینید."
+
+msgctxt "Languages::onboarding_guide.preview_seller_onboarding"
+msgid "Preview seller onboarding"
+msgstr "پیش نمایش ورود فروشنده"
+
+msgctxt "Languages::onboarding_guide.walk_the_seller_path"
+msgid "Walk the seller path"
+msgstr "مسیر فروشنده را طی کنید"
+
+msgctxt "Languages::onboarding_guide.customize_onboarding_process"
+msgid "Prospective sellers can request to join your marketplace on their own. See for yourself how that process works: the information they provide, the emails they receive, etc. You can adjust all of it, or even make your marketplace invite-only."
+msgstr "فروشندگان احتمالی می توانند به تنهایی درخواست کنند به بازار شما بپیوندند. خودتان ببینید این فرآیند چگونه کار می‌کند: اطلاعاتی که ارائه می‌کنند، ایمیل‌هایی که دریافت می‌کنند، و غیره."
+
+msgctxt "Languages::onboarding_guide.set_up_commissions_and_fees"
+msgid "Configure commissions and fees"
+msgstr "کمیسیون ها و هزینه ها را پیکربندی کنید"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans"
+msgid "Set up seller plans"
+msgstr "برنامه های فروشنده را تنظیم کنید"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans_description"
+msgid "A marketplace usually earns you money from monthly fees and/or commissions from sales. Seller plans let you set the size and frequency of those payments."
+msgstr "یک بازار معمولاً از کارمزدهای ماهانه و/یا کمیسیون های حاصل از فروش برای شما درآمد کسب می کند. برنامه های فروشنده به شما امکان می دهد اندازه و دفعات آن پرداخت ها را تنظیم کنید."
+
+msgctxt "Languages::onboarding_guide.view_seller_plans"
+msgid "Preview seller plans"
+msgstr "پیش نمایش طرح های فروشنده"
+
+msgctxt "Languages::onboarding_guide.view_seller_plans_description"
+msgid "See how your configured seller plans appear to your prospective sellers on the storefront."
+msgstr "ببینید چگونه برنامه های فروشنده پیکربندی شده شما برای فروشندگان احتمالی شما در ویترین فروشگاه ظاهر می شود."
+
+msgctxt "Languages::onboarding_guide.reset_onboarding"
+msgid "Reset onboarding"
+msgstr "بازنشانی ورود"
+
+msgctxt "Languages::onboarding_guide.reset"
+msgid "Reset"
+msgstr "بازنشانی کنید"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_title"
+msgid "Set up shipping"
+msgstr "حمل و نقل را تنظیم کنید"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_description"
+msgid "CS-Cart provides your customers with shipping rates depending on the customer's address and order. You can set the rules for these rates yourself, or receive rates in real time from shipping companies like UPS or DHL. You can also make shipping methods available in some locations and unavailable in others."
+msgstr "CS-Cart با توجه به آدرس و سفارش مشتری، نرخ حمل و نقل را به مشتریان شما ارائه می دهد. شما می‌توانید قوانین این نرخ‌ها را خودتان تنظیم کنید، یا نرخ‌ها را به صورت بلادرنگ از شرکت‌های حمل‌ونقل مانند UPS یا DHL دریافت کنید. همچنین می‌توانید روش‌های حمل و نقل را در برخی مکان‌ها در دسترس و در برخی مکان‌ها غیرقابل دسترس قرار دهید."
+
+msgctxt "Languages::onboarding_guide.configure_shippings_label"
+msgid "Let's set up a shipping method called \"Pickup from store\" to see how it works."
+msgstr "بیایید یک روش حمل و نقل به نام \"وصول از فروشگاه\" تنظیم کنیم تا ببینیم چگونه کار می کند."
+
+msgctxt "Languages::onboarding_guide.configure_shippings"
+msgid "Configure shipping methods"
+msgstr "پیکربندی روش های حمل و نقل"
+

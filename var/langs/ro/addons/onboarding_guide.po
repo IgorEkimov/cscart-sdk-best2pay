@@ -1,0 +1,354 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Romanian\n"
+"Language: ro_RO\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: ro\n"
+"X-Crowdin-File: /release-4.18.1/addons/onboarding_guide.po\n"
+"X-Crowdin-File-ID: 8264\n"
+"PO-Revision-Date: 2024-04-12 06:06\n"
+
+msgctxt "Addons::name::onboarding_guide"
+msgid "Onboarding guide"
+msgstr "Ghid de îmbarcare"
+
+msgctxt "Addons::description::onboarding_guide"
+msgid "Introduces the marketplace to administrators and allows quickly set up basic functionality."
+msgstr "Prezintă piața administratorilor și permite configurarea rapidă a funcționalității de bază."
+
+msgctxt "Languages::onboarding_guide.guide_title"
+msgid "Welcome to your marketplace!<br>Get ready to receive your first order"
+msgstr "Bine ați venit pe piața dvs.!<br>Pregătește-te să primești prima ta comandă"
+
+msgctxt "Languages::onboarding_guide.sb_guide_title"
+msgid "Welcome to your online store!<br>Get ready to receive your first order"
+msgstr "Bine ați venit în magazinul dvs. online!<br>Pregătește-te să primești prima ta comandă"
+
+msgctxt "Languages::onboarding_guide.completed_steps_progress"
+msgid "[completed] out of [total] complete"
+msgstr "[completed] din [total] complet"
+
+msgctxt "Languages::onboarding_guide.dismiss"
+msgid "Dismiss"
+msgstr "Respingeți"
+
+msgctxt "Languages::onboarding_guide.step_close"
+msgid "Close"
+msgstr "Închide"
+
+msgctxt "Languages::onboarding_guide.step_complete"
+msgid "Complete"
+msgstr "Complet"
+
+msgctxt "Languages::onboarding_guide.explore_interface_title"
+msgid "Explore the Multi-Vendor No-Code interface"
+msgstr "Explorați interfața Multi-Vendor No-Code"
+
+msgctxt "Languages::onboarding_guide.explore_interface_description"
+msgid "Discover how to effortlessly launch your marketplace in just 5 minutes. Learn the ins and outs of the intuitive interface and get ready to dive into the world of hassle-free marketplace creation."
+msgstr "Descoperiți cum să vă lansați piața fără efort în doar 5 minute. Aflați dezavantajele interfeței intuitive și pregătiți-vă să vă scufundați în lumea creării de piețe fără probleme."
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_title"
+msgid "Personalize your marketplace"
+msgstr "Personalizați-vă piața"
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_title"
+msgid "Personalize your online store"
+msgstr "Personalizați-vă magazinul online"
+
+msgctxt "Languages::onboarding_guide.personalize_your_marketplace_description"
+msgid "Choose the style of your marketplace. Provide your contact information for customers and sellers."
+msgstr "Alegeți stilul pieței dvs. Furnizați informațiile dvs. de contact pentru clienți și vânzători."
+
+msgctxt "Languages::onboarding_guide.sb_personalize_your_marketplace_description"
+msgid "Choose the style of your online store. Provide your contact information for customers."
+msgstr "Alege stilul magazinului tău online. Furnizați informațiile dvs. de contact pentru clienți."
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_title"
+msgid "Make changes on the fly"
+msgstr "Faceți modificări din mers"
+
+msgctxt "Languages::onboarding_guide.make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the marketplace to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "Utilizați instrumentele fără cod pentru a adapta piața la nevoile dvs. Editați orice texte; rearanjați blocurile; schimbați culorile, fonturile și stilul. Când vedeți vitrina ca administrator, puteți utiliza aceste instrumente oricând."
+
+msgctxt "Languages::onboarding_guide.sb_make_changes_on_the_fly_description"
+msgid "Use the no-code tools to tailor the online store to your needs. Edit any texts; rearrange the blocks; change the colors, fonts, and style. When you see the storefront as an admin, you can use these tools any time."
+msgstr "Utilizați instrumentele fără cod pentru a adapta magazinul online nevoilor dvs. Editați orice texte; rearanjați blocurile; schimbați culorile, fonturile și stilul. Când vedeți vitrina ca administrator, puteți utiliza aceste instrumente oricând."
+
+msgctxt "Languages::onboarding_guide.theme_and_logo"
+msgid "Theme & logo"
+msgstr "Temă și logo"
+
+msgctxt "Languages::onboarding_guide.business_details"
+msgid "Business details"
+msgstr "Detalii de afaceri"
+
+msgctxt "Languages::onboarding_guide.languages_and_currency"
+msgid "Languages & Currency"
+msgstr "Limbi și monedă"
+
+msgctxt "Languages::onboarding_guide.select_theme"
+msgid "Select theme"
+msgstr "Selectează tema"
+
+msgctxt "Languages::onboarding_guide.current_theme"
+msgid "Current theme"
+msgstr "Tema curentă"
+
+msgctxt "Languages::onboarding_guide.custom_theme"
+msgid "Custom theme"
+msgstr "Temă personalizată"
+
+msgctxt "Languages::onboarding_guide.upload_logo"
+msgid "Upload logo"
+msgstr "Încărcați sigla"
+
+msgctxt "Languages::onboarding_guide.activate"
+msgid "Activate"
+msgstr "Activati"
+
+msgctxt "Languages::onboarding_guide.next"
+msgid "Next"
+msgstr "Următorul"
+
+msgctxt "Languages::onboarding_guide.back"
+msgid "Back"
+msgstr "Înapoi"
+
+msgctxt "Languages::onboarding_guide.save"
+msgid "Save"
+msgstr "Salvați"
+
+msgctxt "Languages::onboarding_guide.edit_colors"
+msgid "Edit colors"
+msgstr "Editați culorile"
+
+msgctxt "Languages::onboarding_guide.modify_colors_fonts_backgrounds"
+msgid "Modify colors, fonts, and backgrounds"
+msgstr "Modificați culorile, fonturile și fundalurile"
+
+msgctxt "Languages::onboarding_guide.edit_texts"
+msgid "Edit or translate any texts"
+msgstr "Editați sau traduceți orice text"
+
+msgctxt "Languages::onboarding_guide.edit_blocks"
+msgid "Fine-tune page layouts"
+msgstr "Ajustați aspectul paginilor"
+
+msgctxt "Languages::onboarding_guide.configure_payment_options"
+msgid "Set up payments"
+msgstr "Configurați plăți"
+
+msgctxt "Languages::onboarding_guide.select_payment_options"
+msgid "Choose how you plan to accept payments. Select one of the following scenarios:"
+msgstr "Alegeți cum plănuiți să acceptați plăți. Selectați unul dintre următoarele scenarii:"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split"
+msgid "Multi-party payment (automatic disbursements)"
+msgstr "Plată cu mai multe părți (plate automate)"
+
+msgctxt "Languages::onboarding_guide.single_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: PayPal Commerce Platform and Stripe Connect. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with PayPal or Stripe as well."
+msgstr "Există metode de plată speciale pentru piețe: PayPal Commerce Platform și Stripe Connect. Un client efectuează în continuare o singură plată pentru toate produsele; metoda de plată împarte automat banii între dvs. și vânzători. Rețineți că vânzătorii vor avea nevoie și de conturi cu PayPal sau Stripe."
+
+msgctxt "Languages::onboarding_guide.single_rus_payment_with_automatic_split_description"
+msgid "There are special payment methods for marketplaces: YooKassa For Marketplaces and Tinkoff Multiparty. A customer still makes one payment for all the products; the payment method splits the money between you and sellers automatically. Note that sellers will need accounts with YooKassa or Tinkoff as well."
+msgstr "Există metode speciale de plată pentru piețe: YooKassa For Marketplaces și Tinkoff Multiparty. Un client efectuează în continuare o singură plată pentru toate produsele; metoda de plată împarte automat banii între dvs. și vânzători. Rețineți că vânzătorii vor avea nevoie și de conturi la YooKassa sau Tinkoff."
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you"
+msgid "Single payment to the marketplace"
+msgstr "Plată unică către piață"
+
+msgctxt "Languages::onboarding_guide.single_payment_to_you_description"
+msgid "A customer makes one payment for all the products in the cart. The money ends up on your account, with the record of what you own to each seller. You periodically distribute the money between sellers."
+msgstr "Un client efectuează o singură plată pentru toate produsele din coș. Banii ajung în contul tău, cu evidența a ceea ce deții pentru fiecare vânzător. Distribuiți periodic banii între vânzători."
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers"
+msgid "Separate payments to sellers"
+msgstr "Plăți separate către vânzători"
+
+msgctxt "Languages::onboarding_guide.separate_payments_to_sellers_description"
+msgid "A customer pays to each seller separately. It becomes the seller’s responsibility to pay the commission to you (we have ways for that). Sellers will be able to set up their own shipping methods and promotions."
+msgstr "Un client plătește fiecărui vânzător separat. Devine responsabilitatea vânzătorului să vă plătească comisionul (avem modalități pentru asta). Vânzătorii își vor putea configura propriile metode de livrare și promoții."
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods"
+msgid "Configure payment methods"
+msgstr "Configurați metodele de plată"
+
+msgctxt "Languages::onboarding_guide.configure_payment_methods_description"
+msgid "CS-Cart allows you to set up various payment methods; most of them automatically process the full up-front payment. But for now, let’s set up \"Cash on Delivery\" just to see how it works."
+msgstr "CS-Cart vă permite să configurați diverse metode de plată; majoritatea procesează automat plata integrală în avans. Dar, deocamdată, să setăm „Ramburs la livrare” doar pentru a vedea cum funcționează."
+
+msgctxt "Languages::onboarding_guide.view_checkout_page"
+msgid "View checkout page"
+msgstr "Vizualizați pagina de plată"
+
+msgctxt "Languages::onboarding_guide.view_checkout_page_description"
+msgid "Once configured, your payment method will appear at the checkout page:"
+msgstr "Odată configurată, metoda dvs. de plată va apărea pe pagina de finalizare a comenzii:"
+
+msgctxt "Languages::onboarding_guide.missing_products"
+msgid "Missing products"
+msgstr "Lipsesc produse"
+
+msgctxt "Languages::onboarding_guide.create_at_least_one_product_to_proceed_to_checkout"
+msgid "Create at least one product to proceed to checkout"
+msgstr "Creați cel puțin un produs pentru a trece la finalizarea comenzii"
+
+msgctxt "Languages::onboarding_guide.manage_sellers"
+msgid "Manage sellers"
+msgstr "Gestionați vânzătorii"
+
+msgctxt "Languages::onboarding_guide.create_one_vendor"
+msgid "Add a seller"
+msgstr "Adăugați un vânzător"
+
+msgctxt "Languages::onboarding_guide.create_vendor_description"
+msgid "Sellers—referred to as \"vendors\" in the admin panel—are essential for a marketplace. They provide products and services to customers. A seller can create an account themselves, or you can do it for them in the admin panel. Let’s add one seller via the admin panel."
+msgstr "Vânzătorii – denumiți „vânzători” în panoul de administrare – sunt esențiali pentru o piață. Ei furnizează produse și servicii clienților. Un vânzător își poate crea singur un cont sau o puteți face pentru el în panoul de administrare. Să adăugăm un vânzător prin panoul de administrare."
+
+msgctxt "Languages::onboarding_guide.view_storefront"
+msgid "See sellers on the storefront"
+msgstr "Vedeți vânzătorii pe vitrină"
+
+msgctxt "Languages::onboarding_guide.view_invoice"
+msgid "View invoice"
+msgstr "Vezi factura"
+
+msgctxt "Languages::onboarding_guide.logos_updated"
+msgid "Theme and email logos updated"
+msgstr "Tema și siglele de e-mail au fost actualizate"
+
+msgctxt "Languages::onboarding_guide.set_default_currency"
+msgid "Set default currency"
+msgstr "Setați moneda implicită"
+
+msgctxt "Languages::onboarding_guide.manage_currencies"
+msgid "Manage currencies"
+msgstr "Gestionați monedele"
+
+msgctxt "Languages::onboarding_guide.set_default_languages"
+msgid "Set default languages"
+msgstr "Setați limbile implicite"
+
+msgctxt "Languages::onboarding_guide.manage_languages"
+msgid "Manage languages"
+msgstr "Gestionați limbile"
+
+msgctxt "Languages::onboarding_guide.preview_an_email"
+msgid "Preview an email"
+msgstr "Previzualizează un e-mail"
+
+msgctxt "Languages::onboarding_guide.preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the new sellers who register at your marketplace."
+msgstr "După ce ați terminat, vedeți cum apar datele dvs. într-un e-mail către noii vânzători care se înregistrează pe piața dvs."
+
+msgctxt "Languages::onboarding_guide.sb_preview_an_email_description"
+msgid "Once you’re done, see how your data appears in an email to the newly-registered customers."
+msgstr "După ce ați terminat, vedeți cum apar datele dvs. într-un e-mail către clienții nou-înregistrați."
+
+msgctxt "Languages::onboarding_guide.customize_vendor_panel_design"
+msgid "Customize seller panel"
+msgstr "Personalizați panoul vânzătorului"
+
+msgctxt "Languages::onboarding_guide.edit_vendor_panel_style"
+msgid "Sellers work with their own dedicated control panel. You can make it look the way you need. Set its colors, edit the menu, add blocks with info to the seller's dashboard."
+msgstr "Vânzătorii lucrează cu propriul lor panou de control dedicat. Îl poți face să arate așa cum ai nevoie. Setați-i culorile, editați meniul, adăugați blocuri cu informații în tabloul de bord al vânzătorului."
+
+msgctxt "Languages::onboarding_guide.edit_structure"
+msgid "Edit menus and onboarding"
+msgstr "Editați meniurile și integrarea"
+
+msgctxt "Languages::onboarding_guide.manage_products"
+msgid "Manage products"
+msgstr "Gestionați produsele"
+
+msgctxt "Languages::onboarding_guide.manage_products_description"
+msgid "You as the marketplace owner can control all products sold on your platform. But sellers manage products through their own dashboard. See how they can add products one by one or in bulk."
+msgstr "În calitate de proprietar al pieței, puteți controla toate produsele vândute pe platforma dvs. Dar vânzătorii gestionează produsele prin propriul tablou de bord. Vedeți cum pot adăuga produse unul câte unul sau în vrac."
+
+msgctxt "Languages::onboarding_guide.sb_manage_products_description"
+msgid "Products are how your online store makes money; they include commodities, services, or anything else offered for a price. You can add products one by one or in bulk."
+msgstr "Produsele reprezintă modul în care magazinul dvs. online face bani; acestea includ mărfuri, servicii sau orice altceva oferit la un preț. Puteți adăuga produse unul câte unul sau în vrac."
+
+msgctxt "Languages::onboarding_guide.add_one_product"
+msgid "Add one product"
+msgstr "Adăugați un produs"
+
+msgctxt "Languages::onboarding_guide.import_csv_or_xml"
+msgid "Import CSV or XML"
+msgstr "Importați CSV sau XML"
+
+msgctxt "Languages::onboarding_guide.view_product_page"
+msgid "View the latest added product"
+msgstr "Vezi cel mai recent produs adăugat"
+
+msgctxt "Languages::onboarding_guide.premoderation"
+msgid "If you do not see the created product on the storefront, you may have the <b>Vendor data premoderation</b> module enabled"
+msgstr "Dacă nu vedeți produsul creat pe vitrina, este posibil să aveți modulul <b>Premoderare date furnizor</b> activat"
+
+msgctxt "Languages::onboarding_guide.view_product_page_description"
+msgid "See your new products on the storefront."
+msgstr "Vezi noile tale produse pe vitrina."
+
+msgctxt "Languages::onboarding_guide.preview_seller_onboarding"
+msgid "Preview seller onboarding"
+msgstr "Previzualizează integrarea vânzătorului"
+
+msgctxt "Languages::onboarding_guide.walk_the_seller_path"
+msgid "Walk the seller path"
+msgstr "Mergeți pe calea vânzătorului"
+
+msgctxt "Languages::onboarding_guide.customize_onboarding_process"
+msgid "Prospective sellers can request to join your marketplace on their own. See for yourself how that process works: the information they provide, the emails they receive, etc. You can adjust all of it, or even make your marketplace invite-only."
+msgstr "Vânzătorii potențiali pot solicita să se alăture pieței dvs. pe cont propriu. Vedeți singur cum funcționează acest proces: informațiile pe care le furnizează, e-mailurile pe care le primesc etc. Puteți să le ajustați pe toate sau chiar să faceți ca piața dvs. să fie doar pe invitație."
+
+msgctxt "Languages::onboarding_guide.set_up_commissions_and_fees"
+msgid "Configure commissions and fees"
+msgstr "Configurați comisioane și taxe"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans"
+msgid "Set up seller plans"
+msgstr "Configurați planuri de vânzător"
+
+msgctxt "Languages::onboarding_guide.set_up_seller_plans_description"
+msgid "A marketplace usually earns you money from monthly fees and/or commissions from sales. Seller plans let you set the size and frequency of those payments."
+msgstr "De obicei, o piață vă aduce bani din taxe lunare și/sau comisioane din vânzări. Planurile vânzătorului vă permit să setați dimensiunea și frecvența acestor plăți."
+
+msgctxt "Languages::onboarding_guide.view_seller_plans"
+msgid "Preview seller plans"
+msgstr "Previzualizează planurile vânzătorului"
+
+msgctxt "Languages::onboarding_guide.view_seller_plans_description"
+msgid "See how your configured seller plans appear to your prospective sellers on the storefront."
+msgstr "Vedeți cum apar planurile dvs. de vânzător configurate pentru potențialii dvs. vânzători pe vitrina."
+
+msgctxt "Languages::onboarding_guide.reset_onboarding"
+msgid "Reset onboarding"
+msgstr "Resetați integrarea"
+
+msgctxt "Languages::onboarding_guide.reset"
+msgid "Reset"
+msgstr "Resetați"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_title"
+msgid "Set up shipping"
+msgstr "Configurați livrarea"
+
+msgctxt "Languages::onboarding_guide.configure_shippings_description"
+msgid "CS-Cart provides your customers with shipping rates depending on the customer's address and order. You can set the rules for these rates yourself, or receive rates in real time from shipping companies like UPS or DHL. You can also make shipping methods available in some locations and unavailable in others."
+msgstr "CS-Cart oferă clienților tăi tarife de expediere în funcție de adresa și comanda clientului. Puteți stabili singur regulile pentru aceste tarife sau puteți primi tarife în timp real de la companii de transport maritim precum UPS sau DHL. De asemenea, puteți face metode de expediere disponibile în unele locații și indisponibile în altele."
+
+msgctxt "Languages::onboarding_guide.configure_shippings_label"
+msgid "Let's set up a shipping method called \"Pickup from store\" to see how it works."
+msgstr "Să setăm o metodă de expediere numită „Ridicare din magazin” pentru a vedea cum funcționează."
+
+msgctxt "Languages::onboarding_guide.configure_shippings"
+msgid "Configure shipping methods"
+msgstr "Configurați metodele de expediere"
+

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+	<id>best2pay</id>
+	<name>Best2Pay</name>
+	<version>1.1.2</version>
+	<description>Возможность оплаты товаров через платежные системы MasterCard, Visa и Мир</description>
+	<status>active</status>
+	<priority>100</priority>
+	<auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+	<authors>
+		<author>
+			<name>Best2Pay</name>
+			<email>helpline@best2pay.net</email>
+			<url>https://best2pay.net/</url>
+			<phone>+7 800 250 78 80</phone>
+		</author>
+	</authors>
+	<supplier>Best2Pay</supplier>
+	<default_language>ru</default_language>
+	<functions>
+		<item for="install">fn_best2pay_add_payment_processor</item>
+		<item for="uninstall">fn_best2pay_delete_payment_processor</item>
+	</functions>
+</addon>

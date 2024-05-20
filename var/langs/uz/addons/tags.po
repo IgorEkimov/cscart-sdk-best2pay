@@ -1,0 +1,74 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Uzbek\n"
+"Language: uz_UZ\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: uz\n"
+"X-Crowdin-File: /release-4.18.1/addons/tags.po\n"
+"X-Crowdin-File-ID: 8336\n"
+"PO-Revision-Date: 2024-04-12 06:06\n"
+
+msgctxt "Addons::name::tags"
+msgid "Tags"
+msgstr "Teglar"
+
+msgctxt "Addons::description::tags"
+msgid "Enables product tags"
+msgstr "Mahsulot teglarini yoqadi"
+
+msgctxt "Languages::sign_in_to_enter_tags"
+msgid "Sign in to enter tags"
+msgstr "Teglarni kiritish uchun tizimga kiring"
+
+msgctxt "Languages::tag_cloud"
+msgid "Tag cloud"
+msgstr "Teg buluti"
+
+msgctxt "Languages::tags"
+msgid "Tags"
+msgstr "Teglar"
+
+msgctxt "Languages::block_tags"
+msgid "Tags"
+msgstr "Teglar"
+
+msgctxt "Languages::block_tags_description"
+msgid "Product tags"
+msgstr "Mahsulot teglari"
+
+msgctxt "Languages::addons.tags.add_a_tag"
+msgid "add a tag"
+msgstr "teg qo'shing"
+
+msgctxt "Languages::items_marked_by_tag"
+msgid "Items marked by the \"[tag]\" tag:"
+msgstr "“[tag]” tegi bilan belgilangan elementlar:"
+
+msgctxt "Languages::tag"
+msgid "Tag"
+msgstr "Teg"
+
+msgctxt "Languages::add_tag"
+msgid "Add tag"
+msgstr "Teg qo'shing"
+
+msgctxt "SettingsSections::tags::general"
+msgid "General"
+msgstr "Umumiy"
+
+msgctxt "SettingsOptions::tags::tags_for_products"
+msgid "Tags for products"
+msgstr "Mahsulotlar uchun teglar"
+
+msgctxt "SettingsOptions::tags::tags_for_pages"
+msgid "Tags for pages"
+msgstr "Sahifalar uchun teglar"
+
+msgctxt "Languages::n_tags"
+msgid "[n] tag|[n] tags"
+msgstr "[n] teg|[n] teglar"
+

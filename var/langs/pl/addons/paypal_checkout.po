@@ -1,0 +1,206 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Polish\n"
+"Language: pl_PL\n"
+"Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: pl\n"
+"X-Crowdin-File: /release-4.18.1/addons/paypal_checkout.po\n"
+"X-Crowdin-File-ID: 8282\n"
+"PO-Revision-Date: 2024-04-17 08:04\n"
+
+msgctxt "Addons::name::paypal_checkout"
+msgid "PayPal Checkout"
+msgstr "Zamówienie PayPal"
+
+msgctxt "Addons::description::paypal_checkout"
+msgid "A PayPal solution for online stores. Lets you accept payments through PayPal and other means."
+msgstr "Rozwiązanie PayPal dla sklepów internetowych. Umożliwia akceptowanie płatności za pośrednictwem PayPal i innych płatności."
+
+msgctxt "SettingsSections::paypal_checkout::general"
+msgid "General"
+msgstr "Ogólny"
+
+msgctxt "Languages::paypal_checkout.paypal_checkout"
+msgid "PayPal Checkout"
+msgstr "PayPal Checkout"
+
+msgctxt "Languages::paypal_checkout.paypal"
+msgid "PayPal"
+msgstr "PayPal"
+
+msgctxt "Languages::paypal_checkout.client_id"
+msgid "App Client ID"
+msgstr "Identyfikator klienta aplikacji"
+
+msgctxt "Languages::paypal_checkout.secret"
+msgid "App Secret"
+msgstr "Tajny klucz aplikacji"
+
+msgctxt "Languages::paypal_checkout.order_id"
+msgid "Order ID in PayPal"
+msgstr "Identyfikator zamówienia w systemie PayPal"
+
+msgctxt "Languages::paypal_checkout.capture_id"
+msgid "Capture ID in PayPal"
+msgstr "Identyfikator przechwytywania w PayPal"
+
+msgctxt "Languages::paypal_checkout.webhook_help_message"
+msgid "Specify the following URL when configuring a webhook for your REST application:"
+msgstr "Podaj następujący adres URL podczas konfigurowania elementu webhook dla aplikacji REST:"
+
+msgctxt "Languages::paypal_checkout.webhook"
+msgid "PayPal Checkout webhook: [payload]"
+msgstr "Webhook PayPal Checkout: [payload]"
+
+msgctxt "Languages::paypal_checkout.settings.account"
+msgid "Account settings"
+msgstr "Ustawienia konta"
+
+msgctxt "Languages::paypal_checkout.settings.enable_funding"
+msgid "Funding sources to show on checkout"
+msgstr "Źródła finansowania do pokazania przy kasie"
+
+msgctxt "Languages::paypal_checkout.funding.card"
+msgid "Credit or debit cards"
+msgstr "Karty kredytowe lub debetowe"
+
+msgctxt "Languages::paypal_checkout.funding.credit"
+msgid "PayPal Credit"
+msgstr "Kredyt PayPal"
+
+msgctxt "Languages::paypal_checkout.funding.venmo"
+msgid "Venmo"
+msgstr "Venmo"
+
+msgctxt "Languages::paypal_checkout.funding.sepa"
+msgid "SEPA-Lastschrift"
+msgstr "SEPA-Lastschrift"
+
+msgctxt "Languages::paypal_checkout.funding.bancontact"
+msgid "Bancontact"
+msgstr "Bankontakt"
+
+msgctxt "Languages::paypal_checkout.funding.eps"
+msgid "eps"
+msgstr "EPS"
+
+msgctxt "Languages::paypal_checkout.funding.giropay"
+msgid "giropay"
+msgstr "żyropay"
+
+msgctxt "Languages::paypal_checkout.funding.ideal"
+msgid "iDEAL"
+msgstr "ideał"
+
+msgctxt "Languages::paypal_checkout.funding.mybank"
+msgid "MyBank"
+msgstr "Mój bank"
+
+msgctxt "Languages::paypal_checkout.funding.p24"
+msgid "Przelewy24"
+msgstr "Przelewy24"
+
+msgctxt "Languages::paypal_checkout.funding.sofort"
+msgid "Sofort"
+msgstr "Sofort"
+
+msgctxt "Languages::paypal_checkout.settings.enable_cards"
+msgid "Cards to show on checkout"
+msgstr "Karty do pokazania przy kasie"
+
+msgctxt "Languages::paypal_checkout.card.visa"
+msgid "Visa"
+msgstr "Visa"
+
+msgctxt "Languages::paypal_checkout.card.mastercard"
+msgid "Mastercard"
+msgstr "MasterCard"
+
+msgctxt "Languages::paypal_checkout.card.amex"
+msgid "American Express"
+msgstr "American Express"
+
+msgctxt "Languages::paypal_checkout.card.discover"
+msgid "Discover"
+msgstr "Discover"
+
+msgctxt "Languages::paypal_checkout.card.jcb"
+msgid "JCB"
+msgstr "JCB"
+
+msgctxt "Languages::paypal_checkout.card.elo"
+msgid "Elo"
+msgstr "Elo"
+
+msgctxt "Languages::paypal_checkout.card.hiper"
+msgid "Hiper"
+msgstr "Hiper"
+
+msgctxt "Languages::paypal_checkout.debug_id"
+msgid "PayPal Debug ID"
+msgstr "Identyfikator debugowania PayPal"
+
+msgctxt "Languages::paypal_checkout.paypal_cookie_title"
+msgid "PayPal"
+msgstr "PayPal"
+
+msgctxt "Languages::paypal_checkout.paypal_cookie_description"
+msgid "PayPal is a payment provider. It allows us to accept payments, if you choose a payment method powered by PayPal. Here is <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\" target=\"_blank\">PayPal privacy statement</a>."
+msgstr "PayPal jest dostawcą płatności. Pozwala nam na przyjmowanie płatności, jeśli wybierzesz metodę płatności obsługiwaną przez PayPal. Oto <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\" target=\"_blank\">Oświadczenie o ochronie prywatności PayPal</a>."
+
+msgctxt "Languages::paypal_checkout.funding.paylater"
+msgid "Pay Later"
+msgstr "Zapłać później"
+
+msgctxt "Languages::paypal_checkout.funding.mercadopago"
+msgid "Mercado Pago"
+msgstr "Mercado Pago"
+
+msgctxt "Languages::paypal_checkout.funding.blik"
+msgid "BLIK"
+msgstr "BLIK"
+
+msgctxt "Languages::paypal_checkout.settings.style"
+msgid "Button appearance"
+msgstr "Wygląd przycisku"
+
+msgctxt "Languages::paypal_checkout.style.shape"
+msgid "Shape"
+msgstr "Kształt"
+
+msgctxt "Languages::paypal_checkout.shape.pill"
+msgid "Pill"
+msgstr "Kształt pigułki"
+
+msgctxt "Languages::paypal_checkout.shape.rect"
+msgid "Rectangular"
+msgstr "Kształt prostokątny"
+
+msgctxt "Languages::paypal_checkout.style.color"
+msgid "Color"
+msgstr "Kolor"
+
+msgctxt "Languages::paypal_checkout.color.gold"
+msgid "Gold"
+msgstr "Złoty"
+
+msgctxt "Languages::paypal_checkout.color.blue"
+msgid "Blue"
+msgstr "Niebieski"
+
+msgctxt "Languages::paypal_checkout.color.silver"
+msgid "Silver"
+msgstr "Srebrny"
+
+msgctxt "Languages::paypal_checkout.color.black"
+msgid "Black"
+msgstr "Czarny"
+
+msgctxt "Languages::paypal_checkout.style.height"
+msgid "Height"
+msgstr "Wysokość"
+

@@ -1,0 +1,194 @@
+// Search form
+.search-filters-wrapper__form-wrapper {
+    overflow: auto;
+}
+
+@media (min-width: @TabletBreakpoint + 1) {
+    .search-filters-wrapper__form-wrapper {
+        overflow: visible;
+    }
+}
+
+.search-filters-wrapper__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0;
+}
+
+// Search filters
+.search-filters {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 4px;
+}
+
+@media (min-width: @TabletBreakpoint + 1) {
+    .search-filters {
+        flex-wrap: wrap;
+    }
+}
+
+.search-filters__dropdown-menu {
+    min-width: 220px;
+    padding-bottom: 16px;
+}
+
+// Round_down_10(((Screen breakpoint - (Main menu + Padding + Advanced search + Gap)) / 2) + (~Search filters dropdown / 2))
+// Round_down_10(((Screen breakpoint - (240px + (16px * 4) + 48px + 8px)) / 2) + (90px / 2))
+@media (min-width: @TabletBreakpoint + 1) {
+    .search-filters__dropdown-menu--large {
+        min-width: 240px;
+    }
+}
+
+@media (min-width: @DesktopBreakpoint + 1) {
+    .search-filters__dropdown-menu--large {
+        min-width: 370px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .search-filters__dropdown-menu--large {
+        min-width: 500px;
+    }
+}
+
+@media (min-width: @LargeDesktopBreakpoint + 1) {
+    .search-filters__dropdown-menu--large {
+        min-width: 530px;
+    }
+}
+
+.search-filters__dropdown-menu.pull-right,
+.search-filters__add-filter-dropdown-menu.pull-right {
+    right: 0;
+    left: auto;
+}
+
+.search-filters__item,
+.search-filters__variant-item,
+.search-filters__footer {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.search-filters__item-raw {
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: @baseLineHeight / 2;
+}
+
+.search-filters__dropdown {
+    max-width: 100%;
+}
+
+.search-filters__dropdown.search-filters__dropdown,
+.search-filters__popup.search-filters__popup {
+    margin: 0;
+}
+
+.search-filters__button-popup,
+.search-filters__dropdown-toggle,
+.search-filters__button-popup,
+.search-filters__add-filter-dropdown-toggle,
+.search-filters__clear-filter-btn {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.search-filters__dropdown:not(.open) .search-filters__button-popup:not(:hover):not(:focus),
+.search-filters__dropdown:not(.open) .search-filters__dropdown-toggle:not(:hover):not(:focus),
+.search-filters__button-popup:not(:hover):not(:focus),
+.search-filters__dropdown:not(.open) .search-filters__clear-filter-btn:not(:hover):not(:focus),
+.search-filters__add-filter:not(.open) .search-filters__add-filter-dropdown-toggle:not(:hover):not(:focus) {
+    border-style: dashed;
+    border-color: darken(@btnBorder, 3%);
+}
+
+.search-filters__button-popup,
+.search-filters__dropdown-toggle {
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.search-filters__button-popup.search-filters__button-popup {
+    border-top-right-radius: @baseBorderRadius;
+    border-bottom-right-radius: @baseBorderRadius;
+}
+
+.search-filters__clear-filter-btn.hidden + .search-filters__dropdown-toggle {
+    margin-left: 0;
+    border-top-left-radius: @baseBorderRadius;
+    border-bottom-left-radius: @baseBorderRadius;
+}
+
+.search-filters__clear-filter-btn .cs-icon--type-remove,
+.search-filters__add-filter-icon {
+    scale: 0.8;
+}
+
+// Add filter
+.search-filters__add-filter {
+    max-width: 100%;
+    position: sticky;
+    right: 0;
+    background: #fff;
+}
+
+@media (min-width: @TabletBreakpoint + 1px) {
+    .search-filters__add-filter {
+        position: relative;
+    }
+}
+
+.search-filters__add-filter:before {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0, #fff 70%, #fff 100%);
+    content: "";
+    height: 100%;
+    left: -8px;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 8px;
+}
+
+@media (min-width: @TabletBreakpoint + 1px) {
+    .search-filters__add-filter:before {
+        content: none;
+    }
+}
+
+.search-filters__add-filter-dropdown-toggle {
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.search-filters__add-filter-content-variant-item-label {
+    margin: 0;
+    padding: @dropdownItemPadding 20px;
+    border-radius: @baseBorderRadius;
+    white-space: nowrap;
+}
+
+.search-filters__add-filter-content-variant-item-label:hover {
+    color: @dropdownLinkColorHover;
+    #gradient > .vertical(@dropdownLinkBackgroundHover, @dropdownLinkBackgroundHover);
+}
+
+// Table in popup
+@media (min-width: @TabletBreakpoint + 2) {
+    .search-filters__popup td {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .search-filters__popup .object-selector {
+        width: 100%;
+    }
+}
+
+// Advanced search
+.search-filters-advanced-search__form {
+    margin: 0;
+}

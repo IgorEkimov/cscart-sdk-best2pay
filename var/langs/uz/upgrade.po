@@ -1,0 +1,46 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cs-cart-latest\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language-Team: Uzbek\n"
+"Language: uz_UZ\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Crowdin-Project: cs-cart-latest\n"
+"X-Crowdin-Project-ID: 50163\n"
+"X-Crowdin-Language: uz\n"
+"X-Crowdin-File: /release-4.18.1/upgrade.po\n"
+"X-Crowdin-File-ID: 8376\n"
+"PO-Revision-Date: 2024-04-17 08:33\n"
+
+msgctxt "Languages::upgrade_notification.warehouses.recalculate_master_products_stocks.title"
+msgid "Common Products now have correct quantities with Warehouses"
+msgstr ""
+
+msgctxt "Languages::upgrade_notification.warehouses.recalculate_master_products_stocks.message"
+msgid "We have fixed the issues that caused Common Products to have wrong quantities on the storefront when Warehouses were involved. The problem will go away over time, as product quantities change and the correct data is saved.</br>To fix the issue right now, you can force the recalculation of quantity for all common products using the button below.</br></br><a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Recalculate quantities</a>"
+msgstr ""
+
+msgctxt "Languages::upgrade_notification.rus_kupivkredit.title"
+msgid "KupiVKredit integration is no longer supported"
+msgstr ""
+
+msgctxt "Languages::upgrade_notification.rus_kupivkredit.message"
+msgid "Your store currently uses an old KupiVKredit integration. According to our information, it is no longer supported and might not work. We no longer support it as well, but it remains available in case it works for you. We may add a new Tinkoff integration for credits and installments in one of the future versions."
+msgstr ""
+
+msgctxt "Languages::upgrade_notification.yandex_maps.yandex_extra_api_key_required.title"
+msgid "Extra API Key Required for Yandex Maps"
+msgstr ""
+
+msgctxt "Languages::upgrade_notification.yandex_maps.yandex_extra_api_key_required"
+msgid "Due to the changes on the Yandex side, our integration of Yandex Maps now requires an extra API key to work properly. Please get the Geosuggest API key <a href=\"https://developer.tech.yandex.ru/\" target=\"_blank\">in your Yandex Developer account</a> and put it in the settings listed below.</br></br>"
+msgstr ""
+
+msgctxt "Languages::upgrade_notification.yandex_maps.geo_maps.addon_setting_button"
+msgid "<a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Maps and geolocation</a>"
+msgstr ""
+
+msgctxt "Languages::upgrade_notification.yandex_maps.vendor_locations.addon_setting_button"
+msgid "<a class=\"btn btn-primary\" target=\"_blank\" href=\"[url]\">Vendor locations</a>"
+msgstr ""
+

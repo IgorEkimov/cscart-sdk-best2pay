@@ -1,0 +1,35 @@
+/*
+    common/content_more.tpl
+*/
+
+.cs-content-more__advantages-icon,
+.cs-content-more__disadvantages-icon,
+.cs-content-more__comment-icon {
+    display: inline-flex;
+    vertical-align: top;
+    margin-right: 4px;
+    background-color: @infoBackground;
+    border-radius: 10px;
+}
+
+.cs-content-more__advantages-icon .cs-icon__svg,
+.cs-content-more__disadvantages-icon .cs-icon__svg,
+.cs-content-more__comment-icon .cs-icon__svg {
+    vertical-align: top;
+}
+
+.cs-content-more__advantages-icon {
+    background-color: @successBackground;
+}
+
+.cs-content-more__disadvantages-icon {
+    background-color: @errorBackground;
+}
+
+.cs-content-more__comment-icon {
+    background-color: @infoBackground;
+}
+
+.cs-content-more__text--review-reply span {
+    font-weight: bold;
+}

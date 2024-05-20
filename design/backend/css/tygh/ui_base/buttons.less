@@ -1,0 +1,395 @@
+// Bootstrap styles
+.btn {
+    display: inline-flex;
+    padding: 5px 13px;
+    box-shadow: none;
+    min-width: @baseLineHeight + 2 * (5px + 1px);   // min-width: 32px;
+    min-height: @baseLineHeight + 2 * (5px + 1px);  // min-height: 32px;
+
+    // Hover/focus state
+    &:hover,
+    &:focus {
+        background-position: 0;
+        transition: background 0.1s linear;
+    }
+
+    // Active state
+    &.active,
+    &:active {
+        box-shadow: inset 0 1px 4px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
+    }
+}
+
+// Button Sizes
+// --------------------------------------------------
+
+// Large
+.btn-large {
+    padding: @paddingLarge;
+    // 11px from @paddingLarge
+    min-width: @baseLineHeight + 2 * (11px + 1px);   // min-width: 44px;
+    min-height: @baseLineHeight + 2 * (11px + 1px);  // min-height: 44px;
+}
+
+// Small
+.btn-small {
+    padding: @paddingSmall;
+    // 2px from @paddingSmall
+    min-width: @baseLineHeight + 2 * (2px + 1px);   // min-width: 26px;
+    min-height: @baseLineHeight + 2 * (2px + 1px);  // min-height: 26px;
+}
+
+// Mini
+.btn-mini {
+    padding: @paddingMini;
+    // 0px from @paddingMini
+    min-width: @baseLineHeight + 2 * (0px + 1px);   // min-width: 22px;
+    min-height: @baseLineHeight + 2 * (0px + 1px);  // min-height: 22px;
+}
+
+// Block button
+// -------------------------
+
+.btn-block {
+    padding-left: 0;
+    padding-right: 0;
+}
+  
+
+// Button groups
+
+// Reposition the caret
+.btn .caret {
+    margin-left: 4px;
+}
+.btn-group.open {
+
+    // The clickable button for toggling the menu
+    // Remove the gradient and set the same inset shadow as the :active state
+    .dropdown-toggle {
+      box-shadow: inset 0 1px 4px rgba(0,0,0,.1), 0 1px 2px rgba(0,0,0,.05);
+    }
+}
+
+.btn-group > .btn + .dropdown-toggle {
+    box-shadow: inset 1px 0 0 rgba(255,255,255,.125), inset 0 0 0 rgba(255,255,255,.2), 0 0 2px rgba(0,0,0,.05);
+}
+
+// Labels
+
+// Colors
+// Only give background-color difference to links (and to simplify, we don't qualifty with `a` but [href] attribute)
+.label,
+.badge {
+    // Important (red)
+    &-important         { background-color: @btnDangerBackground; }
+    &-important[href]   { background-color: @errorText; }
+    // Warnings (orange)
+    &-warning           { background-color: @btnWarningBackground; }
+    &-warning[href]     { background-color: @orange; }
+    // Success (green)
+    &-success           { background-color: @btnSuccessBackground; }
+    &-success[href]     { background-color: @successText; }
+    // Info (turquoise)
+    &-info              { background-color: @btnInfoBackground; }
+    &-info[href]        { background-color: @infoText; }
+    // Inverse (black)
+    &-inverse           { background-color: @grayDark; }
+    &-inverse[href]     { background-color: @grayDark; }
+}
+
+
+
+// Custom styles
+
+.btn {
+    border-color: @btnBorder @btnBorder darken(@btnBorder, 10%) @btnBorder;
+}
+
+.btn-primary {
+    border-color: @btnPrimaryBackgroundHighlight @btnPrimaryBackgroundHighlight darken(@btnPrimaryBackgroundHighlight, 2%) @btnPrimaryBackgroundHighlight;
+}
+
+.btn-warning {
+    border-color: lighten(@btnWarningBackgroundHighlight, 2%) @btnWarningBackgroundHighlight darken(@btnWarningBackgroundHighlight, 2%) @btnWarningBackgroundHighlight;
+}
+
+.btn-danger {
+    border-color: lighten(@btnDangerBackgroundHighlight, 2%) @btnDangerBackgroundHighlight darken(@btnDangerBackgroundHighlight, 2%) @btnDangerBackgroundHighlight;
+}
+
+.btn-success {
+    border-color: lighten(@btnSuccessBackgroundHighlight, 2%) @btnSuccessBackgroundHighlight darken(@btnSuccessBackgroundHighlight, 2%) @btnSuccessBackgroundHighlight;
+}
+
+.btn-info {
+    border-color: lighten(@btnInfoBackgroundHighlight, 2%) @btnInfoBackgroundHighlight darken(@btnInfoBackgroundHighlight, 2%) @btnInfoBackgroundHighlight;
+}
+
+.btn-inverse {
+    border-color: lighten(@btnInverseBackgroundHighlight, 2%) @btnInverseBackgroundHighlight darken(@btnInverseBackgroundHighlight, 2%) @btnInverseBackgroundHighlight;
+}
+
+.btn-link {
+    border-color: transparent;
+}
+
+.btn__icon {
+    display: inline-flex;
+    vertical-align: top;
+}
+
+.btn__icon:not(:only-child) {
+    margin-right: 5px;
+}
+
+.btn__icon.btn__icon--caret:not(:only-child) {
+    margin-right: 0;
+}
+
+.btn__icon--text {
+    vertical-align: text-bottom;
+}
+
+.btn .cs-icon:not(:last-child) {
+    margin-right: 6px;
+}
+
+.btn__icon--with-text:only-child {
+    margin-right: 6px;
+}
+
+.btn__icon--with-text.btn__icon--last {
+    margin-left: 6px;
+    margin-right: auto;
+}
+
+.btn .flag.cs-icon:not(:last-child) {
+    margin-right: 0;
+}
+
+.btn .cs-icon:not(:last-child) + .caret {
+    margin-left: 0;
+}
+
+.btn-link {
+    .caret {
+        margin-top: @baseLineHeight / 2 - 2px;
+        border-top-color: #1010107b;;
+        border-bottom-color: #1010107b;
+        line-height: 5px !important;
+        opacity: 1;
+    }
+}
+.btn-toolbar .btn-link {
+  font-size: @baseFontSize;
+}
+.btn-checkbox {
+    position: relative;
+    margin: -4px -8px;
+    input[type="checkbox"] {
+        position: absolute;
+        top: 9px;
+        left: 6px;
+        z-index: 5;
+    }
+    .caret {
+        margin-left: ~"calc(100% - 3px)";
+        margin-top: 10px;
+    }
+    .dropdown-toggle {
+        box-shadow: none;
+        border-radius: @baseBorderRadius;
+        padding: 3px 13px 3px 6px;
+        width: 50px;
+        height: @inputHeight;
+        border: 1px solid transparent ;
+        background: transparent;
+    }
+    .dropdown-menu, .caret {
+        visibility: hidden;
+    }
+}
+.btn-indent {
+    margin-bottom: 10px;
+}
+// .btn-group must open at all width on mobile devices
+@media (max-width: @TabletBreakpoint) {
+    .btn-group,
+    .dropdown {
+        &.open {
+            position: unset;
+
+            .dropdown-menu {
+                top: auto;
+                right: 17px;
+            }
+            .dropdown-menu.dropdown-menu {
+                left: 17px;
+            }
+        }
+    }
+    .controls {
+        .btn-group,
+        .dropdown {
+            &.open .dropdown-menu {
+                left: 0;
+                right: 0;
+            }
+        }
+    }
+}
+@media (width: @TabletBreakpoint) {
+    .controls {
+        .btn-group,
+        .dropdown {
+            &.open .dropdown-menu {
+                right: auto;
+            }
+        }
+    }
+}
+.checkbox-list label{
+    display: inline-block;
+    margin-right: 10px;
+    min-width: 185px;
+    input[type="checkbox"] {
+        margin-top: 0 !important;
+        margin-right: 9px;
+    }
+}
+.btn-live-edit {
+    margin: 12px 0px;
+}
+// show dropdown menu on hover
+.btn-hover {
+    &:hover ul.dropdown-menu{
+        display: block;
+    }
+    ul.dropdown-menu{
+        margin-top: 0px;
+    }
+}
+
+[class*="o-status-"] {
+    white-space: nowrap;
+}
+
+textarea {
+    resize: vertical;
+}
+.btn-toolbar .tab-tools {
+    > .btn + .btn,
+    > .btn-group + .btn,
+    > .btn + .btn-group {
+      margin-left: 5px;
+    }
+}
+.tab-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.control-toolbar {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+.control-toolbar__btns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.control-toolbar__btns-left {
+    display: flex;
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+.control-toolbar__btns-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 3;
+    gap: 10px;
+
+    @media (min-width: @TabletBreakpoint + 1px) {
+        flex-direction: row;
+    }
+}
+.control-toolbar__btns-right {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+.control-toolbar__select {
+    width: 100%;
+    max-width: 500px;
+
+    .select2-search__field {
+        width: 100% !important;
+        min-width: 200px !important;
+        margin-bottom: 0;
+    }
+}
+
+// List with button
+.list-with-btns {
+    margin-top: 15px;
+    li {
+        margin-bottom: 20px;
+    }
+    .list-description {
+        display: inline-block;
+        width: 143px;
+        vertical-align: top;
+    }
+}
+
+.form-edit.form-horizontal .controls .btn-group {
+    margin-top: 2px;
+}
+
+.btn-expand {
+    display: inline-flex;
+    min-width: @inputHeight;
+    min-height: @inputHeight;
+    padding-left: 6px;
+    padding-right: 6px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+
+    &--header {
+        min-height: 22px;
+        vertical-align: top;
+    }
+
+    .icon-caret-right {
+        margin-top: 0;
+    }
+
+    &-wrapper {
+        display: inline-block;
+        min-width: @inputHeight;
+        height: 22px;
+        text-align: center;
+        vertical-align: top;
+    }
+}
+
+button.label, button.badge {
+    border: 0;
+}
+
+.btn-group > {
+
+    .btn-add,
+    .btn-clone {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}

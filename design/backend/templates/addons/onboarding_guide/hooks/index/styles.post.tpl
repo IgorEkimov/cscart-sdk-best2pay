@@ -1,0 +1,1 @@
+{style src="addons/onboarding_guide/onboarding_guide.less"}
