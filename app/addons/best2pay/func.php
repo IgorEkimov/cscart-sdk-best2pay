@@ -112,17 +112,17 @@ function fn_best2pay_isNotifyRequest($client){
  */
 function fn_best2pay_add_payment_processor()
 {
-	db_query(
-		'INSERT INTO ?:payment_processors ?e', [
-			'processor'          => 'Best2Pay',
-			'processor_script'   => BEST2PAY_PROCESSOR,
-			'processor_template' => 'views/orders/components/payments/cc_outside.tpl',
-			'admin_template'     => 'best2pay.tpl',
-			'callback'           => YesNo::NO,
-			'type'               => 'P',
-			'addon'              => 'best2pay',
-		]
-	);
+    db_query(
+        'INSERT INTO ?:payment_processors ?e', [
+            'processor'          => 'Best2Pay',
+            'processor_script'   => BEST2PAY_PROCESSOR,
+            'processor_template' => 'views/orders/components/payments/cc_outside.tpl',
+            'admin_template'     => 'best2pay.tpl',
+            'callback'           => YesNo::NO,
+            'type'               => 'P',
+            'addon'              => 'best2pay',
+        ]
+    );
 }
 
 /**
@@ -132,147 +132,147 @@ function fn_best2pay_add_payment_processor()
  */
 function fn_best2pay_delete_payment_processor()
 {
-	$addon_processor_id = db_get_field(
-		'SELECT processor_id FROM ?:payment_processors WHERE processor_script = ?s',
-		BEST2PAY_PROCESSOR
-	);
-	
-	db_query(
-		'UPDATE ?:payments SET status = ?s, processor_params = ?s, processor_id = ?i WHERE processor_id = ?s',
-		ObjectStatuses::DISABLED,
-		'',
-		0,
-		$addon_processor_id
-	);
-	
-	db_query(
-		'DELETE FROM ?:payment_processors WHERE processor_id = ?i',
-		$addon_processor_id
-	);
+    $addon_processor_id = db_get_field(
+        'SELECT processor_id FROM ?:payment_processors WHERE processor_script = ?s',
+        BEST2PAY_PROCESSOR
+    );
+
+    db_query(
+        'UPDATE ?:payments SET status = ?s, processor_params = ?s, processor_id = ?i WHERE processor_id = ?s',
+        ObjectStatuses::DISABLED,
+        '',
+        0,
+        $addon_processor_id
+    );
+
+    db_query(
+        'DELETE FROM ?:payment_processors WHERE processor_id = ?i',
+        $addon_processor_id
+    );
 }
 
 function fn_best2pay_get_url($params) {
-	return empty($params['test_mode']) ? 'https://pay.best2pay.net' : 'https://test.best2pay.net';
+    return empty($params['test_mode']) ? 'https://pay.best2pay.net' : 'https://test.best2pay.net';
 }
 
 function fn_best2pay_parse_xml($string) {
-	if (!$string)
-		throw new Exception(__('best2pay.empty_response'));
-	$xml = simplexml_load_string($string);
-	if (!$xml)
-		throw new Exception(__('best2pay.invalid_xml'));
-	$valid_xml = json_decode(json_encode($xml), true);
-	if (!$valid_xml)
-		throw new Exception(__('best2pay.invalid_xml'));
-	return $valid_xml;
+    if (!$string)
+        throw new Exception(__('best2pay.empty_response'));
+    $xml = simplexml_load_string($string);
+    if (!$xml)
+        throw new Exception(__('best2pay.invalid_xml'));
+    $valid_xml = json_decode(json_encode($xml), true);
+    if (!$valid_xml)
+        throw new Exception(__('best2pay.invalid_xml'));
+    return $valid_xml;
 }
 
 function fn_best2pay_operation_is_valid($response, $params) {
-	if(empty($response['reason_code']) && !empty($response['code']) && !empty($response['description']))
-		throw new Exception($response['code'] . " : " . $response['description']);
-	if(empty($response['signature']))
-		throw new Exception(__('best2pay.empty_signature'));
-	$tmp_response = (array)$response;
-	unset($tmp_response['signature'], $tmp_response['ofd_state']);
-	$signature = base64_encode(md5(implode('', $tmp_response) . $params['password']));
-	if ($signature !== $response['signature'])
-		throw new Exception(__('best2pay.invalid_signature'));
-	if(!in_array($response['type'], BEST2PAY_SUPPORTED_TYPES))
-		throw new Exception(__('best2pay.unknown_operation') . ' : ' . $response['type']);
-	return true;
+    if(empty($response['reason_code']) && !empty($response['code']) && !empty($response['description']))
+        throw new Exception($response['code'] . " : " . $response['description']);
+    if(empty($response['signature']))
+        throw new Exception(__('best2pay.empty_signature'));
+    $tmp_response = (array)$response;
+    unset($tmp_response['signature'], $tmp_response['ofd_state']);
+    $signature = base64_encode(md5(implode('', $tmp_response) . $params['password']));
+    if ($signature !== $response['signature'])
+        throw new Exception(__('best2pay.invalid_signature'));
+    if(!in_array($response['type'], BEST2PAY_SUPPORTED_TYPES))
+        throw new Exception(__('best2pay.unknown_operation') . ' : ' . $response['type']);
+    return true;
 }
 
 function fn_best2pay_prepare_order_info(&$order_info) {
-	if($order_info['payment_method']['processor'] == 'Best2Pay') {
-		$payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : 'one_stage';
-		$prefix = 'best2pay.';
-		$type_name = __($prefix . $payment_type);
-		if(strpos($type_name, $prefix) === false)
-			$order_info['payment_info']['payment_type'] = $type_name;
-	}
+    if($order_info['payment_method']['processor'] == 'Best2Pay') {
+        $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : 'one_stage';
+        $prefix = 'best2pay.';
+        $type_name = __($prefix . $payment_type);
+        if(strpos($type_name, $prefix) === false)
+            $order_info['payment_info']['payment_type'] = $type_name;
+    }
 }
 
 function fn_best2pay_order_can_be_refund($order_info) {
-	if($order_info['payment_method']['processor'] == 'Best2Pay') {
-		$status = !empty($order_info['payment_info']['status']) ? $order_info['payment_info']['status'] : '';
-		$order_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
-		if ($order_id && ($status == 'COMPLETED' || $status == 'AUTHORIZED'))
-			return true;
-	}
-	return false;
+    if($order_info['payment_method']['processor'] == 'Best2Pay') {
+        $status = !empty($order_info['payment_info']['status']) ? $order_info['payment_info']['status'] : '';
+        $order_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
+        if ($order_id && ($status == 'COMPLETED' || $status == 'AUTHORIZED'))
+            return true;
+    }
+    return false;
 }
 
 function fn_best2pay_order_can_be_complete($order_info) {
-	if($order_info['payment_method']['processor'] == 'Best2Pay') {
-		$status = !empty($order_info['payment_info']['status']) ? $order_info['payment_info']['status'] : '';
-		$order_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
-		if ($order_id && $status == 'AUTHORIZED')
-			return true;
-	}
-	return false;
+    if($order_info['payment_method']['processor'] == 'Best2Pay') {
+        $status = !empty($order_info['payment_info']['status']) ? $order_info['payment_info']['status'] : '';
+        $order_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
+        if ($order_id && $status == 'AUTHORIZED')
+            return true;
+    }
+    return false;
 }
 
 function fn_best2pay_order_refund($order_info, $params) {
-	$data = fn_best2pay_prepare_order_data($order_info);
-	fn_best2pay_sign_data($data, $params);
-	$payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
-	$path = ($payment_type == 'halva' || $payment_type == 'halva_two_steps') ? '/webapi/custom/svkb/Reverse' : '/webapi/Reverse';
-	$url = fn_best2pay_get_url($params) . $path;
-	$response = Http::post($url, $data);
-	$response_xml = fn_best2pay_parse_xml($response);
-	if (!fn_best2pay_operation_is_valid($response_xml, $params))
-		throw new Exception(__('best2pay.operation_not_valid'));
-	if($response_xml['state'] !== BEST2PAY_OPERATION_APPROVED)
-		throw new Exception(__('best2pay.operation_not_approved'));
-	return ['status' => $response_xml['order_state']];
+    $data = fn_best2pay_prepare_order_data($order_info);
+    fn_best2pay_sign_data($data, $params);
+    $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
+    $path = ($payment_type == 'halva' || $payment_type == 'halva_two_steps') ? '/webapi/custom/svkb/Reverse' : '/webapi/Reverse';
+    $url = fn_best2pay_get_url($params) . $path;
+    $response = Http::post($url, $data);
+    $response_xml = fn_best2pay_parse_xml($response);
+    if (!fn_best2pay_operation_is_valid($response_xml, $params))
+        throw new Exception(__('best2pay.operation_not_valid'));
+    if($response_xml['state'] !== BEST2PAY_OPERATION_APPROVED)
+        throw new Exception(__('best2pay.operation_not_approved'));
+    return ['status' => $response_xml['order_state']];
 }
 
 function fn_best2pay_order_complete($order_info, $params) {
-	$data = fn_best2pay_prepare_order_data($order_info);
-	fn_best2pay_sign_data($data, $params);
-	$payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
-	$path = ($payment_type == 'halva' || $payment_type == 'halva_two_steps') ? '/webapi/custom/svkb/Complete' : '/webapi/Complete';
-	$url = fn_best2pay_get_url($params) . $path;
-	$response = Http::post($url, $data);
-	$response_xml = fn_best2pay_parse_xml($response);
-	if (!fn_best2pay_operation_is_valid($response_xml, $params))
-		throw new Exception(__('best2pay.operation_not_valid'));
-	if($response_xml['state'] !== BEST2PAY_OPERATION_APPROVED)
-		throw new Exception(__('best2pay.operation_not_approved'));
-	return ['status' => $response_xml['order_state']];
+    $data = fn_best2pay_prepare_order_data($order_info);
+    fn_best2pay_sign_data($data, $params);
+    $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
+    $path = ($payment_type == 'halva' || $payment_type == 'halva_two_steps') ? '/webapi/custom/svkb/Complete' : '/webapi/Complete';
+    $url = fn_best2pay_get_url($params) . $path;
+    $response = Http::post($url, $data);
+    $response_xml = fn_best2pay_parse_xml($response);
+    if (!fn_best2pay_operation_is_valid($response_xml, $params))
+        throw new Exception(__('best2pay.operation_not_valid'));
+    if($response_xml['state'] !== BEST2PAY_OPERATION_APPROVED)
+        throw new Exception(__('best2pay.operation_not_approved'));
+    return ['status' => $response_xml['order_state']];
 }
 
 function fn_best2pay_prepare_order_data($order_info) {
-	$best2pay_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
-	if(!$best2pay_id)
-		throw new Exception(__('best2pay.no_order_id'));
-	$amount = intval($order_info['total'] * 100);
-	$currency = '643';
-	return [
-		'id' => $best2pay_id,
-		'amount' => $amount,
-		'currency' => $currency
-	];
+    $best2pay_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
+    if(!$best2pay_id)
+        throw new Exception(__('best2pay.no_order_id'));
+    $amount = intval($order_info['total'] * 100);
+    $currency = '643';
+    return [
+        'id' => $best2pay_id,
+        'amount' => $amount,
+        'currency' => $currency
+    ];
 }
 
 function fn_best2pay_sign_data(&$data, $params, $password = true) {
-	$sign = $params['sector_id'] . implode('', $data);
-	if($password)
-		$sign .= $params['password'];
-	$data['sector'] = $params['sector_id'];
-	$data['signature'] = base64_encode(md5($sign));
+    $sign = $params['sector_id'] . implode('', $data);
+    if($password)
+        $sign .= $params['password'];
+    $data['sector'] = $params['sector_id'];
+    $data['signature'] = base64_encode(md5($sign));
 }
 
 function fn_best2pay_get_custom_order_status($operation_type, $params) {
-	switch($operation_type){
-		case 'PURCHASE':
-		case 'PURCHASE_BY_QR':
-		case 'COMPLETE':
-			return !empty($params['order_completed']) ? $params['order_completed'] : OrderStatuses::PAID;
-		case 'AUTHORIZE':
-			return !empty($params['order_authorized']) ? $params['order_authorized'] : OrderStatuses::PAID;
-		case 'REVERSE':
-			return !empty($params['order_canceled']) ? $params['order_canceled'] : OrderStatuses::CANCELED;
-	}
-	return '';
+    switch($operation_type){
+        case 'PURCHASE':
+        case 'PURCHASE_BY_QR':
+        case 'COMPLETE':
+            return !empty($params['order_completed']) ? $params['order_completed'] : OrderStatuses::PAID;
+        case 'AUTHORIZE':
+            return !empty($params['order_authorized']) ? $params['order_authorized'] : OrderStatuses::PAID;
+        case 'REVERSE':
+            return !empty($params['order_canceled']) ? $params['order_canceled'] : OrderStatuses::CANCELED;
+    }
+    return '';
 }

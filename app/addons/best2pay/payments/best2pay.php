@@ -47,9 +47,9 @@ if(defined('PAYMENT_NOTIFICATION')){
             if(!$pc_ref_id)
                 throw new Exception('Undefined order ID');
 
-//            $pc_order_id = (int)get_post_meta($pc_ref_id, 'best2pay_order_id', true);
-//            if($ct_order_id !== $pc_order_id)
-//                throw new Exception('Request data is not valid');
+            //            $pc_order_id = (int)get_post_meta($pc_ref_id, 'best2pay_order_id', true);
+            //            if($ct_order_id !== $pc_order_id)
+            //                throw new Exception('Request data is not valid');
 
             $order_info = fn_get_order_info($pc_ref_id);
             $processor_data = fn_get_payment_method_data((int)$order_info['payment_id']);
@@ -106,46 +106,46 @@ if(defined('PAYMENT_NOTIFICATION')){
 
 
 
-//        if (!fn_check_payment_script(BEST2PAY_PROCESSOR, $order_id)) {
-//            die(__('best2pay.access_denied'));
-//        }
-//        $operation_id = !empty($_REQUEST['operation']) ? (int)$_REQUEST['operation'] : 0;
-//        $native_id = !empty($_REQUEST['id']) ? (int)$_REQUEST['id'] : 0;
-//        $order_info = fn_get_order_info($order_id);
-//        $processor_data = fn_get_payment_method_data((int) $order_info['payment_id']);
-//        $params = !empty($processor_data['processor_params']) ? $processor_data['processor_params'] : [];
-//
-//        $data = [
-//            'id' => $native_id,
-//            'operation' => $operation_id,
-//        ];
-//        fn_best2pay_sign_data($data, $params);
-//        $url = fn_best2pay_get_url($params) . '/webapi/Operation';
-//        $operation = [];
-//        $operation_is_valid = false;
-//        try {
-//            $response = Http::post($url, $data);
-//            $operation = fn_best2pay_parse_xml($response);
-//            $operation_is_valid = fn_best2pay_operation_is_valid($operation, $params);
-//        } catch(Exception $e) {
-//            fn_set_notification('E', 'Error', $e->getMessage());
-//            fn_order_placement_routines('route', $order_id);
-//        }
-//
-//
-//        $pp_response['order_id'] = $native_id;
-//        $pp_response['status'] = $operation['order_state'];
-//        $pp_response['payment_type'] = !empty($params['payment_type']) ? $params['payment_type'] : '';
-//        $pp_response['currency'] = 'RUB';
-//        $pp_response['amount'] = (!empty($operation['buyIdSumAmount']) ? $operation['buyIdSumAmount'] : $operation['amount']) / 100;
-//
-//        if($operation_is_valid && $operation['state'] === BEST2PAY_OPERATION_APPROVED && in_array($operation['type'], BEST2PAY_PAYMENT_TYPES))
-//            $pp_response['order_status'] = fn_best2pay_get_custom_order_status($operation['type'], $params);
-//        else
-//            $pp_response['order_status'] = OrderStatuses::FAILED;
-//
-//        fn_finish_payment($order_id, $pp_response);
-//        fn_order_placement_routines('route', $order_id);
+        //        if (!fn_check_payment_script(BEST2PAY_PROCESSOR, $order_id)) {
+        //            die(__('best2pay.access_denied'));
+        //        }
+        //        $operation_id = !empty($_REQUEST['operation']) ? (int)$_REQUEST['operation'] : 0;
+        //        $native_id = !empty($_REQUEST['id']) ? (int)$_REQUEST['id'] : 0;
+        //        $order_info = fn_get_order_info($order_id);
+        //        $processor_data = fn_get_payment_method_data((int) $order_info['payment_id']);
+        //        $params = !empty($processor_data['processor_params']) ? $processor_data['processor_params'] : [];
+        //
+        //        $data = [
+        //            'id' => $native_id,
+        //            'operation' => $operation_id,
+        //        ];
+        //        fn_best2pay_sign_data($data, $params);
+        //        $url = fn_best2pay_get_url($params) . '/webapi/Operation';
+        //        $operation = [];
+        //        $operation_is_valid = false;
+        //        try {
+        //            $response = Http::post($url, $data);
+        //            $operation = fn_best2pay_parse_xml($response);
+        //            $operation_is_valid = fn_best2pay_operation_is_valid($operation, $params);
+        //        } catch(Exception $e) {
+        //            fn_set_notification('E', 'Error', $e->getMessage());
+        //            fn_order_placement_routines('route', $order_id);
+        //        }
+        //
+        //
+        //        $pp_response['order_id'] = $native_id;
+        //        $pp_response['status'] = $operation['order_state'];
+        //        $pp_response['payment_type'] = !empty($params['payment_type']) ? $params['payment_type'] : '';
+        //        $pp_response['currency'] = 'RUB';
+        //        $pp_response['amount'] = (!empty($operation['buyIdSumAmount']) ? $operation['buyIdSumAmount'] : $operation['amount']) / 100;
+        //
+        //        if($operation_is_valid && $operation['state'] === BEST2PAY_OPERATION_APPROVED && in_array($operation['type'], BEST2PAY_PAYMENT_TYPES))
+        //            $pp_response['order_status'] = fn_best2pay_get_custom_order_status($operation['type'], $params);
+        //        else
+        //            $pp_response['order_status'] = OrderStatuses::FAILED;
+        //
+        //        fn_finish_payment($order_id, $pp_response);
+        //        fn_order_placement_routines('route', $order_id);
 
 
 
@@ -179,7 +179,7 @@ if(defined('PAYMENT_NOTIFICATION')){
 
             //$response = $client->getState($order_info['payment_info']['payment_id']);
             //if ($ct_order->isPaid()) {
-                //fn_update_order_payment_info($order_id, ['addons.tinkoff.payment_status' => $response['Status']]);
+            //fn_update_order_payment_info($order_id, ['addons.tinkoff.payment_status' => $response['Status']]);
 
 
             if (in_array($ct_order->getState(), ['AUTHORIZED', 'COMPLETED'])) {
@@ -191,7 +191,7 @@ if(defined('PAYMENT_NOTIFICATION')){
 
 
             //}
-//            fn_order_placement_routines('route', $order_info['order_id'], false);
+            //            fn_order_placement_routines('route', $order_info['order_id'], false);
 
 
 
@@ -222,100 +222,100 @@ if(defined('PAYMENT_NOTIFICATION')){
 
 
 
-//	if(($mode == 'success') || ($mode == 'fail')){
-//		if(!empty($_REQUEST['modal'])) {
-//			$args = $_REQUEST;
-//			$args['action'] = "payment_notification.{$mode}";
-//			fn_create_payment_form(fn_url('best2pay.redirect'), $args);
-//		}
-//
-//		$order_id = !empty($_REQUEST['order_id']) ? (int)$_REQUEST['order_id'] : 0;
-//		if (!fn_check_payment_script(BEST2PAY_PROCESSOR, $order_id)) {
-//			die(__('best2pay.access_denied'));
-//		}
-//		$operation_id = !empty($_REQUEST['operation']) ? (int)$_REQUEST['operation'] : 0;
-//		$native_id = !empty($_REQUEST['id']) ? (int)$_REQUEST['id'] : 0;
-//		$order_info = fn_get_order_info($order_id);
-//		$processor_data = fn_get_payment_method_data((int) $order_info['payment_id']);
-//		$params = !empty($processor_data['processor_params']) ? $processor_data['processor_params'] : [];
-//
-//		$data = [
-//			'id' => $native_id,
-//			'operation' => $operation_id,
-//		];
-//		fn_best2pay_sign_data($data, $params);
-//		$url = fn_best2pay_get_url($params) . '/webapi/Operation';
-//		$operation = [];
-//		$operation_is_valid = false;
-//		try {
-//			$response = Http::post($url, $data);
-//			$operation = fn_best2pay_parse_xml($response);
-//			$operation_is_valid = fn_best2pay_operation_is_valid($operation, $params);
-//		} catch(Exception $e) {
-//			fn_set_notification('E', 'Error', $e->getMessage());
-//			fn_order_placement_routines('route', $order_id);
-//		}
-//
-//		$pp_response['order_id'] = $native_id;
-//		$pp_response['status'] = $operation['order_state'];
-//		$pp_response['payment_type'] = !empty($params['payment_type']) ? $params['payment_type'] : '';
-//		$pp_response['currency'] = 'RUB';
-//		$pp_response['amount'] = (!empty($operation['buyIdSumAmount']) ? $operation['buyIdSumAmount'] : $operation['amount']) / 100;
-//
-//		if($operation_is_valid && $operation['state'] === BEST2PAY_OPERATION_APPROVED && in_array($operation['type'], BEST2PAY_PAYMENT_TYPES))
-//			$pp_response['order_status'] = fn_best2pay_get_custom_order_status($operation['type'], $params);
-//		else
-//			$pp_response['order_status'] = OrderStatuses::FAILED;
-//
-//		fn_finish_payment($order_id, $pp_response);
-//		fn_order_placement_routines('route', $order_id);
+    //	if(($mode == 'success') || ($mode == 'fail')){
+    //		if(!empty($_REQUEST['modal'])) {
+    //			$args = $_REQUEST;
+    //			$args['action'] = "payment_notification.{$mode}";
+    //			fn_create_payment_form(fn_url('best2pay.redirect'), $args);
+    //		}
+    //
+    //		$order_id = !empty($_REQUEST['order_id']) ? (int)$_REQUEST['order_id'] : 0;
+    //		if (!fn_check_payment_script(BEST2PAY_PROCESSOR, $order_id)) {
+    //			die(__('best2pay.access_denied'));
+    //		}
+    //		$operation_id = !empty($_REQUEST['operation']) ? (int)$_REQUEST['operation'] : 0;
+    //		$native_id = !empty($_REQUEST['id']) ? (int)$_REQUEST['id'] : 0;
+    //		$order_info = fn_get_order_info($order_id);
+    //		$processor_data = fn_get_payment_method_data((int) $order_info['payment_id']);
+    //		$params = !empty($processor_data['processor_params']) ? $processor_data['processor_params'] : [];
+    //
+    //		$data = [
+    //			'id' => $native_id,
+    //			'operation' => $operation_id,
+    //		];
+    //		fn_best2pay_sign_data($data, $params);
+    //		$url = fn_best2pay_get_url($params) . '/webapi/Operation';
+    //		$operation = [];
+    //		$operation_is_valid = false;
+    //		try {
+    //			$response = Http::post($url, $data);
+    //			$operation = fn_best2pay_parse_xml($response);
+    //			$operation_is_valid = fn_best2pay_operation_is_valid($operation, $params);
+    //		} catch(Exception $e) {
+    //			fn_set_notification('E', 'Error', $e->getMessage());
+    //			fn_order_placement_routines('route', $order_id);
+    //		}
+    //
+    //		$pp_response['order_id'] = $native_id;
+    //		$pp_response['status'] = $operation['order_state'];
+    //		$pp_response['payment_type'] = !empty($params['payment_type']) ? $params['payment_type'] : '';
+    //		$pp_response['currency'] = 'RUB';
+    //		$pp_response['amount'] = (!empty($operation['buyIdSumAmount']) ? $operation['buyIdSumAmount'] : $operation['amount']) / 100;
+    //
+    //		if($operation_is_valid && $operation['state'] === BEST2PAY_OPERATION_APPROVED && in_array($operation['type'], BEST2PAY_PAYMENT_TYPES))
+    //			$pp_response['order_status'] = fn_best2pay_get_custom_order_status($operation['type'], $params);
+    //		else
+    //			$pp_response['order_status'] = OrderStatuses::FAILED;
+    //
+    //		fn_finish_payment($order_id, $pp_response);
+    //		fn_order_placement_routines('route', $order_id);
 
-//	} elseif($mode == 'notify') {
-//
-//		try {
-//			$response = file_get_contents("php://input");
-//			$response_xml = fn_best2pay_parse_xml($response);
-//		} catch(Exception $e) {
-//			die($e->getMessage());
-//		}
-//
-//		if(!empty($response_xml['reason_code'])) {
-//			$order_id = $response_xml['reference'];
-//			$order_info = fn_get_order_info($order_id);
-//			$processor_data = fn_get_payment_method_data((int) $order_info['payment_id']);
-//			$params = !empty($processor_data['processor_params']) ? $processor_data['processor_params'] : [];
-//			try {
-//				$operation_is_valid = fn_best2pay_operation_is_valid($response_xml, $params);
-//				if(!$operation_is_valid)
-//					throw new Exception(__('best2pay.operation_not_valid'));
-//			} catch(Exception $e) {
-//				die($e->getMessage());
-//			}
-//			$pp_response['order_id'] = $response_xml['order_id'];
-//			$pp_response['status'] = $response_xml['order_state'];
-//
-//			if ($response_xml['reason_code'] == 1) {
-//				$pp_response['order_status'] = fn_best2pay_get_custom_order_status($response_xml['type'], $params);
-//			} else {
-//				$pp_response['order_status'] = OrderStatuses::FAILED;
-//			}
-//			fn_update_order_payment_info($order_id, $pp_response);
-//			fn_change_order_status($order_id, $pp_response['order_status']);
-//			echo "ok";
-//		}
-//	}
+    //	} elseif($mode == 'notify') {
+    //
+    //		try {
+    //			$response = file_get_contents("php://input");
+    //			$response_xml = fn_best2pay_parse_xml($response);
+    //		} catch(Exception $e) {
+    //			die($e->getMessage());
+    //		}
+    //
+    //		if(!empty($response_xml['reason_code'])) {
+    //			$order_id = $response_xml['reference'];
+    //			$order_info = fn_get_order_info($order_id);
+    //			$processor_data = fn_get_payment_method_data((int) $order_info['payment_id']);
+    //			$params = !empty($processor_data['processor_params']) ? $processor_data['processor_params'] : [];
+    //			try {
+    //				$operation_is_valid = fn_best2pay_operation_is_valid($response_xml, $params);
+    //				if(!$operation_is_valid)
+    //					throw new Exception(__('best2pay.operation_not_valid'));
+    //			} catch(Exception $e) {
+    //				die($e->getMessage());
+    //			}
+    //			$pp_response['order_id'] = $response_xml['order_id'];
+    //			$pp_response['status'] = $response_xml['order_state'];
+    //
+    //			if ($response_xml['reason_code'] == 1) {
+    //				$pp_response['order_status'] = fn_best2pay_get_custom_order_status($response_xml['type'], $params);
+    //			} else {
+    //				$pp_response['order_status'] = OrderStatuses::FAILED;
+    //			}
+    //			fn_update_order_payment_info($order_id, $pp_response);
+    //			fn_change_order_status($order_id, $pp_response['order_status']);
+    //			echo "ok";
+    //		}
+    //	}
 } else {
     /**
-    * Запуск необходимой для принятия платежей логики,
-    * после того как клиент нажмет кнопку "Создать заказ".
-    *
-    * Доступные переменные:
-    *
-    * @var array $order_info Полная информация о заказе
-    * @var array $processor_data Информация о обработчике платежа
-    */
+     * Запуск необходимой для принятия платежей логики,
+     * после того как клиент нажмет кнопку "Создать заказ".
+     *
+     * Доступные переменные:
+     *
+     * @var array $order_info Полная информация о заказе
+     * @var array $processor_data Информация о обработчике платежа
+     */
 
-	$params = !empty($processor_data['processor_params']) ? $processor_data['processor_params'] : [];
+    $params = !empty($processor_data['processor_params']) ? $processor_data['processor_params'] : [];
 
     $client = fn_best2pay_get_client($params);
 
