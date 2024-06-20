@@ -2,7 +2,7 @@
 <addon scheme="3.0">
 	<id>best2pay</id>
 	<name>Best2Pay</name>
-	<version>1.1.2</version>
+	<version>2.0</version>
 	<description>Возможность оплаты товаров через платежные системы MasterCard, Visa и Мир</description>
 	<status>active</status>
 	<priority>100</priority>

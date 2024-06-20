@@ -1,5 +1,11 @@
 <?php
 
+use B2P\Client;
+use B2P\Models\Enums\CurrencyCode;
+use B2P\Responses\Error;
+use B2P\Models\Interfaces\CreditOrder;
+
+use Tygh\Registry;
 use Tygh\Enum\ObjectStatuses;
 use Tygh\Enum\YesNo;
 use Tygh\Http;
@@ -7,6 +13,97 @@ use Tygh\Enum\OrderDataTypes;
 use Tygh\Enum\OrderStatuses;
 
 defined('BOOTSTRAP') or die('Access denied');
+
+require_once Registry::get('config.dir.addons') . "/best2pay/sdk/sdk_autoload.php";
+
+function fn_best2pay_get_client($params) {
+    try {
+        if (isset($params['sector_id']) && $params['password'])
+            $client = new Client((int)$params['sector_id'], $params['password'], (bool)$params['test_mode'], (bool)$params['hash_algo']);
+    } catch (Exception $e) {
+        return $e->getMessage();
+    }
+
+    return $client;
+}
+
+function fn_best2pay_get_currency($currency): int {
+    if (isset(CurrencyCode::cases()[$currency])) {
+        return CurrencyCode::cases()[$currency];
+    } else throw new Exception('wrong currency');
+}
+
+function fn_best2pay_calc_fiscal_positions_shop_cart($client, $order_info) {
+    $fiscal_positions = [];
+    $fiscal_amount = 0;
+    $shop_cart = [];
+    $tax = $order_info['payment_method']['processor_params']['tax'];
+
+    foreach ($order_info['products'] as $b_key => $basket_item) {
+        $fiscal_positions[$b_key]['quantity'] = (int)$basket_item['amount'];
+        $fiscal_amount += $basket_item['amount'] * ($fiscal_positions[$b_key]['amount'] = $client->centifyAmount($basket_item['price']));
+        $fiscal_positions[$b_key]['tax'] = (int)$tax;
+        $fiscal_positions[$b_key]['name'] = str_ireplace([';', '|'], '', $basket_item['product']);
+
+        $shop_cart[] = [
+            'name' => $basket_item['product'],
+            'goodCost' => $basket_item['price'],
+            'quantityGoods' => (int)$basket_item['amount']
+        ];
+    }
+
+    if($order_info['shipping_cost'] > 0){
+        $fiscal_positions[] = [
+            'quantity' => 1,
+            'amount' => $client->centifyAmount($order_info['shipping_cost']),
+            'tax' => (int)$tax,
+            'name' => 'Доставка'
+        ];
+        $fiscal_amount += $client->centifyAmount($order_info['shipping_cost']);
+        $shop_cart[] = [
+            'name' => 'Доставка',
+            'goodCost' => $order_info['shipping_cost'],
+            'quantityGoods' => 1
+        ];
+    }
+
+    if ($fiscal_diff = abs($fiscal_amount - $client->centifyAmount($order_info['total']))) {
+        $fiscal_positions[] = [1, $fiscal_diff, (int)$tax, 'Скидка', 14];
+        $shop_cart = [];
+    }
+
+    return [$fiscal_positions, $shop_cart];
+}
+
+function fn_best2pay_isNotifyRequest($client){
+    try {
+        $input = file_get_contents("php://input");
+
+        if ($input && $client->handleResponse($input)) return true;
+        return false;
+    } catch (\throwable $e) {
+        return $e->getMessage();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Creates Best2Pay payment processor on add-on installation.
@@ -83,46 +180,6 @@ function fn_best2pay_operation_is_valid($response, $params) {
 	if(!in_array($response['type'], BEST2PAY_SUPPORTED_TYPES))
 		throw new Exception(__('best2pay.unknown_operation') . ' : ' . $response['type']);
 	return true;
-}
-
-function fn_best2pay_calc_fiscal_positions_shop_cart($order_info, $tax) {
-	$fiscal_positions = '';
-	$shop_cart = [];
-	$fiscal_amount = 0;
-	$sc_key = 0;
-	foreach($order_info['products'] as $product) {
-		$fiscal_positions .= $product['amount'] . ';';
-		$element_price = intval(round($product['price'] * 100));
-		$fiscal_positions .= $element_price . ';';
-		$fiscal_positions .= $tax . ';';
-		$fiscal_positions .= $product['product'] . '|';
-		$fiscal_amount += $product['amount'] * $element_price;
-		
-		$shop_cart[$sc_key]['name'] = $product['product'];
-		$shop_cart[$sc_key]['quantityGoods'] = (int) $product['amount'];
-		$shop_cart[$sc_key]['goodCost'] = round($product['price'] * $shop_cart[$sc_key]['quantityGoods'], 2);
-		$sc_key++;
-	}
-	if($order_info['shipping_cost'] > 0){
-		$fiscal_positions .= '1;';
-		$element_price = intval(round($order_info['shipping_cost'] * 100));
-		$fiscal_positions .= $element_price . ';';
-		$fiscal_positions .= $tax . ';';
-		$fiscal_positions .= 'Доставка' . '|';
-		$fiscal_amount += $element_price;
-		
-		$shop_cart[$sc_key]['quantityGoods'] = 1;
-		$shop_cart[$sc_key]['goodCost'] = round($order_info['shipping_cost'], 2);
-		$shop_cart[$sc_key]['name'] = 'Доставка';
-	}
-	$order_amount = intval($order_info['total'] * 100);
-	$fiscal_diff = abs($fiscal_amount - $order_amount);
-	if ($fiscal_diff) {
-		$fiscal_positions .= '1;' . $fiscal_diff . ';6;Скидка;14|';
-		$shop_cart = [];
-	}
-	$fiscal_positions = substr($fiscal_positions, 0, -1);
-	return [$fiscal_positions, $shop_cart];
 }
 
 function fn_best2pay_prepare_order_info(&$order_info) {

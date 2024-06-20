@@ -16,11 +16,12 @@
 	<label for="payment_type" class="control-label">{__("best2pay.payment_method")}:</label>
 	<div class="controls">
 		<select name="payment_data[processor_params][payment_type]" id="payment_type" style="width: auto">
-			<option value="" {if $processor_params.payment_type == ""}selected="selected"{/if}>{__("best2pay.one_stage")}</option>
-			<option value="two_steps" {if $processor_params.payment_type == "two_steps"}selected="selected"{/if}>{__("best2pay.two_steps")} *</option>
-			<option value="halva" {if $processor_params.payment_type == "halva"}selected="selected"{/if}>{__("best2pay.halva")}</option>
-			<option value="halva_two_steps" {if $processor_params.payment_type == "halva_two_steps"}selected="selected"{/if}>{__("best2pay.halva_two_steps")} *</option>
-			<option value="sbp" {if $processor_params.payment_type == "sbp"}selected="selected"{/if}>{__("best2pay.sbp")}</option>
+			<option value="purchase" {if $processor_params.payment_type == "purchase"}selected="selected"{/if}>{__("best2pay.one_stage")}</option>
+			<option value="authorize" {if $processor_params.payment_type == "authorize"}selected="selected"{/if}>{__("best2pay.two_steps")} *</option>
+			<option value="purchaseWithInstallment" {if $processor_params.payment_type == "purchaseWithInstallment"}selected="selected"{/if}>{__("best2pay.halva")}</option>
+			<option value="authorizeWithInstallment" {if $processor_params.payment_type == "authorizeWithInstallment"}selected="selected"{/if}>{__("best2pay.halva_two_steps")} *</option>
+			<option value="purchaseSBP" {if $processor_params.payment_type == "purchaseSBP"}selected="selected"{/if}>{__("best2pay.sbp")}</option>
+			<option value="loan" {if $processor_params.payment_type == "loan"}selected="selected"{/if}>{__("best2pay.loan")}</option>
 		</select>
 		<p class="muted description">* {__("best2pay.two_steps_description")}</p>
 	</div>
@@ -55,6 +56,16 @@
 			<option value="4" {if $processor_params.tax == "4"}selected="selected"{/if}>{__("best2pay.vat4")}</option>
 			<option value="5" {if $processor_params.tax == "5"}selected="selected"{/if}>{__("best2pay.vat5")}</option>
 			<option value="6" {if !$processor_params.tax || $processor_params.tax == "6"}selected="selected"{/if}>{__("best2pay.vat6")}</option>
+		</select>
+		<p class="muted description"></p>
+	</div>
+</div>
+<div class="control-group">
+	<label for="hash_algo" class="control-label">{__("best2pay.hash_algo")}:</label>
+	<div class="controls">
+		<select name="payment_data[processor_params][hash_algo]" id="hash_algo">
+			<option value="0" {if $processor_params.hash_algo == "0"}selected="selected"{/if}>MD5</option>
+			<option value="1" {if $processor_params.hash_algo == "1"}selected="selected"{/if}>SHA256</option>
 		</select>
 		<p class="muted description"></p>
 	</div>
@@ -99,6 +110,18 @@
 					{/foreach}
 			</select>
 			<p class="muted description"></p>
+			<p class="muted description"></p>
+		</div>
+	</div>
+	<div class="control-group">
+		<label for="order_loan" class="control-label">{__("best2pay.order_loan")}:</label>
+		<div class="controls">
+			<select name="payment_data[processor_params][order_loan]" id="order_loan">
+				<option value="">--</option>
+				{foreach from=$order_statuses key=key item=status}
+					<option value="{$key}" {if $processor_params.order_loan == $key}selected="selected"{/if}>{$status.description}</option>
+				{/foreach}
+			</select>
 			<p class="muted description"></p>
 		</div>
 	</div>

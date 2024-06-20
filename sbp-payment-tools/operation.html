@@ -1,0 +1,285 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Operation XML to localhost</title>
+	<link rel="stylesheet" href="style/default.css" type="text/css">
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.4.custom.css">
+	<link rel="shortcut icon" href="favicons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
+	<noscript>
+		<h1 style="color: #D90003">Your browser does't support JavaScript. Please enable JavaScript support and reload
+			page</h1>
+	</noscript>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/jquery.base64.js"></script>
+	<script type="text/javascript" src="js/crypto-js.min.js"></script>
+	<script type="text/javascript" src="js/hmac-sha256.min.js"></script>
+	<script type="text/javascript">
+		function signature() {
+			var signcode = 'test';
+			var str =
+				document.data.sector.value +
+				document.data.order_id.value +
+				document.data.operation.value +
+				signcode;
+			var alg = 'md5';
+			var sgn;
+			if (alg === 'sha256') {
+				sgn = CryptoJS.SHA256(str).toString();
+			} else {
+				sgn = hex_md5(str);
+			}
+			return Base64.encode(sgn);
+		}
+
+		function doRefGenerate() {
+			var str =
+				document.data.sector.value +
+				document.data.order_id.value +
+				document.data.operation.value + "test";
+			document.data.operation_url.value = document.data.host.value + "/webapi/Operation?" +
+				(document.data.sector.value !== "" ? "sector=" + document.data.sector.value : "") +
+				(document.data.order_id.value !== "" ? "&" + "id=" + document.data.order_id.value : "") +
+				(document.data.operation.value !== "" ? "&" + "operation=" + document.data.operation.value : "") +
+				"&signature=" + Base64.encode(hex_md5(str));
+
+			var sgn = signature();
+			document.data.signature.value = sgn;
+			localStorage.setItem('signature', sgn);
+		}
+
+		function displayInline() {
+			var f = document.getElementById('screen');
+			f.style.display = "inline";
+			document.data.signature.value = signature();
+		}
+
+		function getXML() {
+			$.ajax({
+				method: "POST",
+				url: "operation.php",
+				data: {
+					action: "get_xml",
+					host: document.data.host.value,
+					sector: document.data.sector.value,
+					id: document.data.order_id.value,
+					operation: document.data.operation.value,
+					signature: document.data.signature.value
+				}
+			})
+				.done(function (response) {
+					var xml = formatXml(response)
+					document.data.xml.value = xml;
+					localStorage.setItem('xml', xml);
+				});
+		}
+
+		function sendXML() {
+			$.ajax({
+				method: "POST",
+				url: "operation.php",
+				data: {
+					action: "send_xml",
+					url: document.data.send_to_url.value,
+					xml: document.data.xml.value
+				}
+			})
+				.done(function (response) {
+					document.data.result.value = response;
+				});
+		}
+
+		function formatXml(xml, tab) { // tab = optional indent value, default is tab (\t)
+			var formatted = '', indent = '';
+			tab = tab || '\t';
+			xml.split(/>\s*</).forEach(function (node) {
+				if (node.match(/^\/\w/)) indent = indent.substring(tab.length); // decrease indent by one 'tab'
+				formatted += indent + '<' + node + '>\r\n';
+				if (node.match(/^<?\w[^>]*[^\/]$/)) indent += tab;              // increase indent
+			});
+			return formatted.substring(1, formatted.length - 3);
+		}
+
+		function valueToClipboard(id) {
+			var copyText = document.getElementById(id);
+			copyText.select();
+			copyText.setSelectionRange(0, 99999); // For mobile devices
+			document.execCommand('copy');
+		}
+	
+	</script>
+</head>
+
+<style>
+    .ui-menu {
+        overflow: hidden;
+    }
+
+    .ui-menu .ui-menu {
+        overflow: visible !important;
+    }
+
+    .ui-menu > li {
+        float: left;
+        display: block;
+        width: auto !important;
+    }
+
+    .ui-menu ul li {
+        display: block;
+        float: none;
+    }
+
+    .ui-menu ul li ul {
+        left: 120px !important;
+        width: 100%;
+    }
+
+    .ui-menu ul li ul li {
+        width: auto;
+    }
+
+    .ui-menu ul li ul li a {
+        float: left;
+    }
+
+    .ui-menu > li {
+        margin: 5px 5px !important;
+        padding: 0 0 !important;
+    }
+
+    .ui-menu > li > a {
+        float: left;
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
+
+    .ui-menu .ui-menu-icon {
+        margin-top: 0.3em !important;
+    }
+
+    .ui-menu .ui-menu .ui-menu li {
+        float: left;
+        display: block;
+    }
+
+    .gradient {
+        background: #75CFDE; /* Для старых браузров */
+        background: linear-gradient(to bottom, #75CFDE, white);
+        padding: 1em 0 1em 1.75em;
+        height: 40px;
+    }
+
+    .page-footer {
+        height: 40px;
+    }
+</style>
+<body onload="displayInline();doRefGenerate();">
+<div id="screen" style="display: inline;">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+	<script>
+		$(function () {
+			$("#nav").menu({position: {at: "left bottom"}});
+			$('#sectorsBox').on('change', function () {
+				document.data2.submit();
+			});
+			var stored_xml = localStorage.getItem('xml');
+			if (stored_xml) $('#xml').val(stored_xml);
+
+			$("form input, form select").each(function () {
+				input_name = $(this).attr('name');
+				var stored_value = localStorage.getItem(input_name);
+				if (stored_value) $(this).val(stored_value);
+				$(this).on('change', function () {
+					doRefGenerate();
+					localStorage.setItem($(this).attr('name'), $(this).val());
+				})
+			});
+
+			$("#year").html(new Date().getFullYear());
+		});
+	</script>
+	<div class="page-header">
+		<div class="gradient">
+			<img src="images/icons/best2pay.png" alt="">
+		</div>
+		<ul id="nav" class="ui-menu ui-widget ui-widget-content ui-corner-all" role="menu" tabindex="0"
+				aria-activedescendant="new_sd_payout_precheck">
+			<li class="ui-menu-item" role="presentation"><a href="sbp.html" id="sbptestcase" class="ui-corner-all"
+																											tabindex="-1" role="menuitem">
+				<img width="16" height="16" src="images/icons/sbp_16.png">
+				SBPTestCase
+			</a></li>
+			<li class="ui-menu-item" role="presentation"><a href="operation.html" id="operation" class="ui-corner-all"
+																											tabindex="-1" role="menuitem">
+				<img width="16" height="16" src="images/icons/folder_star.png">
+				Operation
+			</a></li>
+		</ul>
+	</div>
+	<br>
+	<div>
+	</div>
+	<br>
+	<table width="100%" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+			<td width="10%">
+			</td>
+			<td class="right-menu" width="60%">
+				<h1>Operation XML to localhost</h1>
+				<form name="data" method="POST" action="" target="_blank">
+					<p>Host: </p>
+					<p>
+						<select name="host">
+							<option value="https://test.best2pay.net">https://test.best2pay.net</option>
+							<option value="https://test.paygine.com">https://test.paygine.com</option>
+						</select>
+					</p>
+					<p>Sector: </p>
+					<p><input type="text" name="sector" value=""></p>
+					<p>ID: </p>
+					<p><input type="text" name="order_id" value=""></p>
+					<p>Operation: </p>
+					<p><input type="text" name="operation" value=""></p>
+					<p>Signature: </p>
+					<p><input type="text" name="signature" value="" size="50"></p>
+					<p>Operation URL:</p>
+					<p><textarea id="operation_url" name="operation_url" rows="2" cols="100" readonly=""></textarea></p>
+					<input type="button" value="    GET    " onclick="getXML()">
+					<input type="button" value="    COPY    " onclick="valueToClipboard('operation_url')"
+								 style="margin-left: 30px;">
+					<br>
+					<br>
+					<p>
+						<textarea id="xml" name="xml" rows="18" cols="80" readonly="" style="font-size: 10px;"></textarea>
+						<input type="button" value="    COPY    " onclick="valueToClipboard('xml')"
+									 style="position: absolute; margin-left: 10px;">
+					</p>
+					<p>Send to:</p>
+					<p><input type="text" name="send_to_url" value="" size="80"></p>
+					<input type="button" value="    SEND    " onclick="sendXML()">
+					<br>
+					<br>
+					<p><textarea id="result" name="result" rows="3" cols="80" readonly="" style="font-size: 10px;"></textarea></p>
+				</form>
+			</td>
+			<td width="20%">
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<div class="page-footer">
+		<p class="footer-line"></p>
+		<hr size="1" noshade="" color="#f0f0f0">
+		<p></p>
+		<p class="footer"><small>© <span id="year"></span> <a href="http://www.paygine.net">Best2Pay PHP team</a></small>
+		</p>
+	</div>
+</div>
+</body>
+
+</html>

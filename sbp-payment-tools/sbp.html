@@ -1,0 +1,907 @@
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Test portal</title>
+	<link rel="stylesheet" href="style/default.css" type="text/css">
+	<link rel="stylesheet" href="css/smoothness/jquery-ui-1.10.4.custom.css">
+	<link rel="shortcut icon" href="favicons/favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicons/favicon.ico" type="image/x-icon">
+	<noscript>
+		<h1 style="color: #D90003">Your browser does't support JavaScript. Please enable JavaScript support and reload
+			page</h1>
+	</noscript>
+	<script type="text/javascript" src="js/md5.js"></script>
+	<script type="text/javascript" src="js/jquery.base64.js"></script>
+	<script type="text/javascript" src="js/crypto-js.min.js"></script>
+	<script type="text/javascript" src="js/hmac-sha256.min.js"></script>
+	<script type="text/javascript">
+		function signature() {
+			var signcode = 'test';
+			var str =
+				document.data.sector.value +
+				document.data.case_id.value +
+				document.data.qrc_id.value +
+				document.data.order_id.value +
+				signcode;
+			var alg = 'md5';
+			var sgn;
+			if (alg === 'sha256') {
+				sgn = CryptoJS.SHA256(str).toString();
+			} else {
+				sgn = hex_md5(str);
+			}
+			return Base64.encode(sgn);
+		}
+
+		function doSubmit() {
+			document.data.submit();
+		}
+
+		function doRefGenerate() {
+			var str =
+				document.data.sector.value +
+				document.data.case_id.value +
+				document.data.qrc_id.value +
+				document.data.order_id.value + "test";
+			
+			document.data.url.value = document.data.host.value + "/test/SBPTestCase" +
+				"?sector=" + document.data.sector.value +
+				(document.data.case_id.value !== "" ? "&case_id=" + document.data.case_id.value : "") +
+				(document.data.qrc_id.value !== "" ? "&qrc_id=" + document.data.qrc_id.value : "") +
+				(document.data.order_id.value !== "" ? "&order_id=" + document.data.order_id.value : "") +
+				"&signature=" + Base64.encode(hex_md5(str));
+			
+			sgn = signature();
+			document.data.signature.value = sgn;
+			localStorage.setItem('signature', sgn);
+		}
+
+		function displayInline() {
+			var f = document.getElementById('screen');
+			f.style.display = "inline";
+		}
+		
+		function generateFormAction() {
+			document.data.action = document.data.host.value + "/test/SBPTestCase";
+		}
+	</script>
+</head>
+<style>
+    .ui-menu {
+        overflow: hidden;
+    }
+    .ui-menu .ui-menu {
+        overflow: visible !important;
+    }
+    .ui-menu > li {
+        float: left;
+        display: block;
+        width: auto !important;
+    }
+    .ui-menu ul li {
+        display: block;
+        float: none;
+    }
+    .ui-menu ul li ul {
+        left: 120px !important;
+        width: 100%;
+    }
+    .ui-menu ul li ul li {
+        width: auto;
+    }
+    .ui-menu ul li ul li a {
+        float: left;
+    }
+    .ui-menu > li {
+        margin: 5px 5px !important;
+        padding: 0 0 !important;
+    }
+    .ui-menu > li > a {
+        float: left;
+        display: block;
+        clear: both;
+        overflow: hidden;
+    }
+    .ui-menu .ui-menu-icon {
+        margin-top: 0.3em !important;
+    }
+    .ui-menu .ui-menu .ui-menu li {
+        float: left;
+        display: block;
+    }
+    .gradient {
+        background: #75CFDE; /* Для старых браузров */
+        background: linear-gradient(to bottom, #75CFDE, white);
+        padding: 1em 0 1em 1.75em;
+        height: 40px;
+    }
+    .page-footer {
+        height: 40px;
+    }
+</style>
+<body onload="displayInline()">
+<div id="screen" style="display: inline;">
+	<script src="js/jquery-1.9.1.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.js"></script>
+	<script>
+		$(function () {
+			$("#nav").menu({position: {at: "left bottom"}});
+
+			$('#sectorsBox').on('change', function () {
+				document.data2.submit();
+			});
+			
+			$("form input, form select").each(function () {
+				let input_name = $(this).attr('name');
+				let stored_value = localStorage.getItem(input_name);
+				if (stored_value) $(this).val(stored_value);
+				$(this).on('change', function () {
+					doRefGenerate();
+					localStorage.setItem($(this).attr('name'), $(this).val());
+				})
+			});
+
+			generateFormAction();
+			doRefGenerate();
+			
+			$("#year").html(new Date().getFullYear());
+		});
+	</script>
+	<div class="page-header">
+		<div class="gradient">
+			<img src="images/icons/best2pay.png" alt="">
+		</div>
+		<ul id="nav" class="ui-menu ui-widget ui-widget-content ui-corner-all" role="menu" tabindex="0" aria-activedescendant="new_sd_payout_precheck">
+			<li class="ui-menu-item" role="presentation"><a href="sbp.html" id="sbptestcase" class="ui-corner-all" tabindex="-1" role="menuitem">
+				<img width="16" height="16" src="images/icons/sbp_16.png">
+				SBPTestCase
+			</a></li>
+			<li class="ui-menu-item" role="presentation"><a href="operation.html" id="operation" class="ui-corner-all" tabindex="-1" role="menuitem">
+				<img width="16" height="16" src="images/icons/folder_star.png">
+				Operation
+			</a></li>
+		<!--
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=getFiscalPositions" id="getFiscalPositions" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								getFiscalPositions
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=register" id="register" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								Register
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=authorize" id="authorize" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning.png">
+								Authorize
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=cardenroll" id="cardenroll" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning.png">
+								Card enroll
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=changereccard" id="changereccard" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning.png">
+								Change rec card
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=changerecinstallmentcard" id="changerecinstallmentcard" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning.png">
+								Change rec installment card
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=complete" id="complete" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								Complete
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=customskvbpurchasewithinstallment" id="customskvbpurchasewithinstallment" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								SKVB PurchaseWithInstallment
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=customskvbauthorizewithinstallment" id="customskvbauthorizewithinstallment" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								SKVB AuthorizeWithInstallment
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=customskvbpurchasewithinstallmentreverse" id="customskvbpurchasewithinstallmentreverse" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								SKVB PurchaseInstallmentReverse
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=customskvbauthorizewithinstallmentreverse" id="customskvbauthorizewithinstallmentreverse" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								SKVB AuthorizeInstallmentReverse
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=customskvbreverse" id="customskvbreverse" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								SKVB InstallmentReverse(Operation Info)
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=customskvbcomplete" id="customskvbcomplete" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								SKVB InstallmentComplete(Operation Info)
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=purchase" id="purchase" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								Purchase
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=purchasebytoken" id="purchasebytoken" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								Purchase by token
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=authorizebytoken" id="authorizebytoken" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								Authorize by token
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=purchasebyuser" id="purchasebyuser" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								Purchase by user
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=purchasesbp" id="purchasesbp" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								Purchase SBP
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=qrcodestatus" id="qrcodestatus" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								QR code status
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=authorizebyuser" id="authorizebyuser" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								Authorize by user
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=authorizeinc" id="authorizeinc" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								Authorize Inc
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=recurringbytoken" id="recurringbytoken" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/recurring.png">
+								Recurring by token
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=payment" id="payment" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/payment.png">
+								Payment
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=mobilepayment" id="mobilepayment" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/payment.png">
+								Mobile Payment
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=phonepay" id="phonepay" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/payment.png">
+								Phone pay
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=phonepayweb" id="phonepayweb" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/payment.png">
+								Phone pay web
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=getvendorbyphone" id="getvendorbyphone" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_go.png">
+								Get Vendor By Phone
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=fastpay" id="fastpay" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/payment.png">
+								Fast pay
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2pfee" id="p2pfee" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/tag.png">
+								P2P Fee
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=paymentfee" id="paymentfee" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								Payment Fee
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=newpaymentfee" id="newpaymentfee" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								New Payment Fee
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserpayinfee" id="b2puserpayinfee" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								B2P Userpay InFee
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserpayoutfee" id="b2puserpayoutfee" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								B2P Userpay OutFee
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserpaytransferfee" id="b2puserpaytransferfee" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								B2P Userpay TransferFee
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserp2pin" id="b2puserp2pin" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								B2P Userpay P2PIn
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2p" id="p2p" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2ptransmission" id="p2ptransmission" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P transmission
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2ptransfer" id="p2ptransfer" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P gate
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2pdebit" id="p2pdebit" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P debit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2pcomplete" id="p2pcomplete" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P complete
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2pcompletegate" id="p2pcompletegate" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P complete gate
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2pcredit" id="p2pcredit" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P credit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2pcreditgateweb" id="p2pcreditgateweb" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P credit gate
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2pcreditbank" id="p2pcreditbank" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								P2P credit bank (Gateweb)
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserregister" id="b2puserregister" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Register
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusermodify" id="b2pusermodify" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User modify
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusermodifypage" id="b2pusermodifypage" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User modify (Page)
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusercardenroll" id="b2pusercardenroll" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User card enroll
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=userauthorize" id="userauthorize" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User authorize
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=userpurchase" id="userpurchase" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User purchase
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserpayin" id="b2puserpayin" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User pay in
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusergiftcard" id="b2pusergiftcard" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Gift Card
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusergiftcardchangeidentdata" id="b2pusergiftcardchangeidentdata" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Gift Card Change IdentData
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserupdatecardmetadata" id="b2puserupdatecardmetadata" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User UpdateCardMetadata
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserpayout" id="b2puserpayout" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User pay out
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserpayout2" id="b2puserpayout2" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User pay out 2
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusertransfer" id="b2pusertransfer" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User transfer
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserinfo" id="b2puserinfo" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User info
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserpayIndebit" id="b2puserpayIndebit" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P Userpay In debit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserpayIndebit2" id="b2puserpayIndebit2" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P Userpay In debit 2
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusertransferdebit" id="b2pusertransferdebit" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P Userpay transfer debit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserdocomplete" id="b2puserdocomplete" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P Userpay Complete
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puservcard" id="b2puservcard" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User VCard
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puservcardsetphone" id="b2puservcardsetphone" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User VCard And Set Phone
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puservcardblock" id="b2puservcardblock" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User VCard block
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puseropbalance" id="b2puseropbalance" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Operations and Balance
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusercheckvalidphone" id="b2pusercheckvalidphone" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Check Valid phone
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusersetphone" id="b2pusersetphone" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Set phone
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puseridentstatus" id="b2puseridentstatus" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Identification Status
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusersetphonevcard" id="b2pusersetphonevcard" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Set phone with VCard
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puservcardunblock" id="b2puservcardunblock" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User VCard Unblock
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puservcardunblock2" id="b2puservcardunblock2" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User VCard Unblock Service (No sms)
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusercheckphoneservice" id="b2pusercheckphoneservice" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Check phone Service
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusersetphoneservice" id="b2pusersetphoneservice" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Set phone Service
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=gateweb_b2pusercheckphone" id="gateweb_b2pusercheckphone" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Check phone (Gateweb)
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=gateweb_b2pusersetphone" id="gateweb_b2pusersetphone" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Set phone (Gateweb)
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=vcardreissue" id="vcardreissue" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								VCardReissue
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusersbpbanklist" id="b2pusersbpbanklist" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P Get SBP Bank
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=getsbpbanklist" id="getsbpbanklist" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								GetSBPBankList
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusersbpprecheck" id="b2pusersbpprecheck" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P PayOutSBPPrecheck
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusersbppayout" id="b2pusersbppayout" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P PayOutSBP
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pgetdefaultsbpbank" id="b2pgetdefaultsbpbank" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P Get Default SPB Bank
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=getdefaultsbpbank" id="getdefaultsbpbank" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								GetDefaultSBPBank
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2puserreverse" id="b2puserreverse" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Reverse
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusergetbalance" id="b2pusergetbalance" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Get balance
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pusercredituser" id="b2pusercredituser" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Credit user
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pcardstatement" id="b2pcardstatement" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User Statement
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2psetallowedparams" id="b2psetallowedparams" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User set allowed params
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2psetrestrictedparams" id="b2psetrestrictedparams" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User set restricted params
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=b2pcardlimit" id="b2pcardlimit" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P User set card limit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=qrgiftcard" id="qrgiftcard" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								B2P Get Qr Gift Card
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=safedepositdebit" id="safedepositdebit" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Safe deposit debit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=safedepositdebit2" id="safedepositdebit2" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Safe deposit debit 2
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=safedepositcomplete" id="safedepositcomplete" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Safe deposit complete
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=safeclosedeal" id="safeclosedeal" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Safe close deal
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=safereverse" id="safereverse" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Safe reverse
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=safeextrapayment" id="safeextrapayment" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Safe extra payment
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=safeextrapayout" id="safeextrapayout" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Safe extra payout
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sbpqrstaticregister" id="sbpqrstaticregister" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Register Sbp QRS
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sbpqrstaticcashactivate" id="sbpqrstaticcashactivate" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Activate Sbp Cash QRS
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sbpqrstaticcashregister" id="sbpqrstaticcashregister" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Register Sbp Cash QRS
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sbpqrstaticcashdeactivate" id="sbpqrstaticcashdeactivate" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Deactivate Sbp Cash QRS
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sbpqrstaticshow" id="sbpqrstaticshow" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Show Sbp QRS
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=verify" id="verify" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/verify.png">
+								Verify
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=checkVerifyStatus" id="checkVerifyStatus" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/verify.png">
+								CheckVerifyStatus
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=handleacs" id="handleacs" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightbulb.png">
+								Handle ACS
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=reverse" id="reverse" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_delete.png">
+								Reverse
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=reversekeeprec" id="reversekeeprec" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_delete.png">
+								ReverseKeepRec
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=recurring" id="recurring" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/recurring.png">
+								Recurring
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=setrec" id="setrec" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/recurring.png">
+								Set recurring
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=cancel" id="cancel" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/recurring.png">
+								Cancel
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=getrecinfo" id="getrecinfo" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/recurring.png">
+								GetRecInfo
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=epayment" id="epayment" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								EPayment
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sms" id="sms" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								SMS
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=smsstatus" id="smsstatus" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								SMS Status
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=cardinfo" id="cardinfo" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								Card info
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=checkbalance" id="checkbalance" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								Check Balance
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=p2pcreditbalance" id="p2pcreditbalance" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								P2P credit balance
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=poidem" id="poidem" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								Poidem
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=getpayload" id="getpayload" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightning_add.png">
+								Get payload
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=operation" id="operation" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/folder_star.png">
+								Operation
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=upload" id="upload" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/folder_star.png">
+								Upload
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=operations" id="operations" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/folder_star.png">
+								Operations
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=uccheckparams" id="uccheckparams" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/folder_star.png">
+								UCCheckParams
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=checkdiscountlimit" id="checkdiscountlimit" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/lightbulb.png">
+								CheckDiscountLimit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=order" id="order" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/folder_table.png">
+								Order
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=order_list" id="order_list" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/folder_table.png">
+								OrderList
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=changeorderstatus" id="changeorderstatus" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/folder_table.png">
+								ChangeOrderStatus
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sector_sector" id="sector_sector" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								Sector
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=pareq" id="pareq" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								PaReq
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=pares" id="pares" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								PaRes
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=shortlink" id="shortlink" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								Short Link
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=repeat" id="repeat" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/arrow_rotate_clockwise.png">
+								Repeat
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=repeat_b2p_complete" id="repeat_b2p_complete" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/arrow_rotate_clockwise.png">
+								Repeat B2PComplete
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=remind" id="remind" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/arrow_rotate_clockwise.png">
+								Remid
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=mpiconsumerreq" id="mpiconsumerreq" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								MPI Consumer req
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=card_reg" id="card_reg" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/credit_card.png">
+								Register card
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=card_reg2" id="card_reg2" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/credit_card.png">
+								Register card 2
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=mpiclient" id="mpiclient" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								MPI Client emulate
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sign" id="sign" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								Signature
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=signxml" id="signxml" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								Signature XML
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=qrgenerate" id="qrgenerate" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								QR generate
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=encrypt" id="encrypt" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								Encrypt XML
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=decrypt" id="decrypt" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								Decrypt XML
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sectors" id="sectors" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								Sectors
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=bins" id="bins" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								Country bins
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=makeapplepay" id="makeapplepay" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								MakeApplePay
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_complete" id="new_sd_complete" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD complete
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_payin" id="new_sd_payin" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD PayIn
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_payin_debit" id="new_sd_payin_debit" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD PayIn debit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_payin_debit2" id="new_sd_payin_debit2" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD PayIn debit 2
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_purchase" id="new_sd_purchase" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD Purchase
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_reverse" id="new_sd_reverse" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD Reverse
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_payout" id="new_sd_payout" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD Payout
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_getbalance" id="new_sd_getbalance" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD GetBalance
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_payout_page" id="new_sd_payout_page" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SD Payout Page
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_payout_precheck" id="new_sd_payout_precheck" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SDPayOutSBPPrecheck
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=new_sd_payout_sbp" id="new_sd_payout_sbp" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								New SDPayOutSBP
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=externalfiscalreg" id="externalfiscalreg" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								External FiscalReg
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=externalfiscalcheck" id="externalfiscalcheck" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								External FiscalCheck
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=logout" id="logout" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bullet_go.png">
+								Exit
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sdpayinsbp" id="sdpayinsbp" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								SDPayInSbp
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sdpayinsbpreg" id="sdpayinsbpreg" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								SDPayInSBPReg
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sbpdymanicqrlink" id="sbpdymanicqrlink" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								SDSBPDynamicQRLink
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sbptestcase" id="sbptestcase" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/bell-16.png">
+								SBPTestCase
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=getfiscalreceipt" id="getfiscalreceipt" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								getFiscalReceipt
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=namesuggestion" id="namesuggestion" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Fio Suggestion
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=emailsuggestion" id="emailsuggestion" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Email Suggestion
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sberpay" id="sberpay" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								Sberpay
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=sd_sberpay" id="sd_sberpay" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/money_add.png">
+								SD Sberpay
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=getoperationconfirmation" id="getoperationconfirmation" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/time_go.png">
+								Get Operation Confirmation
+						</a></li>
+				<li class="ui-menu-item" role="presentation"><a href="/test/index?action=methodshortlink" id="methodshortlink" class="ui-corner-all" tabindex="-1" role="menuitem">
+								<img width="16" height="16" src="images/icons/user_suit.png">
+								Method Short Link
+						</a></li>
+		</ul-->
+	</div>
+	<br>
+	<div>
+	</div>
+	<br>
+	<table width="100%" cellpadding="0" cellspacing="0">
+		<tbody>
+		<tr>
+			<td width="10%">
+			</td>
+			<td class="right-menu" width="60%">
+				<h1>SBPTestCase</h1>
+				<form name="data" method="POST" action="" target="_blank">
+					<p>Host: </p>
+					<p>
+						<select name="host" onchange="generateFormAction();">
+							<option value="https://test.best2pay.net">https://test.best2pay.net</option>
+							<option value="https://test.paygine.com">https://test.paygine.com</option>
+						</select>
+					</p>
+					<p>Sector ID: </p>
+					<p><input type="text" name="sector" value=""></p>
+					<p>Case ID: </p>
+					<p><input type="text" name="case_id" value="150" placeholder="150"></p>
+					<p>Qrc ID: </p>
+					<p><input type="text" name="qrc_id" value=""></p>
+					<p>Order ID: </p>
+					<p><input type="text" name="order_id" value="" autofocus></p>
+					<p>Signature: </p>
+					<p><input type="text" name="signature" size="50" value=""></p>
+					<p>Sign hash type: md5</p>
+					<p>Executable reference:</p>
+					<p><textarea name="url" rows="2" cols="120" readonly=""></textarea></p>
+					<input type="button" value="    OK    " onclick="doSubmit()">
+				</form>
+			</td>
+			<td width="20%">
+			</td>
+		</tr>
+		</tbody>
+	</table>
+	<style>
+
+	</style>
+	<div class="page-footer">
+		<p class="footer-line"></p>
+		<hr size="1" noshade="" color="#f0f0f0">
+		<p></p>
+		<p class="footer"><small>© <span id="year"></span> <a href="http://www.paygine.net">Best2Pay PHP team</a></small></p>
+	</div>
+</div>
+</body>
+
+</html>

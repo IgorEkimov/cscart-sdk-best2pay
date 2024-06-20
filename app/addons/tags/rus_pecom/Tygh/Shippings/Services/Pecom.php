@@ -12,12 +12,12 @@
  * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
  ****************************************************************************/
 
-namespace Tygh\Shippings\Services;
+namespace addons\tags\rus_pecom\Tygh\Shippings\Services;
 
 use Tygh\Enum\YesNo;
-use Tygh\Shippings\IService;
 use Tygh\Http;
 use Tygh\Registry;
+use Tygh\Shippings\IService;
 
 /**
  * UPS shipping service

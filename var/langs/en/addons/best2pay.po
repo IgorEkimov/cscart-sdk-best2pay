@@ -41,7 +41,11 @@ msgctxt "Languages::best2pay.halva_two_steps"
 msgid "Halva Chastyami (two-stage payment)"
 msgstr "Halva Chastyami (two-stage payment)"
 
-msgctxt "Languages::best2pay.sbp"
+msgctxt "Languages::best2pay.loan"
+msgid "Credit"
+msgstr "Credit"
+
+msgctxt "Languages::best2pay.loan"
 msgid "Fast Payment System"
 msgstr "Fast Payment System"
 
@@ -68,6 +72,10 @@ msgstr "Use emulation of real work. Buyer will not be charged"
 msgctxt "Languages::best2pay.tax"
 msgid "Tax"
 msgstr "Tax"
+
+msgctxt "Languages::best2pay.hash_algo"
+msgid "Data encryption algorithm"
+msgstr "Data encryption algorithm"
 
 msgctxt "Languages::best2pay.vat1"
 msgid "VAT rate 20%"
@@ -104,6 +112,10 @@ msgstr "Order successfully paid"
 msgctxt "Languages::best2pay.order_authorized"
 msgid "Order authorized"
 msgstr "Order authorized"
+
+msgctxt "Languages::best2pay.order_loan"
+msgid "Order loan"
+msgstr "Order loan"
 
 msgctxt "Languages::best2pay.order_canceled"
 msgid "Order cancelled"
