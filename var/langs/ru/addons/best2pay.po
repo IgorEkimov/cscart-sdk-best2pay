@@ -1,6 +1,5 @@
 msgid ""
-msgstr ""
-"Project-Id-Version: cs-cart-latest\n"
+msgstr "Project-Id-Version: cs-cart-latest\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Language-Team: Russian\n"
 "Language: ru_RU\n"
@@ -35,20 +34,20 @@ msgid "Standard acquiring (two-stage payment)"
 msgstr "Стандартный эквайринг (двухстадийная оплата)"
 
 msgctxt "Languages::best2pay.halva"
-msgid "Halva Chastyami (one-stage payment)"
-msgstr "Только Халва Частями (одностадийная оплата)"
+msgid "Plait (one-stage payment)"
+msgstr "Плайт (одностадийная оплата)"
 
 msgctxt "Languages::best2pay.halva_two_steps"
-msgid "Halva Chastyami (two-stage payment)"
-msgstr "Только Халва Частями (двухстадийная оплата)"
-
-msgctxt "Languages::best2pay.loan"
-msgid "Кредитование"
-msgstr "Кредитование"
+msgid "Plait (two-stage payment)"
+msgstr "Плайт (двухстадийная оплата)"
 
 msgctxt "Languages::best2pay.sbp"
 msgid "Fast Payment System"
 msgstr "Система Быстрых Платежей (СБП)"
+
+msgctxt "Languages::best2pay.loan"
+msgid "Credit"
+msgstr "Кредитование"
 
 msgctxt "Languages::best2pay.two_steps_description"
 msgid "Payment occurs after confirmation by the manager in the personal account"
@@ -171,6 +170,18 @@ msgctxt "Languages::best2pay.no_order_id"
 msgid "Order ID does not exist"
 msgstr "ID заказа не существует"
 
+msgctxt "Languages::best2pay.no_reference_id"
+msgid "Reference ID does not exist"
+msgstr "Reference ID заказа не существует"
+
+msgctxt "Languages::best2pay.no_client"
+msgid "Client does not exist"
+msgstr "Client не существует"
+
+msgctxt "Languages::best2pay.no_currency"
+msgid "Wrong currency"
+msgstr "Некорректная валюта заказа"
+
 msgctxt "Languages::best2pay.refund_completed"
 msgid "Refund completed successfully"
 msgstr "Возврат успешно завершен"
@@ -187,3 +198,7 @@ msgstr "Списать средства"
 msgctxt "Languages::best2pay.refund"
 msgid "Refund"
 msgstr "Отменить платеж"
+
+msgctxt "Languages::best2pay.redirect_error"
+msgid "Failed to pay for the order"
+msgstr "Не удалось оплатить заказ"

@@ -16,10 +16,39 @@ defined('BOOTSTRAP') or die('Access denied');
 
 require_once Registry::get('config.dir.addons') . "/best2pay/sdk/sdk_autoload.php";
 
-function fn_best2pay_get_client($params) {
+function fn_best2pay_get_processor_data($mode) {
+    if($_REQUEST['payment_id']) {
+        $processor_data = fn_get_payment_method_data($_REQUEST['payment_id']);
+    } else {
+        try {
+            if($mode === 'notify') {
+                $response = file_get_contents("php://input");
+                $response_xml = fn_best2pay_parse_xml($response);
+                $order_id = (int)$response_xml['reference'];
+            } else {
+                $order_id = (int)$_REQUEST['reference'];
+            }
+
+            if(!$order_id)
+                throw new Exception(__('best2pay.no_order_id'));
+
+            $order_info = fn_get_order_info($order_id);
+            $processor_data = fn_get_payment_method_data($order_info['payment_id']);
+        } catch(Exception $e) {
+            die($e->getMessage());
+        }
+    }
+
+    return $processor_data['processor_params'];
+}
+
+function fn_best2pay_get_client($params) : Client | string {
     try {
-        if (isset($params['sector_id']) && $params['password'])
+        if (isset($params['sector_id']) && $params['password']) {
             $client = new Client((int)$params['sector_id'], $params['password'], (bool)$params['test_mode'], (bool)$params['hash_algo']);
+        } else {
+            throw new Exception(__('best2pay.no_client'));
+        }
     } catch (Exception $e) {
         return $e->getMessage();
     }
@@ -27,13 +56,34 @@ function fn_best2pay_get_client($params) {
     return $client;
 }
 
+/**
+ * @throws \Exception
+ */
+function fn_best2pay_parse_xml($string) {
+    if (!$string)
+        throw new Exception(__('best2pay.empty_response'));
+
+    $xml = simplexml_load_string($string);
+    if (!$xml)
+        throw new Exception(__('best2pay.invalid_xml'));
+
+    $valid_xml = json_decode(json_encode($xml), true);
+    if (!$valid_xml)
+        throw new Exception(__('best2pay.invalid_xml'));
+
+    return $valid_xml;
+}
+
+/**
+ * @throws \Exception
+ */
 function fn_best2pay_get_currency($currency): int {
     if (isset(CurrencyCode::cases()[$currency])) {
         return CurrencyCode::cases()[$currency];
-    } else throw new Exception('wrong currency');
+    } else throw new Exception(__('best2pay.no_currency'));
 }
 
-function fn_best2pay_calc_fiscal_positions_shop_cart($client, $order_info) {
+function fn_best2pay_calc_fiscal_positions_shop_cart($client, $order_info) : array {
     $fiscal_positions = [];
     $fiscal_amount = 0;
     $shop_cart = [];
@@ -75,16 +125,74 @@ function fn_best2pay_calc_fiscal_positions_shop_cart($client, $order_info) {
     return [$fiscal_positions, $shop_cart];
 }
 
-function fn_best2pay_isNotifyRequest($client){
-    try {
-        $input = file_get_contents("php://input");
-
-        if ($input && $client->handleResponse($input)) return true;
-        return false;
-    } catch (\throwable $e) {
-        return $e->getMessage();
-    }
+function fn_best2pay_get_custom_order_status($operation_type, $params) {
+    return match ($operation_type) {
+        'PURCHASE', 'PURCHASE_BY_QR', 'COMPLETE' => !empty($params['order_completed']) ? $params['order_completed'] : OrderStatuses::PAID,
+        'AUTHORIZE' => !empty($params['order_authorized']) ? $params['order_authorized'] : OrderStatuses::PAID,
+        'LOAN' => !empty($params['order_loan']) ? $params['order_loan'] : OrderStatuses::PAID,
+        'REVERSE' => !empty($params['order_canceled']) ? $params['order_canceled'] : OrderStatuses::CANCELED,
+        default => '',
+    };
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -153,18 +261,6 @@ function fn_best2pay_delete_payment_processor()
 
 function fn_best2pay_get_url($params) {
     return empty($params['test_mode']) ? 'https://pay.best2pay.net' : 'https://test.best2pay.net';
-}
-
-function fn_best2pay_parse_xml($string) {
-    if (!$string)
-        throw new Exception(__('best2pay.empty_response'));
-    $xml = simplexml_load_string($string);
-    if (!$xml)
-        throw new Exception(__('best2pay.invalid_xml'));
-    $valid_xml = json_decode(json_encode($xml), true);
-    if (!$valid_xml)
-        throw new Exception(__('best2pay.invalid_xml'));
-    return $valid_xml;
 }
 
 function fn_best2pay_operation_is_valid($response, $params) {
@@ -261,18 +357,4 @@ function fn_best2pay_sign_data(&$data, $params, $password = true) {
         $sign .= $params['password'];
     $data['sector'] = $params['sector_id'];
     $data['signature'] = base64_encode(md5($sign));
-}
-
-function fn_best2pay_get_custom_order_status($operation_type, $params) {
-    switch($operation_type){
-        case 'PURCHASE':
-        case 'PURCHASE_BY_QR':
-        case 'COMPLETE':
-            return !empty($params['order_completed']) ? $params['order_completed'] : OrderStatuses::PAID;
-        case 'AUTHORIZE':
-            return !empty($params['order_authorized']) ? $params['order_authorized'] : OrderStatuses::PAID;
-        case 'REVERSE':
-            return !empty($params['order_canceled']) ? $params['order_canceled'] : OrderStatuses::CANCELED;
-    }
-    return '';
 }

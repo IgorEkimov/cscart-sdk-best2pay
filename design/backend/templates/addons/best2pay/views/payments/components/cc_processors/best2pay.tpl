@@ -101,6 +101,18 @@
 		</div>
 	</div>
 	<div class="control-group">
+		<label for="order_loan" class="control-label">{__("best2pay.order_loan")}:</label>
+		<div class="controls">
+			<select name="payment_data[processor_params][order_loan]" id="order_loan">
+				<option value="">--</option>
+				{foreach from=$order_statuses key=key item=status}
+					<option value="{$key}" {if $processor_params.order_loan == $key}selected="selected"{/if}>{$status.description}</option>
+				{/foreach}
+			</select>
+			<p class="muted description"></p>
+		</div>
+	</div>
+	<div class="control-group">
 		<label for="order_canceled" class="control-label">{__("best2pay.order_canceled")}:</label>
 		<div class="controls">
 			<select name="payment_data[processor_params][order_canceled]" id="order_canceled">
@@ -110,18 +122,6 @@
 					{/foreach}
 			</select>
 			<p class="muted description"></p>
-			<p class="muted description"></p>
-		</div>
-	</div>
-	<div class="control-group">
-		<label for="order_loan" class="control-label">{__("best2pay.order_loan")}:</label>
-		<div class="controls">
-			<select name="payment_data[processor_params][order_loan]" id="order_loan">
-				<option value="">--</option>
-				{foreach from=$order_statuses key=key item=status}
-					<option value="{$key}" {if $processor_params.order_loan == $key}selected="selected"{/if}>{$status.description}</option>
-				{/foreach}
-			</select>
 			<p class="muted description"></p>
 		</div>
 	</div>

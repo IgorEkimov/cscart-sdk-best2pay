@@ -1,8 +1,0 @@
-array (
-  'dispatch' => 'payment_notification.success',
-  'payment' => 'best2pay',
-  'order_id' => '295',
-  'id' => '8210824',
-  'operation' => '2508473',
-  'reference' => '295',
-)

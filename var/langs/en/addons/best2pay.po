@@ -34,20 +34,20 @@ msgid "Standard acquiring (two-stage payment)"
 msgstr "Standard acquiring (two-stage payment)"
 
 msgctxt "Languages::best2pay.halva"
-msgid "Halva Chastyami (one-stage payment)"
-msgstr "Halva Chastyami (one-stage payment)"
+msgid "Plait (one-stage payment)"
+msgstr "Plait (one-stage payment)"
 
 msgctxt "Languages::best2pay.halva_two_steps"
-msgid "Halva Chastyami (two-stage payment)"
-msgstr "Halva Chastyami (two-stage payment)"
+msgid "Plait (two-stage payment)"
+msgstr "Plait (two-stage payment)"
+
+msgctxt "Languages::best2pay.sbp"
+msgid "Fast Payment System"
+msgstr "Fast Payment System"
 
 msgctxt "Languages::best2pay.loan"
 msgid "Credit"
 msgstr "Credit"
-
-msgctxt "Languages::best2pay.loan"
-msgid "Fast Payment System"
-msgstr "Fast Payment System"
 
 msgctxt "Languages::best2pay.two_steps_description"
 msgid "Payment occurs after confirmation by the manager in the personal account"
@@ -170,6 +170,18 @@ msgctxt "Languages::best2pay.no_order_id"
 msgid "Order ID does not exist"
 msgstr "Order ID does not exist"
 
+msgctxt "Languages::best2pay.no_reference_id"
+msgid "Reference ID does not exist"
+msgstr "Reference ID does not exist"
+
+msgctxt "Languages::best2pay.no_client"
+msgid "Client does not exist"
+msgstr "Client does not exist"
+
+msgctxt "Languages::best2pay.no_currency"
+msgid "Wrong currency"
+msgstr "Wrong currency"
+
 msgctxt "Languages::best2pay.refund_completed"
 msgid "Refund completed successfully"
 msgstr "Refund completed successfully"
@@ -186,3 +198,7 @@ msgstr "Complete"
 msgctxt "Languages::best2pay.refund"
 msgid "Refund"
 msgstr "Refund"
+
+msgctxt "Languages::best2pay.redirect_error"
+msgid "Failed to pay for the order"
+msgstr "Failed to pay for the order"
