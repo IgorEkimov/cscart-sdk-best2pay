@@ -12,9 +12,11 @@
  * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
  ****************************************************************************/
 
-namespace Tygh;
+namespace addons\tags\rus_hybrid_auth\Tygh;
 
-class HybridProvidersOdnoklassniki extends \Hybrid_Providers_Odnoklassniki
+use Tygh\Exception;
+
+class HybridProvidersOdnoklassniki extends \addons\tags\rus_hybrid_auth\lib\Hybrid\Providers\Hybrid_Providers_Odnoklassniki
 {
     public $useSafeUrls = true;
 
@@ -54,4 +56,3 @@ class HybridProvidersOdnoklassniki extends \Hybrid_Providers_Odnoklassniki
         $this->setUserConnected();
     }
 }
-

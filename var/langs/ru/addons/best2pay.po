@@ -25,23 +25,23 @@ msgctxt "Languages::best2pay.payment_method"
 msgid "Payment method"
 msgstr "Способ оплаты"
 
-msgctxt "Languages::best2pay.one_stage"
+msgctxt "Languages::best2pay.purchase"
 msgid "Standard acquiring (one-stage payment)"
 msgstr "Стандартный эквайринг (одностадийная оплата)"
 
-msgctxt "Languages::best2pay.two_steps"
+msgctxt "Languages::best2pay.authorize"
 msgid "Standard acquiring (two-stage payment)"
 msgstr "Стандартный эквайринг (двухстадийная оплата)"
 
-msgctxt "Languages::best2pay.halva"
+msgctxt "Languages::best2pay.purchasewithinstallment"
 msgid "Plait (one-stage payment)"
 msgstr "Плайт (одностадийная оплата)"
 
-msgctxt "Languages::best2pay.halva_two_steps"
+msgctxt "Languages::best2pay.authorizewithinstallment"
 msgid "Plait (two-stage payment)"
 msgstr "Плайт (двухстадийная оплата)"
 
-msgctxt "Languages::best2pay.sbp"
+msgctxt "Languages::best2pay.purchasesbp"
 msgid "Fast Payment System"
 msgstr "Система Быстрых Платежей (СБП)"
 

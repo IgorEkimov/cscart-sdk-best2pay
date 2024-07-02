@@ -7,6 +7,7 @@ use B2P\Client;
 use B2P\Responses\Error;
 use B2P\Models\Enums\CurrencyCode;
 use B2P\Models\Interfaces\CreditOrder;
+use function Clue\StreamFilter\prepend;
 
 /**
  * @var array                 $order_info
@@ -110,54 +111,51 @@ if(defined('PAYMENT_NOTIFICATION')){
         }
 
     } elseif($mode == 'notify') {
-
-        //echo '<pre>'; print_r($client); echo '</pre>';
-
         try {
             $response = file_get_contents("php://input");
 
-           // echo '<pre>'; print_r($response); echo '</pre>';
+            $ct_order_id = $client->handleResponse($response)->order_id->getValue();
+            if(!$ct_order_id)
+                throw new Exception(__('best2pay.no_order_id'));
 
-            $response_xml = fn_best2pay_parse_xml($response);
+            $operation_id = $client->handleResponse($response)->id->getValue();
+            if(!$operation_id)
+                throw new Exception(__('best2pay.unknown_operation'));
 
-           // echo '<pre>'; print_r($response_xml); echo '</pre>';
+            $ct_order = $client->order(['id' => $ct_order_id]);
+            if($ct_order instanceof Error)
+                throw new Exception($ct_order->description->getValue());
+
+            $ct_ref_id = $ct_order->reference;
+            if(!$ct_ref_id)
+                throw new Exception(__('best2pay.no_reference_id'));
+
+            $operationType = $ct_order->getOperation($operation_id)->type->getValue()->name;
+
+            $order_info = fn_get_order_info($ct_ref_id);
+            $processor_data = fn_get_payment_method_data((int)$order_info['payment_id']);
+
+            $pp_response['order_id'] = $ct_order->id;
+            $pp_response['status'] = $ct_order->getState();
+
+            if($ct_order instanceof CreditOrder) {
+                $pp_response['order_status'] = fn_best2pay_get_custom_order_status($ct_order->isPaid() ? 'COMPLETE' : 'LOAN', $processor_data['processor_params']);
+
+                $paid = true;
+            } else {
+                $pp_response['order_status'] = fn_best2pay_get_custom_order_status($operationType, $processor_data['processor_params']);
+
+                $paid = $ct_order->isPaid();
+            }
+
+            fn_update_order_payment_info($ct_ref_id, $pp_response);
+            fn_change_order_status($ct_ref_id, $pp_response['order_status']);
+            echo "ok";
+
+
         } catch(Exception $e) {
             die($e->getMessage());
         }
-
-        $order_info = fn_get_order_info($response_xml['reference']);
-        $processor_data = fn_get_payment_method_data((int) $order_info['payment_id']);
-
-        $input = file_get_contents("php://input");
-        $ct_order_id = $client->handleResponse($input)->order_id->getValue();
-
-        $ct_order = $client->order(['id' => $ct_order_id]);
-        if($ct_order instanceof Error)
-            throw new Exception($ct_order->description->getValue());
-
-
-
-
-
-            //$response = $client->getState($order_info['payment_info']['payment_id']);
-            //if ($ct_order->isPaid()) {
-            //fn_update_order_payment_info($order_id, ['addons.tinkoff.payment_status' => $response['Status']]);
-
-
-            if (in_array($ct_order->getState(), ['AUTHORIZED', 'COMPLETED'])) {
-                fn_change_order_status($ct_order->reference, OrderStatuses::COMPLETE);
-            }
-            if (in_array($ct_order->getState(), ['REJECTED', 'CANCELED', 'REVERSED', 'REFUNDED'])) {
-                fn_change_order_status($ct_order->reference, OrderStatuses::CANCELED);
-            }
-
-
-            //}
-            //            fn_order_placement_routines('route', $order_info['order_id'], false);
-
-
-
-
     }
 
     /* TODO соответствие статусов

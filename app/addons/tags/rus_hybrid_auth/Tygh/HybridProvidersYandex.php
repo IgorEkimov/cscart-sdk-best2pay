@@ -12,10 +12,9 @@
  * "copyright.txt" FILE PROVIDED WITH THIS DISTRIBUTION PACKAGE.            *
  ****************************************************************************/
 
-namespace Tygh;
+namespace addons\tags\rus_hybrid_auth\Tygh;
 
-class HybridProvidersYandex extends \Hybrid_Providers_Yandex
+class HybridProvidersYandex extends \addons\tags\rus_hybrid_auth\lib\Hybrid\Providers\Hybrid_Providers_Yandex
 {
     public $useSafeUrls = true;
 }
-

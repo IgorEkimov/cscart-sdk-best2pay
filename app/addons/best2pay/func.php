@@ -136,6 +136,23 @@ function fn_best2pay_get_custom_order_status($operation_type, $params) {
 }
 
 
+/* TODO Order state (статусы заказов)
+ *
+ * REGISTERED
+ *
+ * AUTHORIZED
+ *
+ * P2PAUTHORIZED
+ *
+ * COMPLETED
+ *
+ * CANCELED
+ *
+ * BLOCKED
+ *
+ * EXPIRED
+ *
+ * */
 
 
 
@@ -280,7 +297,7 @@ function fn_best2pay_operation_is_valid($response, $params) {
 
 function fn_best2pay_prepare_order_info(&$order_info) {
     if($order_info['payment_method']['processor'] == 'Best2Pay') {
-        $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : 'one_stage';
+        $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
         $prefix = 'best2pay.';
         $type_name = __($prefix . $payment_type);
         if(strpos($type_name, $prefix) === false)
@@ -312,7 +329,7 @@ function fn_best2pay_order_refund($order_info, $params) {
     $data = fn_best2pay_prepare_order_data($order_info);
     fn_best2pay_sign_data($data, $params);
     $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
-    $path = ($payment_type == 'halva' || $payment_type == 'halva_two_steps') ? '/webapi/custom/svkb/Reverse' : '/webapi/Reverse';
+    $path = ($payment_type == 'halva' || $payment_type == 'plait_two_steps') ? '/webapi/custom/svkb/Reverse' : '/webapi/Reverse';
     $url = fn_best2pay_get_url($params) . $path;
     $response = Http::post($url, $data);
     $response_xml = fn_best2pay_parse_xml($response);
@@ -327,7 +344,7 @@ function fn_best2pay_order_complete($order_info, $params) {
     $data = fn_best2pay_prepare_order_data($order_info);
     fn_best2pay_sign_data($data, $params);
     $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
-    $path = ($payment_type == 'halva' || $payment_type == 'halva_two_steps') ? '/webapi/custom/svkb/Complete' : '/webapi/Complete';
+    $path = ($payment_type == 'halva' || $payment_type == 'plait_two_steps') ? '/webapi/custom/svkb/Complete' : '/webapi/Complete';
     $url = fn_best2pay_get_url($params) . $path;
     $response = Http::post($url, $data);
     $response_xml = fn_best2pay_parse_xml($response);

@@ -34,7 +34,7 @@ $schema['vkontakte'] = array(
     ),
     'wrapper' => array(
         'path' => $path . 'Vkontakte.php',
-        'class' => 'Hybrid_Providers_Vkontakte',
+        'class' => 'addons\tags\rus_hybrid_auth\lib\Hybrid\Providers\Hybrid_Providers_Vkontakte',
     ),
     'instruction' => 'rus_hybrid_auth.instruction_vkontakte'
 );
@@ -57,7 +57,7 @@ $schema['mailru'] = array(
     ),
     'wrapper' => array(
         'path' => $path . 'Mailru.php',
-        'class' => 'Hybrid_Providers_Mailru',
+        'class' => 'addons\tags\rus_hybrid_auth\lib\Hybrid\Providers\Hybrid_Providers_Mailru',
     ),
     'instruction' => 'rus_hybrid_auth.instruction_mailru'
 );
@@ -86,7 +86,7 @@ $schema['yandex'] = array(
     ),
     'wrapper' => array(
         'path' => $path . 'Yandex.php',
-        'class' => '\Tygh\HybridProvidersYandex',
+        'class' => '\addons\tags\rus_hybrid_auth\Tygh\HybridProvidersYandex',
     ),
     'instruction' => 'rus_hybrid_auth.instruction_yandex'
 );
@@ -121,7 +121,7 @@ $schema['odnoklassniki'] = array(
     ),
     'wrapper' => array(
         'path' => $path . 'Odnoklassniki.php',
-        'class' => '\Tygh\HybridProvidersOdnoklassniki',
+        'class' => '\addons\tags\rus_hybrid_auth\Tygh\HybridProvidersOdnoklassniki',
     ),
     'instruction' => 'rus_hybrid_auth.instruction_odnoklassniki'
 );

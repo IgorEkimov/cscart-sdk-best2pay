@@ -16,11 +16,11 @@
 	<label for="payment_type" class="control-label">{__("best2pay.payment_method")}:</label>
 	<div class="controls">
 		<select name="payment_data[processor_params][payment_type]" id="payment_type" style="width: auto">
-			<option value="purchase" {if $processor_params.payment_type == "purchase"}selected="selected"{/if}>{__("best2pay.one_stage")}</option>
-			<option value="authorize" {if $processor_params.payment_type == "authorize"}selected="selected"{/if}>{__("best2pay.two_steps")} *</option>
-			<option value="purchaseWithInstallment" {if $processor_params.payment_type == "purchaseWithInstallment"}selected="selected"{/if}>{__("best2pay.halva")}</option>
-			<option value="authorizeWithInstallment" {if $processor_params.payment_type == "authorizeWithInstallment"}selected="selected"{/if}>{__("best2pay.halva_two_steps")} *</option>
-			<option value="purchaseSBP" {if $processor_params.payment_type == "purchaseSBP"}selected="selected"{/if}>{__("best2pay.sbp")}</option>
+			<option value="purchase" {if $processor_params.payment_type == "purchase"}selected="selected"{/if}>{__("best2pay.purchase")}</option>
+			<option value="authorize" {if $processor_params.payment_type == "authorize"}selected="selected"{/if}>{__("best2pay.authorize")} *</option>
+			<option value="purchaseWithInstallment" {if $processor_params.payment_type == "purchaseWithInstallment"}selected="selected"{/if}>{__("best2pay.purchasewithinstallment")}</option>
+			<option value="authorizeWithInstallment" {if $processor_params.payment_type == "authorizeWithInstallment"}selected="selected"{/if}>{__("best2pay.authorizewithinstallment")} *</option>
+			<option value="purchaseSBP" {if $processor_params.payment_type == "purchaseSBP"}selected="selected"{/if}>{__("best2pay.purchasesbp")}</option>
 			<option value="loan" {if $processor_params.payment_type == "loan"}selected="selected"{/if}>{__("best2pay.loan")}</option>
 		</select>
 		<p class="muted description">* {__("best2pay.two_steps_description")}</p>
