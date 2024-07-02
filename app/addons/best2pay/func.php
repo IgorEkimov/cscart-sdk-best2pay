@@ -135,6 +135,103 @@ function fn_best2pay_get_custom_order_status($operation_type, $params) {
     };
 }
 
+function fn_best2pay_prepare_order_info(&$order_info) : void {
+    if($order_info['payment_method']['processor'] === 'Best2Pay') {
+        $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
+        $prefix = 'best2pay.';
+        $type_name = __($prefix . $payment_type);
+
+        if(!str_contains($type_name, $prefix))
+            $order_info['payment_info']['payment_type'] = $type_name;
+    }
+}
+
+function fn_best2pay_order_can_be_complete($order_info) : bool {
+    if($order_info['payment_method']['processor'] === 'Best2Pay') {
+        $status = !empty($order_info['payment_info']['status']) ? $order_info['payment_info']['status'] : '';
+        $order_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
+
+        if ($order_id && $status === 'AUTHORIZED')
+            return true;
+    }
+
+    return false;
+}
+
+function fn_best2pay_order_can_be_refund($order_info) : bool {
+    if($order_info['payment_method']['processor'] === 'Best2Pay') {
+        $status = !empty($order_info['payment_info']['status']) ? $order_info['payment_info']['status'] : '';
+        $order_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
+
+        if ($order_id && ($status === 'COMPLETED' || $status === 'AUTHORIZED'))
+            return true;
+    }
+
+    return false;
+}
+
+
+
+
+
+
+
+
+
+
+/**
+ * Creates Best2Pay payment processor on add-on installation.
+ *
+ * @return void
+ */
+function fn_best2pay_add_payment_processor() {
+    db_query(
+        'INSERT INTO ?:payment_processors ?e', [
+            'processor'          => 'Best2Pay',
+            'processor_script'   => BEST2PAY_PROCESSOR,
+            'processor_template' => 'views/orders/components/payments/cc_outside.tpl',
+            'admin_template'     => 'best2pay.tpl',
+            'callback'           => YesNo::NO,
+            'type'               => 'P',
+            'addon'              => 'best2pay',
+        ]
+    );
+}
+
+/**
+ * Removes Best2Pay payment processor and disables payment methods on add-on uninstallation.
+ *
+ * @return void
+ */
+function fn_best2pay_delete_payment_processor() {
+    $addon_processor_id = db_get_field(
+        'SELECT processor_id FROM ?:payment_processors WHERE processor_script = ?s',
+        BEST2PAY_PROCESSOR
+    );
+
+    db_query(
+        'UPDATE ?:payments SET status = ?s, processor_params = ?s, processor_id = ?i WHERE processor_id = ?s',
+        ObjectStatuses::DISABLED,
+        '',
+        0,
+        $addon_processor_id
+    );
+
+    db_query(
+        'DELETE FROM ?:payment_processors WHERE processor_id = ?i',
+        $addon_processor_id
+    );
+}
+
+
+
+
+
+
+
+
+
+
 
 /* TODO Order state (статусы заказов)
  *
@@ -225,57 +322,6 @@ function fn_best2pay_get_custom_order_status($operation_type, $params) {
 
 
 
-
-
-
-
-
-/**
- * Creates Best2Pay payment processor on add-on installation.
- *
- * @return void
- */
-function fn_best2pay_add_payment_processor()
-{
-    db_query(
-        'INSERT INTO ?:payment_processors ?e', [
-            'processor'          => 'Best2Pay',
-            'processor_script'   => BEST2PAY_PROCESSOR,
-            'processor_template' => 'views/orders/components/payments/cc_outside.tpl',
-            'admin_template'     => 'best2pay.tpl',
-            'callback'           => YesNo::NO,
-            'type'               => 'P',
-            'addon'              => 'best2pay',
-        ]
-    );
-}
-
-/**
- * Removes Best2Pay payment processor and disables payment methods on add-on uninstallation.
- *
- * @return void
- */
-function fn_best2pay_delete_payment_processor()
-{
-    $addon_processor_id = db_get_field(
-        'SELECT processor_id FROM ?:payment_processors WHERE processor_script = ?s',
-        BEST2PAY_PROCESSOR
-    );
-
-    db_query(
-        'UPDATE ?:payments SET status = ?s, processor_params = ?s, processor_id = ?i WHERE processor_id = ?s',
-        ObjectStatuses::DISABLED,
-        '',
-        0,
-        $addon_processor_id
-    );
-
-    db_query(
-        'DELETE FROM ?:payment_processors WHERE processor_id = ?i',
-        $addon_processor_id
-    );
-}
-
 function fn_best2pay_get_url($params) {
     return empty($params['test_mode']) ? 'https://pay.best2pay.net' : 'https://test.best2pay.net';
 }
@@ -293,36 +339,6 @@ function fn_best2pay_operation_is_valid($response, $params) {
     if(!in_array($response['type'], BEST2PAY_SUPPORTED_TYPES))
         throw new Exception(__('best2pay.unknown_operation') . ' : ' . $response['type']);
     return true;
-}
-
-function fn_best2pay_prepare_order_info(&$order_info) {
-    if($order_info['payment_method']['processor'] == 'Best2Pay') {
-        $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
-        $prefix = 'best2pay.';
-        $type_name = __($prefix . $payment_type);
-        if(strpos($type_name, $prefix) === false)
-            $order_info['payment_info']['payment_type'] = $type_name;
-    }
-}
-
-function fn_best2pay_order_can_be_refund($order_info) {
-    if($order_info['payment_method']['processor'] == 'Best2Pay') {
-        $status = !empty($order_info['payment_info']['status']) ? $order_info['payment_info']['status'] : '';
-        $order_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
-        if ($order_id && ($status == 'COMPLETED' || $status == 'AUTHORIZED'))
-            return true;
-    }
-    return false;
-}
-
-function fn_best2pay_order_can_be_complete($order_info) {
-    if($order_info['payment_method']['processor'] == 'Best2Pay') {
-        $status = !empty($order_info['payment_info']['status']) ? $order_info['payment_info']['status'] : '';
-        $order_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
-        if ($order_id && $status == 'AUTHORIZED')
-            return true;
-    }
-    return false;
 }
 
 function fn_best2pay_order_refund($order_info, $params) {
