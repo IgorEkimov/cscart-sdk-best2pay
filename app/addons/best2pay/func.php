@@ -168,15 +168,6 @@ function fn_best2pay_order_can_be_refund($order_info) : bool {
     return false;
 }
 
-
-
-
-
-
-
-
-
-
 /**
  * Creates Best2Pay payment processor on add-on installation.
  *
