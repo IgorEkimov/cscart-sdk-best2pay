@@ -3,7 +3,6 @@
 defined('BOOTSTRAP') or die('Access denied');
 
 use Tygh\Registry;
-use Tygh\Enum\OrderStatuses;
 use B2P\Responses\Error;
 use B2P\Models\Interfaces\CreditOrder;
 
@@ -81,11 +80,9 @@ if(defined('PAYMENT_NOTIFICATION')){
 
 
         } catch (Throwable $e) {
-            echo '<pre>'; print_r($e->getMessage()); echo '</pre>';
-
-            $pp_response['order_status'] = OrderStatuses::FAILED;
+            fn_set_notification('E', 'Error', $e->getMessage());
+            fn_order_placement_routines('route', $_REQUEST['order_id']);
         }
-
     } elseif($mode == 'notify') {
         try {
             $response = file_get_contents("php://input");
@@ -128,8 +125,6 @@ if(defined('PAYMENT_NOTIFICATION')){
             fn_change_order_status($ct_ref_id, $pp_response['order_status']);
 
             echo "ok";
-
-
         } catch (Throwable $e) {
             die($e->getMessage());
         }
