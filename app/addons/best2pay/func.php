@@ -1,18 +1,14 @@
 <?php
 
+defined('BOOTSTRAP') or die('Access denied');
+
 use B2P\Client;
 use B2P\Models\Enums\CurrencyCode;
 use B2P\Responses\Error;
-use B2P\Models\Interfaces\CreditOrder;
-
 use Tygh\Registry;
 use Tygh\Enum\ObjectStatuses;
 use Tygh\Enum\YesNo;
-use Tygh\Http;
-use Tygh\Enum\OrderDataTypes;
 use Tygh\Enum\OrderStatuses;
-
-defined('BOOTSTRAP') or die('Access denied');
 
 require_once Registry::get('config.dir.addons') . "/best2pay/sdk/sdk_autoload.php";
 
@@ -25,6 +21,8 @@ function fn_best2pay_get_processor_data($mode) {
                 $response = file_get_contents("php://input");
                 $response_xml = fn_best2pay_parse_xml($response);
                 $order_id = (int)$response_xml['reference'];
+            } elseif($mode === 'complete' || $mode === 'refund') {
+                $order_id = (int)$_REQUEST['order_id'];
             } else {
                 $order_id = (int)$_REQUEST['reference'];
             }
@@ -34,7 +32,7 @@ function fn_best2pay_get_processor_data($mode) {
 
             $order_info = fn_get_order_info($order_id);
             $processor_data = fn_get_payment_method_data($order_info['payment_id']);
-        } catch(Exception $e) {
+        } catch (Exception $e) {
             die($e->getMessage());
         }
     }
@@ -226,13 +224,6 @@ function fn_best2pay_delete_payment_processor() {
 
 
 
-
-
-
-
-
-
-
 /* TODO Order state (статусы заказов)
  *
  * REGISTERED
@@ -250,144 +241,3 @@ function fn_best2pay_delete_payment_processor() {
  * EXPIRED
  *
  * */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-function fn_best2pay_get_url($params) {
-    return empty($params['test_mode']) ? 'https://pay.best2pay.net' : 'https://test.best2pay.net';
-}
-
-function fn_best2pay_operation_is_valid($response, $params) {
-    if(empty($response['reason_code']) && !empty($response['code']) && !empty($response['description']))
-        throw new Exception($response['code'] . " : " . $response['description']);
-    if(empty($response['signature']))
-        throw new Exception(__('best2pay.empty_signature'));
-    $tmp_response = (array)$response;
-    unset($tmp_response['signature'], $tmp_response['ofd_state']);
-    $signature = base64_encode(md5(implode('', $tmp_response) . $params['password']));
-    if ($signature !== $response['signature'])
-        throw new Exception(__('best2pay.invalid_signature'));
-    if(!in_array($response['type'], BEST2PAY_SUPPORTED_TYPES))
-        throw new Exception(__('best2pay.unknown_operation') . ' : ' . $response['type']);
-    return true;
-}
-
-function fn_best2pay_order_refund($order_info, $params) {
-    $data = fn_best2pay_prepare_order_data($order_info);
-    fn_best2pay_sign_data($data, $params);
-    $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
-    $path = ($payment_type == 'halva' || $payment_type == 'plait_two_steps') ? '/webapi/custom/svkb/Reverse' : '/webapi/Reverse';
-    $url = fn_best2pay_get_url($params) . $path;
-    $response = Http::post($url, $data);
-    $response_xml = fn_best2pay_parse_xml($response);
-    if (!fn_best2pay_operation_is_valid($response_xml, $params))
-        throw new Exception(__('best2pay.operation_not_valid'));
-    if($response_xml['state'] !== BEST2PAY_OPERATION_APPROVED)
-        throw new Exception(__('best2pay.operation_not_approved'));
-    return ['status' => $response_xml['order_state']];
-}
-
-function fn_best2pay_order_complete($order_info, $params) {
-    $data = fn_best2pay_prepare_order_data($order_info);
-    fn_best2pay_sign_data($data, $params);
-    $payment_type = !empty($order_info['payment_info']['payment_type']) ? $order_info['payment_info']['payment_type'] : '';
-    $path = ($payment_type == 'halva' || $payment_type == 'plait_two_steps') ? '/webapi/custom/svkb/Complete' : '/webapi/Complete';
-    $url = fn_best2pay_get_url($params) . $path;
-    $response = Http::post($url, $data);
-    $response_xml = fn_best2pay_parse_xml($response);
-    if (!fn_best2pay_operation_is_valid($response_xml, $params))
-        throw new Exception(__('best2pay.operation_not_valid'));
-    if($response_xml['state'] !== BEST2PAY_OPERATION_APPROVED)
-        throw new Exception(__('best2pay.operation_not_approved'));
-    return ['status' => $response_xml['order_state']];
-}
-
-function fn_best2pay_prepare_order_data($order_info) {
-    $best2pay_id = !empty($order_info['payment_info']['order_id']) ? $order_info['payment_info']['order_id'] : '';
-    if(!$best2pay_id)
-        throw new Exception(__('best2pay.no_order_id'));
-    $amount = intval($order_info['total'] * 100);
-    $currency = '643';
-    return [
-        'id' => $best2pay_id,
-        'amount' => $amount,
-        'currency' => $currency
-    ];
-}
-
-function fn_best2pay_sign_data(&$data, $params, $password = true) {
-    $sign = $params['sector_id'] . implode('', $data);
-    if($password)
-        $sign .= $params['password'];
-    $data['sector'] = $params['sector_id'];
-    $data['signature'] = base64_encode(md5($sign));
-}

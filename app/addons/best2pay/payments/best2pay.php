@@ -1,35 +1,23 @@
 <?php
 
-use Tygh\Http;
+defined('BOOTSTRAP') or die('Access denied');
+
 use Tygh\Registry;
 use Tygh\Enum\OrderStatuses;
-use B2P\Client;
 use B2P\Responses\Error;
-use B2P\Models\Enums\CurrencyCode;
 use B2P\Models\Interfaces\CreditOrder;
-use function Clue\StreamFilter\prepend;
 
 /**
- * @var array                 $order_info
- * @var array                 $processor_data
- * @var string                $mode
+ * @var array $order_info
+ * @var array $processor_data
+ * @var string $mode
  */
-
-defined('BOOTSTRAP') or die('Access denied');
 
 require_once Registry::get('config.dir.addons') . "/best2pay/sdk/sdk_autoload.php";
 
 $client = fn_best2pay_get_client(fn_best2pay_get_processor_data($mode));
 
 if(defined('PAYMENT_NOTIFICATION')){
-    /**
-     * Получение и обработка ответа от сторонних
-     * платежных сервисов и систем оплаты.
-     *
-     * Доступные переменные:
-     * @var string $mode цель запроса
-     */
-
     if(($mode === 'success') || ($mode === 'fail')){
         try {
             if(isset($_REQUEST['error'])) {
@@ -84,14 +72,6 @@ if(defined('PAYMENT_NOTIFICATION')){
                 $paid = $ct_order->isPaid();
             }
 
-            /*
-            'order_completed' => 'C',
-            'order_authorized' => 'A',
-            'order_loan' => 'Y',
-            'order_canceled' => 'E',
-            */
-
-
 
 
             fn_finish_payment((int)$ct_order->reference, $pp_response);
@@ -100,11 +80,7 @@ if(defined('PAYMENT_NOTIFICATION')){
 
 
 
-
-
-
-
-        } catch (\throwable $e) {
+        } catch (Throwable $e) {
             echo '<pre>'; print_r($e->getMessage()); echo '</pre>';
 
             $pp_response['order_status'] = OrderStatuses::FAILED;
@@ -150,37 +126,15 @@ if(defined('PAYMENT_NOTIFICATION')){
 
             fn_update_order_payment_info($ct_ref_id, $pp_response);
             fn_change_order_status($ct_ref_id, $pp_response['order_status']);
+
             echo "ok";
 
 
-        } catch(Exception $e) {
+        } catch (Throwable $e) {
             die($e->getMessage());
         }
     }
-
-    /* TODO соответствие статусов
-    const PAID = 'P';
-    const COMPLETE = 'C';
-    const OPEN = 'O';
-    const FAILED = 'F';
-    const DECLINED = 'D';
-    const BACKORDERED = 'B';
-    const CANCELED = 'I';
-    const INCOMPLETED = 'N';
-    const PARENT = 'T';
-    */
-
 } else {
-    /**
-     * Запуск необходимой для принятия платежей логики,
-     * после того как клиент нажмет кнопку "Создать заказ".
-     *
-     * Доступные переменные:
-     *
-     * @var array $order_info Полная информация о заказе
-     * @var array $processor_data Информация о обработчике платежа
-     */
-
     $confirm_uri = 'payment_notification.success?payment=best2pay&order_id=' . $order_info['order_id'];
     $cancel_uri = 'payment_notification.fail?payment=best2pay&order_id=' . $order_info['order_id'];
 
